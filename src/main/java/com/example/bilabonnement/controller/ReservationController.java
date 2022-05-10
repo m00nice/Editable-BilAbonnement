@@ -1,4 +1,4 @@
 package com.example.bilabonnement.controller;
 
-public class DataRegisController {
+public class ReservationController {
 }
