@@ -5,11 +5,33 @@
     <title>Title</title>
     <link rel="stylesheet" href="/static/FU.Style.css">
 </head>
-<header class="logud">
-    <button type="button" onclick="Click">Log-ud</button>
+<header class="header">
+    <img class="logo-sign-in" src="/static/Images/BILABONNEMENT.png" alt="billede" height="100px" width="500px">
+    <div class="button" onclick="this"></div>
 </header>
 
 <body>
+<div class="forretningsuviklerBox"><h1>Forretningsudviklere</h1></div>
+<div class="table-container">
+    <table>
+        <thead>
+        <tr>
+            <th>Bil
+            <th>
+            <th>Udlejet til
+            <th>
+            <th>Pris
+            <th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:bil></tr>
+        <tr th:udlejet til></tr>
+        <tr th:pris></tr>
+
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>
