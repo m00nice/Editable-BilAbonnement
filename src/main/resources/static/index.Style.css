@@ -1,12 +1,9 @@
 .textBox {
     display: flex;
-    background-color: dodgerblue;
-    border: solid black;
+    background-color: #1892c3;
     height: 300px;
     width: 300px;
-    position: absolute;
-    top: 30%;
-    left: 37%;
+    border-radius: 20px;
     font-family: Arial;
     flex-flow: nowrap;
     flex-direction: column;
@@ -15,24 +12,55 @@
 .userInput {
     display: flex;
     flex-wrap: wrap;
-    height: 100%;
+    height: 60%;
     width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    height: 20%;
+}
+
+.password-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.username-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 83%;
+    height: 0%
+}
+
+.background {
+    background-color: #f2f2f2;
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
-
+    padding: 50px;
 }
 
-.password-container{
+.wrapper{
     display: flex;
     justify-content: center;
-    flex-direction: column;
-}
-.username-container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    align-items: center;
+    height: 80%;
 }
 
-.banner {
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
 
+body{
+    height: 100vh;
 }

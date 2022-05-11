@@ -16,7 +16,7 @@ body{
 button{}
 
 .logo{
-    background-image: url("../static/BILABONNEMENT.png");
+    background-image: url("Images/BILABONNEMENT.png");
     background-repeat: no-repeat;
     background-size: contain;
     max-width: 50%;

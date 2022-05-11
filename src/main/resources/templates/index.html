@@ -5,18 +5,28 @@
     <title>Dataregistrering</title>
     <link rel="stylesheet" th:href="@{../static_}" href="../static/index.Style.css">
 </head>
+
+
 <body>
+<header class="header">
+    <img class="logo-sign-in" src="/static/Images/BILABONNEMENT.png" alt="billede" height="100px" width="500px">
+    <div class="button" onclick="this"></div>
+</header>
+<div class="wrapper">
+<div class="background">
+
+
 <section class="menu">
     <div class="textBox">
-        <b style="font-size: 42px"><nobr>Log Ind</nobr></b>
+        <b style="font-size: 42px; align-self: center; color: white"><nobr>Log Ind</nobr></b>
         <div class="userInput">
             <div class="username-container">
-                <label for="username">Username:</label>
+                <label for="username">Brugernavn:</label>
                 <input type="text" id="username" name="username">
             </div>
 
             <div class="password-container">
-                <label for="pass">Password (8 characters minimum):</label>
+                <label for="pass">Password (8 karakterer minimum):</label>
                 <input type="password" id="pass" name="password"
                        minlength="8" required>
             </div>
@@ -27,6 +37,8 @@
     </div>
 </section>
 
+</div>
 
+</div>
 </body>
 </html>
