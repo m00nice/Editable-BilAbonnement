@@ -2,10 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" th:href="@{login.css}">
+    <title>Dataregistrering</title>
+    <link rel="stylesheet" th:href="@{../static_}" href="../static/index.Style.css">
 </head>
 <body>
-Hvis i læser det her så virker August's push!
+<section class="menu">
+    <div class="textBox">
+        <b style="font-size: 42px"><nobr>Log Ind</nobr></b>
+        <div class="userInput">
+            <div class="username-container">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+            </div>
+
+            <div class="password-container">
+                <label for="pass">Password (8 characters minimum):</label>
+                <input type="password" id="pass" name="password"
+                       minlength="8" required>
+            </div>
+
+            <input type="submit" value="Sign in">
+
+        </div>
+    </div>
+</section>
+
+
 </body>
 </html>
