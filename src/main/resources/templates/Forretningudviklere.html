@@ -5,11 +5,49 @@
     <title>Title</title>
     <link rel="stylesheet" href="/static/FU.Style.css">
 </head>
-<header class="logud">
-    <button type="button" onclick="Click">Log-ud</button>
+<body>
+<header class="header">
+        <div id="header-left">
+            <button class="favorite styled"
+                    type="button">
+                Log out
+            </button>
+
+        </div>
+        <div id="logo">
+            <img src="/static/Images/BILABONNEMENT.png" alt="billede" height="100px" width="500px">
+        </div>
+             <div id="header-right">
+        </div>
 </header>
 
-<body>
+
+<div class="forretningsudviklerBox"><h1>Forretningsudviklere:</h1></div>
+<!--
+<div class="table-container">
+<table>
+<thead>
+<tr>
+    <th>Bil</th>
+    <th>Udlejer-ID</th>
+    <th>Pris</th>
+</tr>
+</thead>
+<tbody>
+
+<tr th:each="bil:${bilList}">
+    <td th:text="${bil.name}"></td>
+    <td th:text="${bil.Udlejer-ID}"></td>
+    <td th:text="${bil.pris}"></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+-->
 
 </body>
+<footer>
+
+</footer>
 </html>

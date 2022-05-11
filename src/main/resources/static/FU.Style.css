@@ -3,11 +3,45 @@
     padding: 0;
     box-sizing: border-box;
 }
-.logud{
+body{
+    background: #f2f2f2;
+}
+.header{
     display: flex;
-    justify-content: right;
-    height: 30px;
-    width: 50px;
-    background: gainsboro;
+    justify-content: space-around;
+    height: 150px;
+    width: 100%;
+    background: white;
+    align-items: center;
+}
+
+.forretningsudviklerBox{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+}
+.table-container{
+    display: flex;
+    justify-content: left;
+    overflow-y: scroll;
 
 }
+.favorite{
+    height: 50px;
+    width: 75px;
+    align-items: center;
+}
+#header-left{
+    margin-left: 10px;
+}
+#logo{
+    margin-right: 100px;
+
+}
+#header-right{
+    display: flex;
+    justify-content: right;
+}
+
