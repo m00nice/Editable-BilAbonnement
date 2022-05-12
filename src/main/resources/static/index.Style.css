@@ -28,6 +28,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 83%;
+    height: 0%
 }
 .username-container {
     display: flex;
