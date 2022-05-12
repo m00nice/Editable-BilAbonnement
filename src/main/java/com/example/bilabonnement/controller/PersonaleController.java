@@ -19,7 +19,7 @@ public class PersonaleController {
     public String index(){return "index";}
 
     @PostMapping("/LogIn")
-    public String LogInd(@ModelAttribute(name="bruger") Personale personale, Model model) throws SQLException {
+    public String LogInd(@ModelAttribute(name="personale") Personale personale, Model model) throws SQLException {
         String brugernavn = personale.getBrugernavn();
         String password = personale.getPassword();
         model.addAttribute(brugernavn, password);

@@ -13,31 +13,37 @@
     <div class="button" onclick="this"></div>
 </header>
 <div class="wrapper">
-<div class="background">
+    <div class="background">
 
 
-<section class="menu">
-    <div class="textBox">
-        <b style="font-size: 42px; align-self: center; color: white"><nobr>Log Ind</nobr></b>
-        <div class="userInput">
-            <div class="username-container">
-                <label for="username">Brugernavn:</label>
-                <input type="text" id="username" name="username">
+        <section class="menu">
+                <form action="#" th:action="@{/logIn}" th:object="${personale}" method="post">
+            <div class="textBox">
+                <b style="font-size: 42px; align-self: center; color: white">
+                    <nobr>Log Ind</nobr>
+                </b>
+
+                    <div class="userInput">
+                        <div class="username-container">
+                            <label for="brugernavn">Brugernavn:</label>
+                            <input type="text" id="brugernavn" name="brugernavn">
+                        </div>
+
+                        <div class="password-container">
+                            <label for="password">Password (8 karakterer minimum):</label>
+                            <input type="password" id="password" name="password"
+                                   minlength="8" required>
+                        </div>
+
+                        <input type="submit" value="Log ind">
+
+                    </div>
+                </form>
             </div>
 
-            <div class="password-container">
-                <label for="pass">Password (8 karakterer minimum):</label>
-                <input type="password" id="pass" name="password"
-                       minlength="8" required>
-            </div>
+        </section>
 
-            <input type="submit" value="Sign in">
-
-        </div>
     </div>
-</section>
-
-</div>
 
 </div>
 </body>
