@@ -26,4 +26,11 @@ public class BilService {
         }
         return udlejedeBiler;
     }
+
+
+
+    public void setBilFejlOgMangel(Bil bil){
+        bil.setFejlOgMangel("");
+        bil.setPrisPåFejl(0);
+    }
 }
