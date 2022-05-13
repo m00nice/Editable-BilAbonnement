@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <!--
-Forfatter: @
+Forfatter: @Martin Anberg
 -->
 <head>
     <meta charset="UTF-8">
     <title>Skade&Udbedring</title>
-    <link rel="stylesheet" th:href="@{../static_}" href="../static/S&U.Style.css">
+    <link rel="stylesheet" th:href="@{../static/S&U.Style.css}" href="../static/S&U.Style.css">
 </head>
+<header>
+    <div id="headerLeft">
+        <button class="buttonLogOut">Log out</button>
+    </div>
 
+    <div id="headerCenter">
+        <img th:src="BILABONNEMENT.PNG" src="/static/Images/BILABONNEMENT.png" alt="BILABONNEMENT.LOGO" height="100%" width="50%">
+    </div>
+
+    <div id="headerRight">
+        <p class="counterweight1"></p>
+    </div>
+</header>
 <body>
 <h1 class="logo"></h1>
 <div class="titel">Skade & Udbedring</div>
