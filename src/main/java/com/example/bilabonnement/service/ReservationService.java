@@ -28,8 +28,6 @@ public class ReservationService {
     }
 
 
-
-
     public void validerReservation(Reservation reservation){
         if(reservation.isValid()){reservation.setValid(false);}
         else{reservation.setValid(true);}

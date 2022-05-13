@@ -2,15 +2,15 @@ package com.example.bilabonnement.service;
 // Forfatter @Martin Anberg
 
 import com.example.bilabonnement.models.Personale;
-import com.example.bilabonnement.repository.PersonalleRepository;
+import com.example.bilabonnement.repository.PersonaleRepository;
 
 import java.util.List;
 
-public class PersonalleService {
-    PersonalleRepository personalleRepository;
+public class PersonaleService {
+    PersonaleRepository personaleRepository;
 
     public boolean checkBruger(String brugernavn, String password) {
-        List<Personale> list = personalleRepository.getAlleBrugere();
+        List<Personale> list = personaleRepository.getAlleBrugere();
         while (list.iterator().hasNext()) {
             if (list.iterator().next().getBrugernavn().equals(brugernavn) || list.iterator().next().getPassword().equals(password)) {
                 return true;
@@ -20,7 +20,7 @@ public class PersonalleService {
     }
 
     public String getRolle(String brugernavn, String password) {
-        List<Personale> list = personalleRepository.getAlleBrugere();
+        List<Personale> list = personaleRepository.getAlleBrugere();
         while (list.iterator().hasNext()) {
             if (list.iterator().next().getBrugernavn().equals(brugernavn) || list.iterator().next().getPassword().equals(password)) {
                 return list.iterator().next().getRolle();

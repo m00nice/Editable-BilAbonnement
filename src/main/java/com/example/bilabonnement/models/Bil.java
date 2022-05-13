@@ -6,16 +6,16 @@ public class Bil {
     private java.lang.String model;
     private java.lang.String farve;
     private int id;
-    private int udlejerID;
+    private int kundeID;
     private double pris;
 
-    public Bil(int årgang, String mærke, String model, String farve, int id, int udlejerID, double pris) {
+    public Bil(int årgang, String mærke, String model, String farve, int id, int kundeID, double pris) {
         this.årgang = årgang;
         this.mærke = mærke;
         this.model = model;
         this.farve = farve;
         this.id = id;
-        this.udlejerID = udlejerID;
+        this.kundeID = kundeID;
         this.pris = pris;
     }
 
@@ -59,12 +59,12 @@ public class Bil {
         this.id = id;
     }
 
-    public int getUdlejerID() {
-        return udlejerID;
+    public int getKundeID() {
+        return kundeID;
     }
 
-    public void setUdlejerID(int udlejerID) {
-        this.udlejerID = udlejerID;
+    public void setKundeID(int kundeID) {
+        this.kundeID = kundeID;
     }
 
     public double getPris() {

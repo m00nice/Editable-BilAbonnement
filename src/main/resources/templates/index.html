@@ -6,13 +6,13 @@ Forfatter: @August Høgh Dedenroth
 <head>
     <meta charset="UTF-8">
     <title>Dataregistrering</title>
-    <link rel="stylesheet" th:href="@{../static_}" href="../static/index.Style.css">
+    <link rel="stylesheet" th:href="@{index.Style.css}" href="../static/index.Style.css">
 </head>
 
 
 <body>
 <header class="header">
-    <img class="logo-sign-in" src="/static/Images/BILABONNEMENT.png" alt="billede" height="100px" width="500px">
+    <img class="logo-sign-in" th:src="@{/Images/BILABONNEMENT.png}" src="/static/Images/BILABONNEMENT.png" alt="billede" height="100px" width="500px">
     <div class="button" onclick="this"></div>
 </header>
 <div class="wrapper">

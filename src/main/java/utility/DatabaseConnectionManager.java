@@ -39,6 +39,7 @@ public class DatabaseConnectionManager {
 
         try {
             conn = DriverManager.getConnection(url, username, password);
+            System.out.println("connection established");
         } catch (SQLException e) {
             e.printStackTrace();
         }
