@@ -38,6 +38,7 @@ public class BilService {
             System.out.println(bil.getPrisPåFejl());
         }
         return bilMedFejl;
+
     }
 
     public ArrayList getBilerUdenFejl(ArrayList<Bil> biler){
