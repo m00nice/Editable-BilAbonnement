@@ -7,14 +7,17 @@ public class ReservationService {
 
 
     public Reservation findReservation(List list, int bilID, int udlejerID){
+        return null;
 
    }
 
     public List sortListBpyBil(List list){
+        return null;
 
     }
 
     public List createValidReservationList(List list){
+        return null;
 
     }
 

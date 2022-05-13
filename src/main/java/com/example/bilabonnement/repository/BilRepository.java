@@ -13,14 +13,11 @@ import java.util.List;
 
 public class BilRepository {
 
-
-
-
     public List<Bil> getAlleBiler(){
         Connection conn = DatabaseConnectionManager.getConnection();
-        List<Bil> alleBiler = new ArrayList<Bil>();
+        List<Bil> alleBiler = new ArrayList<>();
         try{
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM");
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bil");
             ResultSet rs = pstmt.executeQuery();
             while(rs.next()){
                 Bil temp = new Bil(
