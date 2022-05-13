@@ -40,5 +40,19 @@ public class BilService {
         return bilMedFejl;
     }
 
+    public ArrayList getBilerUdenFejl(ArrayList<Bil> biler){
+        ArrayList<Bil> bilUdenFejl = new ArrayList<>();
+        for (Bil bil : biler){
+            if (bil.getKundeID() == 0 && bil.getPrisPåFejl() == 0){
+                bilUdenFejl.add(bil);
+            }
+        }
+        for (Bil bil : bilUdenFejl){
+            System.out.println(bil.getPrisPåFejl());
+        }
+        return bilUdenFejl;
+    }
+
+
 
 }
