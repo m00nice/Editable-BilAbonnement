@@ -8,8 +8,10 @@ import java.util.List;
 
 public class BilService {
 
-   // public List getAlleBiler(){
+    BilRepository bilRepository;
 
+    public List getAlleBiler(){
+        return bilRepository.getAlleBiler();
     }
 
-//}
+}

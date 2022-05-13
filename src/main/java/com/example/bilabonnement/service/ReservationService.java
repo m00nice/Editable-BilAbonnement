@@ -6,17 +6,17 @@ import java.util.List;
 public class ReservationService {
 
 
-   // public Reservation findReservation(List list, int bilID, int udlejerID){
+    public Reservation findReservation(List list, int bilID, int udlejerID){
 
-  // }
+   }
 
-    //public List sortListBpyBil(List list){
+    public List sortListBpyBil(List list){
 
-    //}
+    }
 
-    //public List createValidReservationList(List list){
+    public List createValidReservationList(List list){
 
-    //}
+    }
 
     public List createInvalidReservationList(List<Reservation> list){
         List<Reservation> list2 = null;
