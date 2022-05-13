@@ -1,54 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <!--
 Forfatter: @August Høgh Dedenroth
 -->
 <head>
     <meta charset="UTF-8">
-    <title>Dataregistrering</title>
-    <link rel="stylesheet" th:href="@{index.Style.css}" href="../static/index.Style.css">
+    <title>Log Ind</title>
+    <link rel="stylesheet" th:href="@{../static_}" href="../static/index.Style.css">
 </head>
-
-
-<body>
-<header class="header">
-    <img class="logo-sign-in" th:src="@{/Images/BILABONNEMENT.png}" src="/static/Images/BILABONNEMENT.png" alt="billede" height="100px" width="500px">
-    <div class="button" onclick="this"></div>
-</header>
-<div class="wrapper">
-    <div class="background">
-
-
-        <section class="menu">
-                <form action="#" th:action="@{/logIn}" th:object="${personale}" method="post">
-            <div class="textBox">
-                <b style="font-size: 42px; align-self: center; color: white">
-                    <nobr>Log Ind</nobr>
-
-                </b>
-
-                    <div class="userInput">
-                        <div class="username-container">
-                            <label for="brugernavn">Brugernavn:</label>
-                            <input type="text" id="brugernavn" name="brugernavn">
-                        </div>
-
-                        <div class="password-container">
-                            <label for="password">Password (8 karakterer minimum):</label>
-                            <input type="password" id="password" name="password"
-                                   minlength="8" required>
-                        </div>
-
-                        <input type="submit" value="Log ind">
-
-                    </div>
-                </form>
-            </div>
-
-        </section>
-
+<header>
+    <div id="headerLeft">
+        <p class="counterweight1"></p>
     </div>
 
-</div>
+    <div id="headerCenter">
+        <img th:src="BILABONNEMENT.PNG" src="/static/Images/BILABONNEMENT.png" alt="BILABONNEMENT.LOGO" height="100%" width="50%">
+    </div>
+
+    <div id="headerRight">
+        <p class="counterweight1"></p>
+    </div>
+</header>
+
+<body>
+
+<section class="LogInBox">
+    <b style="font-size: 250%; align-self: center; color: white;">Log Ind</b>
+    <form action="#" th:action="@{/logIn}" th:object="${personale}" method="post">
+        <label for="brugernavn"></label>
+        <p style="font-size: 120%; align-self: center; color: white; padding: 5%; ">Brugernavn: <input type="text" id="brugernavn" name="brugernavn" autofocus="autofocus" th:field="*{brugernavn}" required/></p>
+
+        <label for="password"></label>
+        <p style="font-size: 120%; align-self: center; color: white; padding: 5%; ">Password:<input type="password" id="password" name="password" autofocus="autofocus" th:field="*{password}" required/></p>
+
+        <p><input style="align-self: center; margin-left: 40%; margin-top: 2%; background-color: white; text-align: center; display: inline-block; height: 3vh; width: 3vw; cursor: pointer; border-color: #1892c3; border-radius: 15%;" type="submit" value="Log ind"></p>
+
+    </form>
+</section>
+
 </body>
 </html>

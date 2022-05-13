@@ -2,24 +2,71 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial;
 }
 body{
     background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    justify-content: center;
 }
-.header{
+
+
+header{
     display: flex;
     justify-content: space-around;
-    height: 150px;
-    width: 100%;
+    width: fit-content;
     background: white;
     align-items: center;
+
 }
+#headerCenter{
+    display: flex;
+    justify-content: center;
+}
+#headerLeft{
+    margin-left: 5%;
+}
+#headerRight{
+    margin-right: 5%;
+}
+
+
+
+
+.buttonLogOut{
+    background-color: #1892c3;
+    color: white;
+    font-size: 100%;
+    text-align: center;
+    display: inline-block;
+    height: 5vh;
+    width: 5vw;
+    cursor: pointer;
+    margin: 1%;
+    border-color: #1892c3;
+    border-radius: 15%;
+}
+.counterweight1{
+    display: inline-block;
+    height: 5vh;
+    width: 5vw;
+    margin: 1%;
+    border-color: #1892c3;
+    border-radius: 15%;
+}
+
 
 .forretningsudviklerBox{
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 100px;
+    height: 25vh;
     align-items: center;
 }
 .table-container{
@@ -28,20 +75,6 @@ body{
     overflow-y: scroll;
 
 }
-.favorite{
-    height: 50px;
-    width: 75px;
-    align-items: center;
-}
-#header-left{
-    margin-left: 10px;
-}
-#logo{
-    margin-right: 100px;
 
-}
-#header-right{
-    display: flex;
-    justify-content: right;
-}
+
 

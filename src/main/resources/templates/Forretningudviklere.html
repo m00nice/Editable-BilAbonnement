@@ -1,32 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <!--
 Forfatter: @Cemarkay Türker
 -->
 <head>
     <meta charset="UTF-8">
     <title>Forretningsudviklere</title>
-    <link rel="stylesheet" th:href="@{../static_}" href="../static/FU.Style.css">
-
+    <link rel="stylesheet" th:href="@{../static_}" href="/static/FU.Style.css">
 </head>
-<body>
-<header class="header">
-        <div id="header-left">
-            <button class="favorite styled"
-                    type="button">
-                Log out
-            </button>
 
-        </div>
-        <div id="logo">
-            <img src="/static/Images/BILABONNEMENT.png" alt="billede" height="100px" width="500px">
-        </div>
-             <div id="header-right">
-        </div>
+<header>
+    <div id="headerLeft">
+        <button class="buttonLogOut">Log out</button>
+    </div>
+
+    <div id="headerCenter">
+        <img th:src="BILABONNEMENT.PNG" src="/static/Images/BILABONNEMENT.png" alt="BILABONNEMENT.LOGO" height="100%" width="50%">
+    </div>
+
+    <div id="headerRight">
+        <p class="counterweight1"></p>
+    </div>
 </header>
 
+<body>
+<section class="forretningsudviklerBox"><div style="font-size: 250%; align-self: center;">Forretningsudviklere:</div></section>
 
-<div class="forretningsudviklerBox"><h1>Forretningsudviklere:</h1></div>
 <!--
 <div class="table-container">
 <table>
