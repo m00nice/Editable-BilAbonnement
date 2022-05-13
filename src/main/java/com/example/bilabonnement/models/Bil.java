@@ -19,6 +19,10 @@ public class Bil {
         this.pris = pris;
     }
 
+    public Bil(double pris) {
+        this.pris = pris;
+    }
+
     public int getÅrgang() {
         return årgang;
     }
@@ -73,6 +77,19 @@ public class Bil {
 
     public void setPris(double pris) {
         this.pris = pris;
+    }
+
+    @Override
+    public String toString() {
+        return "Bil{" +
+                "årgang=" + årgang +
+                ", mærke='" + mærke + '\'' +
+                ", model='" + model + '\'' +
+                ", farve='" + farve + '\'' +
+                ", id=" + id +
+                ", kundeID=" + kundeID +
+                ", pris=" + pris +
+                '}';
     }
 }
 

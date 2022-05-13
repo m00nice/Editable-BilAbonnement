@@ -10,7 +10,7 @@ public class BilAbonnementApplication {
     public static void main(String[] args) {
         BilService bilService = new BilService();
         SpringApplication.run(BilAbonnementApplication.class, args);
-        bilService.getUdlejedeBiler(bilService.getAlleBiler());
+        System.out.println(bilService.getUdlejedeBiler(bilService.getAlleBiler()));
 
     }
 
