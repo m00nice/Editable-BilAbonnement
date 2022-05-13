@@ -40,12 +40,12 @@ public class BilService {
         return bilMedFejl;
     }
 
-
-
-
-
-    public void setBilFejlOgMangel(Bil bil){
-        bil.setFejlOgMangel("");
+    public void setBilFejlOgMangelTilNULL(Bil bil){
+        bil.setFejlOgMangler("");
         bil.setPrisPåFejl(0);
+    }
+    public void setBilFejlOgMangel(Bil bil, String Fejl, int Pris){
+        bil.setFejlOgMangler(Fejl);
+        bil.setPrisPåFejl(Pris);
     }
 }
