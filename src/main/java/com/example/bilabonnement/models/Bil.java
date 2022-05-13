@@ -8,8 +8,10 @@ public class Bil {
     private int id;
     private int kundeID;
     private double pris;
+    private String fejlOgMangler;
+    private double prisPåFejl;
 
-    public Bil(int årgang, String mærke, String model, String farve, int id, int kundeID, double pris) {
+    public Bil(int årgang, String mærke, String model, String farve, int id, int kundeID, double pris, String fejlOgMangler, double prisPåFejl) {
         this.årgang = årgang;
         this.mærke = mærke;
         this.model = model;
@@ -17,6 +19,8 @@ public class Bil {
         this.id = id;
         this.kundeID = kundeID;
         this.pris = pris;
+        this.fejlOgMangler = fejlOgMangler;
+        this.prisPåFejl = prisPåFejl;
     }
 
     public Bil(double pris) {
@@ -79,6 +83,22 @@ public class Bil {
         this.pris = pris;
     }
 
+    public String getFejlOgMangler() {
+        return fejlOgMangler;
+    }
+
+    public void setFejlOgMangler(String fejlOgMangler) {
+        this.fejlOgMangler = fejlOgMangler;
+    }
+
+    public double getPrisPåFejl() {
+        return prisPåFejl;
+    }
+
+    public void setPrisPåFejl(double prisPåFejl) {
+        this.prisPåFejl = prisPåFejl;
+    }
+
     @Override
     public String toString() {
         return "Bil{" +
@@ -89,6 +109,8 @@ public class Bil {
                 ", id=" + id +
                 ", kundeID=" + kundeID +
                 ", pris=" + pris +
+                ", fejlOgMangler='" + fejlOgMangler + '\'' +
+                ", prisPåFejl=" + prisPåFejl +
                 '}';
     }
 }

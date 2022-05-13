@@ -11,6 +11,7 @@ public class BilAbonnementApplication {
         BilService bilService = new BilService();
         SpringApplication.run(BilAbonnementApplication.class, args);
         System.out.println(bilService.getUdlejedeBiler(bilService.getAlleBiler()));
+        System.out.println(bilService.getBilerMedFejl(bilService.getAlleBiler()));
 
     }
 

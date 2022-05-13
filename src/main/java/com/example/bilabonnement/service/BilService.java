@@ -27,6 +27,21 @@ public class BilService {
         return udlejedeBiler;
     }
 
+    public ArrayList getBilerMedFejl(ArrayList<Bil> biler){
+        ArrayList<Bil> bilMedFejl = new ArrayList<>();
+        for (Bil bil : biler){
+            if (bil.getKundeID() == 0 && bil.getPrisPåFejl() > 0){
+                bilMedFejl.add(bil);
+            }
+        }
+        for (Bil bil : bilMedFejl){
+            System.out.println(bil.getPrisPåFejl());
+        }
+        return bilMedFejl;
+    }
+
+
+
 
 
     public void setBilFejlOgMangel(Bil bil){

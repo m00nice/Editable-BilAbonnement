@@ -27,7 +27,9 @@ public class BilRepository {
                         rs.getString(4),
                         rs.getInt(5),
                         rs.getInt(6),
-                        rs.getDouble(7)
+                        rs.getDouble(7),
+                        rs.getString(8),
+                        rs.getDouble(9)
                 );
                 alleBiler.add(temp);
             }
