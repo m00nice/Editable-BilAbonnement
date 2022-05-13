@@ -1,33 +1,35 @@
 package com.example.bilabonnement.service;
 // Forfatter @Martin Anberg
 import com.example.bilabonnement.models.Reservation;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class ReservationService {
 
 
-    public Reservation findReservation(List list, int bilID, int udlejerID){
+    public Reservation findReservation(ArrayList list, int bilID, int udlejerID){
         return null;
 
    }
 
-    public List sortListBpyBil(List list){
+    public ArrayList sortListByBil(List list){
         return null;
 
     }
 
-    public List createValidReservationList(List list){
+    public ArrayList createValidReservationList(List list){
         return null;
 
     }
 
-    public List createInvalidReservationList(List<Reservation> list){
-        List<Reservation> list2 = null;
+    public ArrayList createInvalidReservationList(List<Reservation> list){
+        ArrayList<Reservation> reservationer = new ArrayList();
         while(list.iterator().hasNext()){
             Reservation reservation = list.iterator().next();
-            if(!reservation.isValid()){list2.add(reservation);}
+            if(!reservation.isValid()){reservationer.add(reservation);}
         }
-    return list2;
+    return reservationer;
     }
 
 
