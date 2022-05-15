@@ -1,5 +1,5 @@
 package com.example.bilabonnement.service;
-
+// Forfatter @Martin Anberg @Cemakay Türker
 import com.example.bilabonnement.models.Bil;
 import com.example.bilabonnement.repository.BilRepository;
 
@@ -56,7 +56,7 @@ public class BilService {
 
 
 
-    public void setBilFejlOgMangelTilNULL(Bil bil){
+    public void setBilFejlOgMangelTilIntet(Bil bil){
         bil.setFejlOgMangler("");
         bil.setPrisPåFejl(0);
     }
