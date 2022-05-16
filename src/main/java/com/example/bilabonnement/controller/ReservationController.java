@@ -1,8 +1,11 @@
 package com.example.bilabonnement.controller;
 
+import com.example.bilabonnement.models.Reservation;
 import com.example.bilabonnement.service.ReservationService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -23,9 +26,11 @@ public class ReservationController {
         return "Dataregistrering";
     }
     @PostMapping("/Dataregistrering")
-    public void ændreValidation(){
-        int bilID = 1;
-        int kundeID = 1;
+    public void ændreValidation(@ModelAttribute(name = "reservation") Reservation reservation, Model model){
+        int bilID = reservation.getBilID();
+        int kundeID = reservation.getKundeID();
+        model.addAttribute("bilID",bilID);
+        model.addAttribute("kundeID",kundeID);
         reservationService.ændreValidationReservation(reservationService.getReservation(bilID,kundeID));
     }
 
