@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class ReservationController {
 
+    //TODO GENERELT tilføj SQL syntax til at ændre i databasen
+
+
+
     ReservationService reservationService = new ReservationService();
 
     @GetMapping("/Dataregistrering")
@@ -33,5 +37,7 @@ public class ReservationController {
         model.addAttribute("kundeID",kundeID);
         reservationService.ændreValidationReservation(reservationService.getReservation(bilID,kundeID));
     }
+
+    //TODO get method til at vise all info på reservation
 
 }

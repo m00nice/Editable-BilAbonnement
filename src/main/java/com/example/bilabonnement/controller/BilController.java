@@ -6,9 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class BilController {
 
-    @GetMapping("/")
-    public String index(){return "index";}
 
+    //TODO get method til at lave liste af biler med skade
+
+
+    //TODO get method til at lave liste af biler uden skade
 
 
 }

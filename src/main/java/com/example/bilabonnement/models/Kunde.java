@@ -1,5 +1,5 @@
 package com.example.bilabonnement.models;
-
+// Forfatter @Cemakay Türker
 public class Kunde {
     private String forNavn;
     private String efterNavn;
