@@ -1,41 +1,54 @@
 package com.example.bilabonnement.service;
 // Forfatter @Martin Anberg
 import com.example.bilabonnement.models.Reservation;
+import com.example.bilabonnement.repository.ReservationRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ReservationService {
 
+    ReservationRepository reservationRepository = new ReservationRepository();
 
-    public Reservation findReservation(ArrayList list, int bilID, int udlejerID){
+
+    public Reservation getReservation(int bilID, int kundeID){
+        ArrayList<Reservation> alleReservationer = (ArrayList<Reservation>) reservationRepository.getAlleReservationer();
+        for (Reservation reservation: alleReservationer) {
+            if(reservation.getBilID() == bilID && reservation.getKundeID() == kundeID){
+                return reservation;
+            }
+        }
         return null;
-
    }
 
-    public ArrayList sortListByBil(List list){
-        return null;
 
-    }
-
-    public ArrayList createValidReservationList(List list){
-        return null;
-
-    }
-
-    public ArrayList createInvalidReservationList(List<Reservation> list){
+    public ArrayList createValidReservationList(){
+         ArrayList<Reservation> alleReservationer = (ArrayList<Reservation>) reservationRepository.getAlleReservationer();
         ArrayList<Reservation> reservationer = new ArrayList();
-        while(list.iterator().hasNext()){
-            Reservation reservation = list.iterator().next();
-            if(!reservation.isValid()){reservationer.add(reservation);}
+        for (Reservation reservation: alleReservationer) {
+            if(reservation.isValid()){
+                reservationer.add(reservation);
+            }
+        }
+        return reservationer;
+    }
+
+
+    public ArrayList createInvalidReservationList(){
+        ArrayList<Reservation> alleReservationer = (ArrayList<Reservation>) reservationRepository.getAlleReservationer();
+        ArrayList<Reservation> reservationer = new ArrayList();
+        for (Reservation reservation: alleReservationer) {
+            if(!reservation.isValid()){
+                reservationer.add(reservation);
+            }
         }
     return reservationer;
     }
 
 
-    public void validerReservation(Reservation reservation){
-        if(reservation.isValid()){reservation.setValid(false);}
-        else{reservation.setValid(true);}
+    public void ændreValidationReservation(Reservation reservation){
+        if(reservation.isValid()){reservation.setValid(false); reservationRepository.executeSQLsyntax("UPDATE `Bilabonnement`.`reservation` SET `valid` = '-2' WHERE (`bilID` = '"+reservation.getBilID()+"')");}
+        else{reservation.setValid(true); reservationRepository.executeSQLsyntax("UPDATE `Bilabonnement`.`reservation` SET `valid` = '2' WHERE (`bilID` = '"+reservation.getBilID()+"')");}
     }
 
 }
