@@ -24,7 +24,8 @@ public class BilService {
         return udlejedeBiler;
     }
 
-    public ArrayList<Bil> getBilerMedFejlOgMangler(ArrayList<Bil> biler){
+    public ArrayList<Bil> getBilerMedFejlOgMangler(){
+        ArrayList<Bil> biler = (ArrayList<Bil>) bilRepository.getAlleBiler();
         ArrayList<Bil> bilMedFejl = new ArrayList<>();
         for (Bil bil : biler){
             if (bil.getKundeID() == 0 && bil.getFejl_id() > 0){
