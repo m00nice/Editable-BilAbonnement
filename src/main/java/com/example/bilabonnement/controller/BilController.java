@@ -14,6 +14,7 @@ public class BilController {
     //TODO get method til at lave liste af biler med skade
     @GetMapping("/listeAfSkadetBiler")
      public String alleSkadetBiler(Model model) {
+        model.addAttribute("listeAfSkadetBiler", bilRepository.getAlleSkadetBiler());
       return "listeAfSkadetBiler";
  }
 
