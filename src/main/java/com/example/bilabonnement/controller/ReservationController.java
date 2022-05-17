@@ -3,6 +3,7 @@ package com.example.bilabonnement.controller;
 import com.example.bilabonnement.models.Reservation;
 import com.example.bilabonnement.repository.BilRepository;
 import com.example.bilabonnement.service.BilService;
+import com.example.bilabonnement.service.KundeService;
 import com.example.bilabonnement.service.ReservationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,7 @@ public class ReservationController {
 
     ReservationService reservationService = new ReservationService();
     BilService bilService = new BilService();
+    KundeService kundeService = new KundeService();
 
     @GetMapping("/Dataregistrering")
     public String ShowValidReservationer(){
@@ -44,11 +46,11 @@ public class ReservationController {
     //TODO get method til at vise all info på reservation
 
     @GetMapping("/Dataregistrering")
-    public String showReservertionInfo(@ModelAttribute(name = "reservation") Reservation reservation){
+    public String showReservationInfo(@ModelAttribute(name = "reservation") Reservation reservation){
         bilService.getBil(reservation.getBilID());
+        kundeService.getKunde(reservation.getKundeID());
 
 
-        reservation.getKundeID();
         return "Dataregistrering";
     }
 

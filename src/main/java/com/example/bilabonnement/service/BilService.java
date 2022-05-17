@@ -35,7 +35,8 @@ public class BilService {
 
     }
 
-    public ArrayList<Bil> getBilerUdenFejlOgMangler(ArrayList<Bil> biler){
+    public ArrayList<Bil> getBilerUdenFejlOgMangler(){
+        ArrayList<Bil> biler = (ArrayList<Bil>) bilRepository.getAlleBiler();
         ArrayList<Bil> bilUdenFejl = new ArrayList<>();
         for (Bil bil : biler){
             if (bil.getFejl_id() == 0){
@@ -55,7 +56,7 @@ public class BilService {
         ArrayList<Bil> billiste = getAlleBiler();
         for (Bil bil:
             billiste) {
-            if(bil.getBil_id() == bilID){return bil;}
+            if(bil.getBil_ID() == bilID){return bil;}
         }
         return null;
     }
