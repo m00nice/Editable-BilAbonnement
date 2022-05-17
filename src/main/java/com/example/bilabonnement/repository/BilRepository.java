@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BilRepository {
+public class BilRepository implements IRepository {
 
     public List<Bil> getAlleBiler(){
         Connection conn = DatabaseConnectionManager.getConnection();
@@ -28,8 +28,8 @@ public class BilRepository {
                         rs.getInt(5),
                         rs.getInt(6),
                         rs.getDouble(7),
-                        rs.getString(8),
-                        rs.getDouble(9)
+                        rs.getInt(8)
+
                 );
                 alleBiler.add(temp);
             }
@@ -59,5 +59,19 @@ public class BilRepository {
     }
 
 
+    public void executeSQLsyntax(String syntax){
+        Connection conn = DatabaseConnectionManager.getConnection();
+        try {
+            conn.prepareStatement(syntax).execute();
+        } catch (SQLException throwable) {
+            System.out.println("Noget gik galt i executeSQLsyntax");
+
+        }
+    }
+
+    @Override
+    public List getAlleSkadetBiler() {
+        return null;
+    }
 }
 

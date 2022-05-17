@@ -5,14 +5,14 @@ import java.util.Date;
 public class Reservation {
 
     private int bilID;
-    private int udlejerID;
+    private int kundeID;
     private Date startDato;
     private Date slutDato;
     private boolean valid;
 
     public Reservation(int bilID, int udlejerID, Date startDato, Date slutDato, boolean valid) {
         this.bilID = bilID;
-        this.udlejerID = udlejerID;
+        this.kundeID = udlejerID;
         this.startDato = startDato;
         this.slutDato = slutDato;
         this.valid = valid;
@@ -42,12 +42,12 @@ public class Reservation {
         this.slutDato = slutDato;
     }
 
-    public int getUdlejerID() {
-        return udlejerID;
+    public int getKundeID() {
+        return kundeID;
     }
 
-    public void setUdlejerID(int udlejerID) {
-        this.udlejerID = udlejerID;
+    public void setKundeID(int kundeID) {
+        this.kundeID = kundeID;
     }
 
     public boolean isValid() {

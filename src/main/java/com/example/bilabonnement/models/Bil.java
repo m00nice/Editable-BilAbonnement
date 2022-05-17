@@ -5,22 +5,21 @@ public class Bil {
     private java.lang.String mærke;
     private java.lang.String model;
     private java.lang.String farve;
-    private int id;
+    private int bil_ID;
     private int kundeID;
     private double pris;
-    private String fejlOgMangler;
-    private double prisPåFejl;
+    private int fejl_id;
 
-    public Bil(int årgang, String mærke, String model, String farve, int id, int kundeID, double pris, String fejlOgMangler, double prisPåFejl) {
+    public Bil(int årgang, String mærke, String model, String farve, int bil_ID, int kundeID, double pris, int fejl_id) {
         this.årgang = årgang;
         this.mærke = mærke;
         this.model = model;
         this.farve = farve;
-        this.id = id;
+        this.bil_ID = bil_ID;
         this.kundeID = kundeID;
         this.pris = pris;
-        this.fejlOgMangler = fejlOgMangler;
-        this.prisPåFejl = prisPåFejl;
+        this.fejl_id = fejl_id;
+
     }
 
     public Bil(double pris) {
@@ -59,12 +58,12 @@ public class Bil {
         this.farve = farve;
     }
 
-    public int getId() {
-        return id;
+    public int getBil_ID() {
+        return bil_ID;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setBil_ID(int bil_ID) {
+        this.bil_ID = bil_ID;
     }
 
     public int getKundeID() {
@@ -83,20 +82,12 @@ public class Bil {
         this.pris = pris;
     }
 
-    public String getFejlOgMangler() {
-        return fejlOgMangler;
+    public int getFejl_id() {
+        return fejl_id;
     }
 
-    public void setFejlOgMangler(String fejlOgMangler) {
-        this.fejlOgMangler = fejlOgMangler;
-    }
-
-    public double getPrisPåFejl() {
-        return prisPåFejl;
-    }
-
-    public void setPrisPåFejl(double prisPåFejl) {
-        this.prisPåFejl = prisPåFejl;
+    public void setFejl_id(int fejl_id) {
+        this.fejl_id = fejl_id;
     }
 
     @Override
@@ -106,11 +97,10 @@ public class Bil {
                 ", mærke='" + mærke + '\'' +
                 ", model='" + model + '\'' +
                 ", farve='" + farve + '\'' +
-                ", id=" + id +
+                ", bil_ID=" + bil_ID +
                 ", kundeID=" + kundeID +
                 ", pris=" + pris +
-                ", fejlOgMangler='" + fejlOgMangler + '\'' +
-                ", prisPåFejl=" + prisPåFejl +
+                ", fejl_id=" + fejl_id +
                 '}';
     }
 }

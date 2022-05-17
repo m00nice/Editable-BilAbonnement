@@ -31,5 +31,11 @@ public class PersonaleController {
             if(rolle.equals("S&U")){return "redirect:Skade&Udbedring";}
         }
         return "index";
+
         }
+
+
+    //TODO method til at logge ud af system
+
+
     }
