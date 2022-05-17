@@ -5,7 +5,7 @@ public class Bil {
     private java.lang.String mærke;
     private java.lang.String model;
     private java.lang.String farve;
-    private int id;
+    private int bil_id;
     private int kundeID;
     private double pris;
     private String fejlOgMangler;
@@ -16,7 +16,7 @@ public class Bil {
         this.mærke = mærke;
         this.model = model;
         this.farve = farve;
-        this.id = id;
+        this.bil_id = id;
         this.kundeID = kundeID;
         this.pris = pris;
         this.fejlOgMangler = fejlOgMangler;
@@ -59,12 +59,12 @@ public class Bil {
         this.farve = farve;
     }
 
-    public int getId() {
-        return id;
+    public int getBil_id() {
+        return bil_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setBil_id(int bil_id) {
+        this.bil_id = bil_id;
     }
 
     public int getKundeID() {
@@ -106,7 +106,7 @@ public class Bil {
                 ", mærke='" + mærke + '\'' +
                 ", model='" + model + '\'' +
                 ", farve='" + farve + '\'' +
-                ", id=" + id +
+                ", id=" + bil_id +
                 ", kundeID=" + kundeID +
                 ", pris=" + pris +
                 ", fejlOgMangler='" + fejlOgMangler + '\'' +

@@ -9,33 +9,6 @@ import java.util.List;
 
 public class KundeRepository {
 
-    private ArrayList<Kunde> alleKunder = new ArrayList<>();
-
-    public void createKunde(Kunde kunde) {
-        String SQL_INSERT = "INSERT INTO kunde (fornavn,efternavn,adresse,postnummer,by,email,mobil,cpr_nr) VALUES (?,?,?,?,?,?,?,?)";
-        try{
-            Connection conn = DatabaseConnectionManager.getConnection();
-
-            PreparedStatement preparedStatement = conn.prepareStatement(SQL_INSERT);
-            preparedStatement.setString(1, kunde.getForNavn());
-            preparedStatement.setString(2,kunde.getEfterNavn());
-            preparedStatement.setString(3,kunde.getAdresse());
-            preparedStatement.setInt(4,kunde.getPostNummer());
-            preparedStatement.setString(5,kunde.getBy());
-            preparedStatement.setString(6,kunde.getEmail());
-            preparedStatement.setInt(7,kunde.getMobil());
-            preparedStatement.setInt(8,kunde.getCpr_nr());
-
-            int row = preparedStatement.executeUpdate();
-
-        }catch(SQLException e){
-            System.out.println("Cannot connect to database");
-            e.printStackTrace();
-        }
-    }
-    public ArrayList<Kunde> getAllUsers(){
-        return alleKunder;
-    }
 
     public List<Kunde> getAlleKunder(){
         Connection conn = DatabaseConnectionManager.getConnection();
@@ -52,7 +25,8 @@ public class KundeRepository {
                         rs.getString(5),
                         rs.getString(6),
                         rs.getInt(7),
-                        rs.getInt(8)
+                        rs.getInt(8),
+                        rs.getInt(9)
                 );
                 alleKunder.add(temp);
             }

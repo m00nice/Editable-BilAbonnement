@@ -54,6 +54,15 @@ public class BilService {
         return bilUdenFejl;
     }
 
+    public Bil getBil(int bilID){
+        ArrayList<Bil> billiste = getAlleBiler();
+        for (Bil bil:
+            billiste) {
+            if(bil.getBil_id() == bilID){return bil;}
+        }
+        return null;
+    }
+
 
 
     public void setBilFejlOgMangelTilIntet(Bil bil){
