@@ -57,28 +57,36 @@ header{
     border-color: #1892c3;
     border-radius: 15%;
 }
-.collapseAnchor {
-    text-decoration:none;
+.toggle_collapse {
+    /* make it show to work across all ua's */
+    display:block;
+}
+.toggle_collapse, /* hide off screen */
+.toggle_collapse + * > .collapseAfter ~ * {
+    position:absolute;
+    top:-999em;
+    left:-999em;
+}
+.toggle_collapse:checked + *  .collapseAfter ~ * {
+    position:static;
+}
+.toggle_collapse + * + label {
+    display:inline-block; /* make visible for screen media */
     color:blue;
 }
-.collapseAnchor:before {
-    content:"See Less";
-}
-.collapseWrap.closed + .collapseAnchor:before {
+.toggle_collapse + * + label:before {
     content:"See More";
 }
-.collapseAnchor:after {
-    content:"\25B2";
+.toggle_collapse:checked + * + label:before {
+    content:"See Less";
+}
+.toggle_collapse + * + label:after {
+    content:"\25BC";
     display:inline-block;
     padding:0.4em 0 0 0.3em;
     vertical-align:top;
     font-size:0.625em;
 }
-.collapseWrap.closed + .collapseAnchor:after {
-    content:"\25BC";
-}
-.collapseWrap.closed > .collapseAfter ~ * {
-    position:absolute;
-    top:-999em;
-    left:-999em;
+.toggle_collapse:checked + * + label:after {
+    content:"\25B2";
 }

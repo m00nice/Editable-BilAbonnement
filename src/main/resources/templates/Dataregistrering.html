@@ -48,8 +48,14 @@ Forfatter: @Tobias Winkel
 </table>
 </div>
 -->
-<h1>Collapsible Section Demo</h1>
 <h2>Fruits</h2>
+<input
+        type="checkbox"
+        id="toggle_fruits"
+        class="toggle_collapse"
+        hidden
+        aria-hidden="true"
+>
 <ul>
     <li>Tomato 🍅</li>
     <li class="collapseAfter">Grapes 🍇</li>
@@ -57,14 +63,30 @@ Forfatter: @Tobias Winkel
     <li>Mango 🥭</li>
     <li>Peach 🍑</li>
 </ul>
+<label for="toggle_fruits" hidden aria-hidden="true"></label>
 <h2>Vegetables</h2>
+<input
+        type="checkbox"
+        id="toggle_vegetables"
+        class="toggle_collapse"
+        hidden
+        aria-hidden="true"
+>
 <ul>
     <li>Broccoli 🥦</li>
     <li class="collapseAfter">Corn 🌽</li>
     <li>Carrot 🥕</li>
     <li>Eggplant 🍆</li>
 </ul>
+<label for="toggle_vegetables" hidden aria-hidden="true"></label>
 <h2>Test Section</h2>
+<input
+        type="checkbox"
+        id="toggle_testSection"
+        class="toggle_collapse"
+        hidden
+        aria-hidden="true"
+>
 <div>
     <p class="collapseAfter">
         The first paragraph will show all the time, however later paragraphs will not. This method works on ANY markup so long as there's a common parent wrapper, such as a <code>&lt;div&gt;</code>
@@ -74,6 +96,7 @@ Forfatter: @Tobias Winkel
     Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis commodo dui lectus, id elementum lectus condimentum a. Maecenas feugiat ornare lorem, ac tincidunt purus ultricies eget. Ut fringilla pharetra mi sed sodales. Cras accumsan eleifend massa, et ullamcorper ante tempus ut. Nam dolor diam, finibus a felis et, lacinia viverra dui. Donec magna leo, vestibulum id urna sit amet, dapibus pharetra orci. Sed sodales et erat sed egestas. Phasellus condimentum tempus urna, id facilisis ligula maximus vel.
 </p>
 </div>
+<label for="toggle_testSection" hidden aria-hidden="true"></label>
 
 <input style="position: absolute;width: 185px;height: 34px;top: 185px;left: 35.3%;z-index: 1;" type="text" placeholder="Ikke validerede reservationer"/>
 
