@@ -46,10 +46,11 @@ public class ReservationController {
     //TODO get method til at vise all info på reservation
 
     @GetMapping("/Dataregistrering")
-    public String showReservationInfo(@ModelAttribute(name = "reservation") Reservation reservation){
-        bilService.getBil(reservation.getBilID());
-        kundeService.getKunde(reservation.getKundeID());
+    public String showReservationInfo(@ModelAttribute(name = "reservation") Reservation reservation, Model model1, Model model2){
 
+
+        model1.addAttribute("bil",bilService.getBil(reservation.getBilID()));
+        model2.addAttribute("kunde",kundeService.getKunde(reservation.getKundeID()));
 
         return "Dataregistrering";
     }
