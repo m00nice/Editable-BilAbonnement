@@ -54,8 +54,6 @@ public class BilService {
         return bilUdenFejl;
     }
 
-
-
     public void setBilFejlOgMangelTilIntet(Bil bil){
         bil.setFejlOgMangler("");
         bil.setPrisPåFejl(0);

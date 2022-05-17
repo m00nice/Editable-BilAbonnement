@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BilRepository {
+public class BilRepository implements IRepository {
 
     public List<Bil> getAlleBiler(){
         Connection conn = DatabaseConnectionManager.getConnection();
@@ -69,5 +69,9 @@ public class BilRepository {
         }
     }
 
+    @Override
+    public List getAlleSkadetBiler() {
+        return null;
+    }
 }
 

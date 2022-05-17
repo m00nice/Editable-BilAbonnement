@@ -17,31 +17,34 @@ body{
     justify-content: center;
 }
 
-
 header{
     display: flex;
     justify-content: space-around;
     width: fit-content;
     background: white;
     align-items: center;
-
 }
+
 #headerCenter{
     display: flex;
     justify-content: center;
 }
+
 #headerLeft{
     margin-left: 5%;
 }
+
 #headerRight{
     margin-right: 5%;
 }
-.counterweight1{
+
+.counterweight{
     display: inline-block;
     height: 5vh;
     width: 5vw;
     margin: 1%;
 }
+
 .LogInBox{
     display: flex;
     flex-direction: column;
@@ -50,9 +53,8 @@ header{
     background-color: #1892c3;
     color: white;
     margin: 5%;
-    border-color: #1892c3;
     border-radius: 15%;
-    height: 30vh;
-    width: 15%;
-    padding: 5vh
+    height: 45vh;
+    width: 20vw;
+    padding: 5vh;
 }
