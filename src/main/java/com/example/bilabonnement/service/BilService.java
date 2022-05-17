@@ -55,7 +55,7 @@ public class BilService {
         ArrayList<Bil> billiste = getAlleBiler();
         for (Bil bil:
             billiste) {
-            if(bil.getBil_id() == bilID){return bil;}
+            if(bil.getBil_ID() == bilID){return bil;}
         }
         return null;
     }
