@@ -1,5 +1,5 @@
 package com.example.bilabonnement.models;
-
+// Forfatter @Cemakay Türker
 public class Kunde {
     private String forNavn;
     private String efterNavn;
@@ -11,7 +11,7 @@ public class Kunde {
     private int cpr_nr;
     private int kundeID;
 
-    public Kunde(String forNavn, String efterNavn, String adresse, int postNummer, String by, String email, int mobil, int cpr_nr) {
+    public Kunde(String forNavn, String efterNavn, String adresse, int postNummer, String by, String email, int mobil, int cpr_nr,int kundeID) {
         this.forNavn = forNavn;
         this.efterNavn = efterNavn;
         this.adresse = adresse;
@@ -20,6 +20,16 @@ public class Kunde {
         this.email = email;
         this.mobil = mobil;
         this.cpr_nr = cpr_nr;
+        this.kundeID = kundeID;
+
+    }
+
+    public int getKundeID() {
+        return kundeID;
+    }
+
+    public void setKundeID(int kundeID) {
+        this.kundeID = kundeID;
     }
 
     public String getForNavn() {

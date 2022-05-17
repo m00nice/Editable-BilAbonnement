@@ -32,4 +32,9 @@ public class PersonaleController {
         }
         return "index";
         }
+
+
+    //TODO method til at logge ud af system
+
+
     }

@@ -1,5 +1,5 @@
 package com.example.bilabonnement.service;
-
+// Forfatter @Martin Anberg @Cemakay Türker
 import com.example.bilabonnement.models.Bil;
 import com.example.bilabonnement.repository.BilRepository;
 
@@ -32,6 +32,7 @@ public class BilService {
             }
         }
         return bilMedFejl;
+
     }
 
     public ArrayList<Bil> getBilerUdenFejlOgMangler(ArrayList<Bil> biler){
@@ -49,6 +50,14 @@ public class BilService {
     }
     public void setFejlID(Bil bil, int fejl){
         bil.setFejl_id(fejl);
+    }
+    public Bil getBil(int bilID){
+        ArrayList<Bil> billiste = getAlleBiler();
+        for (Bil bil:
+            billiste) {
+            if(bil.getBil_id() == bilID){return bil;}
+        }
+        return null;
     }
 
     //Forfatter @Cem Akay Türker
