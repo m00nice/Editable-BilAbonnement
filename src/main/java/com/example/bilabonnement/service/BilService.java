@@ -14,7 +14,8 @@ public class BilService {
         return (ArrayList<Bil>) bilRepository.getAlleBiler();
     }
 
-    public ArrayList<Bil> getUdlejedeBiler(ArrayList<Bil>biler){
+    public ArrayList<Bil> getUdlejedeBiler(){
+        ArrayList<Bil> biler = (ArrayList<Bil>) bilRepository.getAlleBiler();
         ArrayList<Bil> udlejedeBiler = new ArrayList<>();
         for(Bil bil : biler){
             if (bil.getKundeID() > 0 ){

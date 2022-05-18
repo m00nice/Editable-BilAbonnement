@@ -31,4 +31,11 @@ public class BilController {
         return "Skade&Udbedring";
     }
 
+    @GetMapping("/Forretningsudvikvikling")
+    public String listeAfUdlejedeBiler(@ModelAttribute(name = "billiste") Model model){
+        ArrayList<Bil> bilArrayList = bilService.getUdlejedeBiler();
+        model.addAttribute("billiste",bilArrayList);
+        return "Forretningudviklere";
+    }
+
 }

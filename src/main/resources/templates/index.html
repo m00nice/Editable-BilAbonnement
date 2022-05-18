@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <!--
-Forfatter: @August Høg Dedenroth
+Forfatter: @August Høg Dedenroth @Martin Anberg
 -->
 
 <head>
     <meta charset="UTF-8">
     <title>Log Ind</title>
-    <link rel="stylesheet" th:href="@{../static_}" href="../static/index.Style.css">
+    <link rel="stylesheet" th:href="@{../static/index.Style.css}" href="../static/index.Style.css">
 </head>
 <header>
     <div id="headerLeft">
@@ -25,12 +25,12 @@ Forfatter: @August Høg Dedenroth
 <body>
 <section class="LogInBox">
     <b style="font-size: 250%; align-self: center; color: white;">Log Ind</b>
-    <form action="#" th:action="@{/logIn}" th:object="${personale}" method="post">
+    <form action="/" method="post">
         <label for="brugernavn"></label>
-        <p style="font-size: 120%; align-self: center; color: white; padding: 5%; ">Brugernavn: <input type="text" id="brugernavn" name="brugernavn" autofocus="autofocus" th:field="*{brugernavn}" required/></p>
+        <p style="font-size: 120%; align-self: center; color: white; padding: 5%; ">Brugernavn: <input type="text" id="brugernavn" name="brugernavn" autofocus="autofocus" required/></p>
 
         <label for="password"></label>
-        <p style="font-size: 120%; align-self: center; color: white; padding: 5%; ">Password:<input type="password" id="password" name="password" autofocus="autofocus" th:field="*{password}" required/></p>
+        <p style="font-size: 120%; align-self: center; color: white; padding: 5%; ">Password:<input type="password" id="password" name="password"  required/></p>
 
         <p><input style="align-self: center; margin-left: 40%; margin-top: 2%; background-color: white; text-align: center; display: inline-block; height: 3vh; width: 3vw; cursor: pointer; border-color: #1892c3; border-radius: 15%;" type="submit" value="Log ind"></p>
     </form>
