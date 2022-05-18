@@ -18,9 +18,10 @@ public class ReservationController {
 
 
 
-    ReservationService reservationService = new ReservationService();
-    BilService bilService = new BilService();
-    KundeService kundeService = new KundeService();
+
+    private final ReservationService reservationService = new ReservationService();
+    private final BilService bilService = new BilService();
+    private final KundeService kundeService = new KundeService();
 
     @GetMapping("/Dataregistrering")
     public String ShowValidReservationer(){
@@ -28,24 +29,26 @@ public class ReservationController {
 
         return "Dataregistrering";
     }
-    @GetMapping("/Dataregistrering")
+    @GetMapping("/Dataregistrering/Invalid")
     public String ShowInvalidReservationer(){
         reservationService.createInvalidReservationList();
 
         return "Dataregistrering";
     }
+
     @PostMapping("/Dataregistrering")
-    public void ændreValidation(@ModelAttribute(name = "reservation") Reservation reservation, Model model){
+    public String ændreValidation(@ModelAttribute(name = "reservation") Reservation reservation, Model model){
         int bilID = reservation.getBilID();
         int kundeID = reservation.getKundeID();
         model.addAttribute("bilID",bilID);
         model.addAttribute("kundeID",kundeID);
         reservationService.ændreValidationReservation(reservationService.getReservation(bilID,kundeID));
+        return "Dataregistrering";
     }
 
     //TODO get method til at vise all info på reservation
 
-    @GetMapping("/Dataregistrering")
+    @GetMapping("/Dataregistrering/info")
     public String showReservationInfo(@ModelAttribute(name = "reservation") Reservation reservation, Model model1, Model model2){
 
 

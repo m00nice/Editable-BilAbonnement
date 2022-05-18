@@ -13,7 +13,7 @@ import java.sql.SQLException;
 @Controller
 public class PersonaleController {
 
-    PersonaleService personaleService;
+    private final PersonaleService personaleService = new PersonaleService();
 
     @GetMapping("/LogIn")
     public String index(){return "index";}
@@ -26,9 +26,9 @@ public class PersonaleController {
         boolean token = personaleService.checkBruger(brugernavn, password);
         if(token){
             String rolle = personaleService.getRolle(brugernavn, password);
-            if(rolle.equals("DR")){return "redirect:Dataregistrering";}
+            if(rolle.equals("DR")){return "redirect:/Dataregistrering/Invalid";}
             if(rolle.equals("FU")){return "redirect:Forretningsudviklere";}
-            if(rolle.equals("S&U")){return "redirect:Skade&Udbedring";}
+            if(rolle.equals("S&U")){return "redirect:/Skade&Udebedring/Biler-med-skader";}
         }
         return "index";
 
@@ -36,12 +36,6 @@ public class PersonaleController {
 
 
     //TODO method til at logge ud af system
-
-    @PostMapping("/Dataregistrering")
-    public String LogUd(){
-
-        return "Dataregistrering";
-    }
 
 
     }
