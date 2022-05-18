@@ -38,7 +38,9 @@ public class BilRepository implements IRepository {
             throwables.printStackTrace();
         }
         return alleBiler;
+
     }
+
     public List<Bil> getPrisPåUdlejedeBiler(){
         Connection conn = DatabaseConnectionManager.getConnection();
         List<Bil> alleBiler = new ArrayList<>();
@@ -70,8 +72,32 @@ public class BilRepository implements IRepository {
     }
 
     @Override
-    public List getAlleSkadetBiler() {
-        return null;
+    public List<Bil> getAlleSkadetBiler() {
+        Connection conn = DatabaseConnectionManager.getConnection();
+        List<Bil> alleSkadetBiler = new ArrayList<>();
+        try {
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bil");
+            ResultSet rs = pstmt.executeQuery();
+            while (rs.next()) {
+                Bil temp = new Bil(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getInt(5),
+                        rs.getInt(6),
+                        rs.getDouble(7),
+                        rs.getInt(8)
+                );
+                alleSkadetBiler.add(temp);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Noget gik galt...");
+            e.printStackTrace();
+        }
+        return alleSkadetBiler;
     }
 }
+
 

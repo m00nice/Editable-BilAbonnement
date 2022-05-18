@@ -37,5 +37,11 @@ public class PersonaleController {
 
     //TODO method til at logge ud af system
 
+    @PostMapping("/Dataregistrering")
+    public String LogUd(){
+
+        return "Dataregistrering";
+    }
+
 
     }
