@@ -13,7 +13,7 @@ import java.sql.SQLException;
 @Controller
 public class PersonaleController {
 
-    PersonaleService personaleService;
+    private final PersonaleService personaleService = new PersonaleService();
 
     @GetMapping("/LogIn")
     public String index(){return "index";}

@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ReservationService {
 
-    ReservationRepository reservationRepository = new ReservationRepository();
+    private final ReservationRepository reservationRepository = new ReservationRepository();
 
 
     public Reservation getReservation(int bilID, int kundeID){
@@ -20,6 +20,7 @@ public class ReservationService {
         }
         return null;
    }
+
 
 
     public ArrayList createValidReservationList(){

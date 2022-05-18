@@ -7,7 +7,7 @@ import com.example.bilabonnement.repository.PersonaleRepository;
 import java.util.List;
 
 public class PersonaleService {
-    PersonaleRepository personaleRepository;
+    private final PersonaleRepository personaleRepository = new PersonaleRepository();
 
     public boolean checkBruger(String brugernavn, String password) {
         List<Personale> list = personaleRepository.getAlleBrugere();
