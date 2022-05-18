@@ -31,7 +31,6 @@ public class PersonaleController {
             if(rolle.equals("S&U")){return "redirect:/Skade&Udebedring/Biler-med-skader";}
         }
         return "index";
-
         }
 
 
