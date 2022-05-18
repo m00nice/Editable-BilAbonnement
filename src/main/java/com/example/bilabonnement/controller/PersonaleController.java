@@ -15,7 +15,8 @@ public class PersonaleController {
 
     private final PersonaleService personaleService = new PersonaleService();
 
-    @GetMapping("/LogIn")
+
+    @GetMapping("/")
     public String index(){return "index";}
 
     @PostMapping("/LogIn")
