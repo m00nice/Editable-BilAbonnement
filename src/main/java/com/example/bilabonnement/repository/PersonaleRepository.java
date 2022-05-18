@@ -16,7 +16,7 @@ public class PersonaleRepository {
         Connection conn = DatabaseConnectionManager.getConnection();
         List<Personale> alleBrugere = new ArrayList<Personale>();
         try{
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM");
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM personale");
             ResultSet rs = pstmt.executeQuery();
             while(rs.next()){
                 Personale temp = new Personale(

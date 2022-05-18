@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--
+Forfatter: @Martin Anberg
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>Skade&Udbedring</title>
+    <link rel="stylesheet" th:href="@{../static/SogU.Style.css}" href="../static/SogU.Style.css">
+</head>
+<header>
+    <div id="headerLeft">
+        <button class="buttonLogOut">Log out</button>
+    </div>
+
+    <div id="headerCenter">
+        <img th:src="BILABONNEMENT.PNG" src="/static/Images/BILABONNEMENT.png" alt="BILABONNEMENT.LOGO" height="100%" width="50%">
+    </div>
+
+    <div id="headerRight">
+        <p class="counterweight1"></p>
+    </div>
+</header>
+<body>
+<h1 class="logo"></h1>
+<div class="titel">Skade & Udbedring</div>
+
+<input type="checkbox" id="title1" />
+<label for="title1">
+    <th style="width: 200vw;">BilID</th>
+    <th style="width: 200vw;">Skade</th>
+    <th style="width: 200vw;">Pris</th>
+    <td><button style="width: 50px;cursor: pointer;">Slet</button></td></label>
+
+
+<div class="content">
+    <p>
+    <th style="width: 200vw;">Leveringstidspunkt</th>
+    <th style="width: 200vw;">Afhentningstidspunkt</th>
+    <th style="width: 200vw;">Værksted</th>
+
+    </p>
+</div>
+
+<input type="checkbox" id="title2" />
+<label for="title2">
+    BilID
+    Skade
+    Pris
+    <button style="width: 50px;cursor: pointer;">Slet</button>
+</label>
+
+<div class="content">
+    <p>
+        Leveringstidspunkt
+        Afhentningstidspunkt
+        Værksted
+    </p>
+    </p>
+</div>
+<input type="checkbox" id="title3" />
+<label for="title3">
+    BilID
+    Skade
+    Pris
+    <button style="width: 50px;cursor: pointer;">Slet</button>
+</label>
+
+<div class="content">
+    <p>
+    Leveringstidspunkt
+    Afhentningstidspunkt
+    Værksted
+    </p>
+</div>
+
+</body>
+</html>

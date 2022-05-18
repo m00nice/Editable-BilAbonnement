@@ -14,21 +14,28 @@ public class BilController {
     private final BilService bilService = new BilService();
 
     //TODO get method til at lave liste af biler med skade
-    @GetMapping("/Skade&Udebedring/Biler-med-skader")
+    @GetMapping("/SkadeOgUdebedring/Biler-med-skader")
      public String alleSkadetBiler(@ModelAttribute (name = "skadeListe") Model model) {
       ArrayList<Bil> skadeArrayList = bilService.getBilerMedFejlOgMangler();
       model.addAttribute("skadeListe", skadeArrayList);
-      return "Skade&Udbedring";
+      return "SkadeOgUdbedring";
  }
 
 
     //TODO get method til at lave liste af biler uden skade
 
-    @GetMapping("/Skade&Udbedring/Biler-uden-skader")
+    @GetMapping("/SkadeOgUdbedring/Biler-uden-skader")
     public String alleBilerUdenSkade(@ModelAttribute(name= "skadeListe") Model model) {
         ArrayList<Bil> bilArrayList = bilService.getBilerUdenFejlOgMangler();
         model.addAttribute("skadeListe", bilArrayList);
-        return "Skade&Udbedring";
+        return "SkadeOgUdbedring";
+    }
+
+    @GetMapping("/Forretningsudvikvikling")
+    public String listeAfUdlejedeBiler(@ModelAttribute(name = "billiste") Model model){
+        ArrayList<Bil> bilArrayList = bilService.getUdlejedeBiler();
+        model.addAttribute("billiste",bilArrayList);
+        return "Forretningudviklere";
     }
 
 }

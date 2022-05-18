@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.context.request.WebRequest;
 
 import java.sql.SQLException;
 
@@ -15,15 +16,13 @@ public class PersonaleController {
 
     private final PersonaleService personaleService = new PersonaleService();
 
-
     @GetMapping("/")
     public String index(){return "index";}
 
-    @PostMapping("/LogIn")
-    public String LogInd(@ModelAttribute(name="personale") Personale personale, Model model) throws SQLException {
-        String brugernavn = personale.getBrugernavn();
-        String password = personale.getPassword();
-        model.addAttribute(brugernavn, password);
+    @PostMapping("/")
+    public String LogInd(WebRequest personaleData) {
+        String brugernavn = personaleData.getParameter("brugernavn");
+        String password = personaleData.getParameter("password");
         boolean token = personaleService.checkBruger(brugernavn, password);
         if(token){
             String rolle = personaleService.getRolle(brugernavn, password);

@@ -14,7 +14,7 @@ public class KundeRepository {
         Connection conn = DatabaseConnectionManager.getConnection();
         List<Kunde> alleKunder = new ArrayList<Kunde>();
         try{
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM");
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM kunde");
             ResultSet rs = pstmt.executeQuery();
             while(rs.next()){
                 Kunde temp = new Kunde(
