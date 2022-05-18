@@ -8,18 +8,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.sql.SQLException;
 
 @Controller
 public class PersonaleController {
 
     private final PersonaleService personaleService = new PersonaleService();
 
-    @GetMapping("/LogIn")
+    @GetMapping("/")
     public String index(){return "index";}
 
-    @PostMapping("/LogIn")
-    public String LogInd(@ModelAttribute(name="personale") Personale personale, Model model) throws SQLException {
+    @PostMapping("/")
+    public String LogInd(@ModelAttribute(name="personale") Personale personale, Model model) {
         String brugernavn = personale.getBrugernavn();
         String password = personale.getPassword();
         model.addAttribute(brugernavn, password);
