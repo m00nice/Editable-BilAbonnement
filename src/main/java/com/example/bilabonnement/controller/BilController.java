@@ -14,7 +14,7 @@ public class BilController {
     private final BilService bilService = new BilService();
 
     //TODO get method til at lave liste af biler med skade
-    @GetMapping("/getListeAfBilerMedSkade")
+    @GetMapping("/Skade&Udebedring/Biler-med-skader")
      public String alleSkadetBiler(@ModelAttribute (name = "skadeListe") Model model) {
       ArrayList<Bil> skadeArrayList = bilService.getBilerMedFejlOgMangler();
       model.addAttribute("skadeListe", skadeArrayList);
@@ -24,7 +24,7 @@ public class BilController {
 
     //TODO get method til at lave liste af biler uden skade
 
-    @GetMapping("/getListeAfBilerUdenSkade")
+    @GetMapping("/Skade&Udbedring/Biler-uden-skader")
     public String alleBilerUdenSkade(@ModelAttribute(name= "skadeListe") Model model) {
         ArrayList<Bil> bilArrayList = bilService.getBilerUdenFejlOgMangler();
         model.addAttribute("skadeListe", bilArrayList);
