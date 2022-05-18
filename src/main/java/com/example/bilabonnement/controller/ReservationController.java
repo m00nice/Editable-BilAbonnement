@@ -29,7 +29,7 @@ public class ReservationController {
 
         return "Dataregistrering";
     }
-    @GetMapping("/Dataregistrering")
+    @GetMapping("/Dataregistrering/Invalid")
     public String ShowInvalidReservationer(){
         reservationService.createInvalidReservationList();
 
@@ -48,7 +48,7 @@ public class ReservationController {
 
     //TODO get method til at vise all info på reservation
 
-    @GetMapping("/Dataregistrering")
+    @GetMapping("/Dataregistrering/info")
     public String showReservationInfo(@ModelAttribute(name = "reservation") Reservation reservation, Model model1, Model model2){
 
 
