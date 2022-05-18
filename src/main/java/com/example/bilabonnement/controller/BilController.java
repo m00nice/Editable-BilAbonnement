@@ -1,5 +1,5 @@
 package com.example.bilabonnement.controller;
-
+// Forfatter @Martin Anberg
 import com.example.bilabonnement.models.Bil;
 import com.example.bilabonnement.service.BilService;
 import org.springframework.stereotype.Controller;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class BilController {
     private final BilService bilService = new BilService();
 
-    //TODO get method til at lave liste af biler med skade
+    //Liste af biler med skader til SkadeOgUdbedring
     @GetMapping("/SkadeOgUdebedring/Biler-med-skader")
      public String alleSkadetBiler(@ModelAttribute (name = "skadeListe") Model model) {
       ArrayList<Bil> skadeArrayList = bilService.getBilerMedFejlOgMangler();
@@ -22,8 +22,7 @@ public class BilController {
  }
 
 
-    //TODO get method til at lave liste af biler uden skade
-
+    //Liste af biler uden skader
     @GetMapping("/SkadeOgUdbedring/Biler-uden-skader")
     public String alleBilerUdenSkade(@ModelAttribute(name= "skadeListe") Model model) {
         ArrayList<Bil> bilArrayList = bilService.getBilerUdenFejlOgMangler();

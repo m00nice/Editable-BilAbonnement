@@ -1,5 +1,5 @@
 package com.example.bilabonnement.controller;
-
+// Forfatter @Martin Anberg
 import com.example.bilabonnement.models.Personale;
 import com.example.bilabonnement.service.PersonaleService;
 import org.springframework.stereotype.Controller;
@@ -27,7 +27,7 @@ public class PersonaleController {
         if(token){
             String rolle = personaleService.getRolle(brugernavn, password);
             if(rolle.equals("DR")){return "redirect:/Dataregistrering/Invalid";}
-            if(rolle.equals("FU")){return "redirect:Forretningsudviklere";}
+            if(rolle.equals("FU")){return "redirect:/Forretningsudviklere";}
             if(rolle.equals("S&U")){return "redirect:/Skade&Udebedring/Biler-med-skader";}
         }
         return "index";
@@ -35,6 +35,26 @@ public class PersonaleController {
 
 
     //TODO method til at logge ud af system
+    @PostMapping("/Dataregistrering/Invalid")
+    public String logUdDataregistreringInvalid(){
+        return "redirect:/";
+    }
 
+    @PostMapping("/Dataregistrering/Valid")
+    public String logUdDataregistreringValid(){
+        return "redirect:/";
+    }
+    @PostMapping("/Skade&Udebedring/Biler-med-skader")
+    public String logUdDataregistreringSogUmedSkade(){
+        return "redirect:/";
+    }
+    @PostMapping("/Skade&Udebedring/Biler-uden-skader")
+    public String logUdDataregistreringSogUudenSkade(){
+        return "redirect:/";
+    }
+    @PostMapping("/Forretningsudviklere")
+    public String logUdForretningsudviklere(){
+        return "redirect:/";
+    }
 
     }
