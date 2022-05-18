@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.context.request.WebRequest;
 
 
 @Controller
@@ -18,10 +19,9 @@ public class PersonaleController {
     public String index(){return "index";}
 
     @PostMapping("/")
-    public String LogInd(@ModelAttribute(name="personale") Personale personale, Model model) {
-        String brugernavn = personale.getBrugernavn();
-        String password = personale.getPassword();
-        model.addAttribute(brugernavn, password);
+    public String LogInd(WebRequest personaleData) {
+        String brugernavn = personaleData.getParameter("brugernavn");
+        String password = personaleData.getParameter("password");
         boolean token = personaleService.checkBruger(brugernavn, password);
         if(token){
             String rolle = personaleService.getRolle(brugernavn, password);
