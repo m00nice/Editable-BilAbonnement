@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class BilService {
 
-    BilRepository bilRepository = new BilRepository();
+    private final BilRepository bilRepository = new BilRepository();
 
     public ArrayList<Bil> getAlleBiler(){
         return (ArrayList<Bil>) bilRepository.getAlleBiler();
