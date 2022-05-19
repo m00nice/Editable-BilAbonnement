@@ -19,7 +19,7 @@ public class ReservationRepository {
         Connection conn = DatabaseConnectionManager.getConnection();
         List<Reservation> alleReservation = new ArrayList<Reservation>();
         try{
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM");
+            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM reservation");
             ResultSet rs = pstmt.executeQuery();
             while(rs.next()){
                 Reservation temp = new Reservation(

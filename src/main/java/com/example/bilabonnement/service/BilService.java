@@ -8,13 +8,14 @@ import java.util.ArrayList;
 
 public class BilService {
 
-    BilRepository bilRepository = new BilRepository();
+    private final BilRepository bilRepository = new BilRepository();
 
     public ArrayList<Bil> getAlleBiler(){
         return (ArrayList<Bil>) bilRepository.getAlleBiler();
     }
 
-    public ArrayList<Bil> getUdlejedeBiler(ArrayList<Bil>biler){
+    public ArrayList<Bil> getUdlejedeBiler(){
+        ArrayList<Bil> biler = (ArrayList<Bil>) bilRepository.getAlleBiler();
         ArrayList<Bil> udlejedeBiler = new ArrayList<>();
         for(Bil bil : biler){
             if (bil.getKundeID() > 0 ){

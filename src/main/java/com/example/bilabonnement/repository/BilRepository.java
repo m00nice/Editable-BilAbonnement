@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BilRepository implements IRepository {
+public class BilRepository {
 
     public List<Bil> getAlleBiler(){
         Connection conn = DatabaseConnectionManager.getConnection();
@@ -38,7 +38,9 @@ public class BilRepository implements IRepository {
             throwables.printStackTrace();
         }
         return alleBiler;
+
     }
+
     public List<Bil> getPrisPåUdlejedeBiler(){
         Connection conn = DatabaseConnectionManager.getConnection();
         List<Bil> alleBiler = new ArrayList<>();
@@ -69,9 +71,6 @@ public class BilRepository implements IRepository {
         }
     }
 
-    @Override
-    public List getAlleSkadetBiler() {
-        return null;
-    }
 }
+
 

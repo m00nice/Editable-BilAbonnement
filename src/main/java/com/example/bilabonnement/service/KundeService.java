@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class KundeService {
 
-    KundeRepository kundeRepository = new KundeRepository();
+    private final KundeRepository kundeRepository = new KundeRepository();
 
     public ArrayList<Kunde> getAlleKunder(){
         ArrayList<Kunde> kundeliste = (ArrayList<Kunde>) kundeRepository.getAlleKunder();
