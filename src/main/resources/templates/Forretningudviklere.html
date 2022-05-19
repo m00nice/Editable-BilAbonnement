@@ -24,7 +24,7 @@ Forfatter: @Cemarkay Türker, August Høg Dedenroth
 </header>
 
 <body>
-<section class="forretningsudviklerBox"><div style="font-size: 250%; align-self: center;">Forretningsudviklere:</div></section>
+<section class="forretningsudviklerBox"><div style="font-size: 250%; align-self: center;"><b>Forretningsudviklere</b></div></section>
 
 <!--
 <table>
@@ -48,18 +48,20 @@ Forfatter: @Cemarkay Türker, August Høg Dedenroth
 </div>
 -->
 <section class="totalPris">
-    <div style="font-size: 100%;"><nobr>Total pris: <text th:text="${totalpris}"></text></nobr>
+    <div style="font-size: 120%;"><nobr>Total pris: <text th:text="${totalpris}"></text> kr</nobr>
    </div>
 </section>
 <div class="table-container">
-<table style="width:500px">
+<table style="width:700px">
     <tr>
         <th>Udlejet Biler (ID)</th>
+        <th>Mærke</th>
         <th>Pris</th>
     </tr>
     <tr th:each="bil:${billiste}">
         <td th:text="${bil.bil_ID}"></td>
-        <td th:text="${bil.pris}"></td>
+        <td th:text="${bil.maerke}"></td>
+        <td th:text="${bil.pris}"><td>
     </tr>
 </table>
 </div>
