@@ -79,6 +79,9 @@ Forfatter: @Martin Anberg
     Værksted
     </p>
 </div>
-
+<tr th:each="bil:${billiste}">
+    <td th:text="${bil.bil_ID}"></td>
+    <td th:text="${bil.pris}"></td>
+</tr>
 </body>
 </html>

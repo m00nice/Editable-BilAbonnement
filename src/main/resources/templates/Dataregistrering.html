@@ -27,43 +27,59 @@ Forfatter: @Tobias Winkel
 
 
 <div class="forretningsudviklerBox"><h1>Dataregistrering</h1></div>
-<!--
+
 <div class="table-container">
 <table>
-<thead>
-<tr>
-    <th>Bil</th>
-    <th>Udlejer-ID</th>
-    <th>Pris</th>
-</tr>
-</thead>
 <tbody>
 
-<tr th:each="bil:${bilList}">
-    <td th:text="${bil.name}"></td>
-    <td th:text="${bil.Udlejer-ID}"></td>
-    <td th:text="${bil.pris}"></td>
+<tr th:each="reservation:${validliste}">
+    <td th:text="${reservation.bilID}"></td>
+    <td th:text="${reservation.kundeID}"></td>
+    <td th:text="${reservation.startDato}"></td>
+    <td th:text="${reservation.slutDato}"></td>
+    <input type="checkbox" id="title1" />
+
+
 </tr>
 
 </tbody>
 </table>
 </div>
--->
+
+<button style="position: absolute;width: 185px;height: 34px;top: 185px;left: 30%;z-index: 1; cursor: pointer;" >Ikke validerede reservationer</button>
+<button style="position: absolute;width: 185px;height: 34px;top: 185px;left: 60%;z-index: 1; cursor: pointer;" >Validerede reservationer</button>
 
 
+<input type="checkbox" id="Registreringstabel" style="" />
+<label for="Registreringstabel">
+    <th style="width: 200vw;">Fornavn</th>
+    <th style="width: 200vw;">Efternavn</th>
+    <th style="width: 200vw;">Postnummer</th>
+    <th style="width: 200vw;">Email</th>
+    <th style="width: 200vw;">Mobil</th>
+    <tr th:each="reservation:${validliste}">
+        <td th:text="${reservation.bilID}"></td>
+        <td th:text="${reservation.kundeID}"></td>
+        <td th:text="${reservation.startDato}"></td>
+        <td th:text="${reservation.slutDato}"></td>
+        <input type="checkbox" id="" />
 
-<section class="RegistreringsBox">
-    <b style="font-size: 250%; align-self: center; color: white;">Registrering</b>
-    <form action="/" method="post">
-        <label for="Fornavn"></label>
-        <p style="font-size: 120%; align-self: center; color: white; padding: 5%; ">Fornavn: <input type="text" id="Fornavn" name="Fornavn" autofocus="autofocus" required/></p>
 
-        <label for="password"></label>
-        <p style="font-size: 120%; align-self: center; color: white; padding: 5%; ">Password:<input type="password" id="password" name="password"  required/></p>
+    <button style="width: 50px;cursor: pointer;">Slet</button>
+    <button style="width: 70px;cursor: pointer;">Acceptér</button>
+</label>
 
-        <p><input style="align-self: center; margin-left: 40%; margin-top: 2%; background-color: white; text-align: center; display: inline-block; height: 3vh; width: 3vw; cursor: pointer; border-color: #1892c3; border-radius: 15%;" type="submit" value="Log ind"></p>
-    </form>
-</section>
+<div class="content">
+    <p>
+    <th style="width: 200vw;">Leveringstidspunkt</th>
+    <th style="width: 200vw;">Afhentningstidspunkt</th>
+    <th style="width: 200vw;">CPR</th>
+    <th style="width: 200vw;">BilID</th>
+    <th style="width: 200vw;">Pris</th>
+    </p>
+</div>
+
+
 </body>
 <footer>
 

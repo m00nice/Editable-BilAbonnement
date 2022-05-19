@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
+
 @Controller
 public class ReservationController {
 
@@ -21,9 +23,9 @@ public class ReservationController {
     private final KundeService kundeService = new KundeService();
 
     @GetMapping("/Dataregistrering")
-    public String ShowValidReservationer(){
-        reservationService.createValidReservationList();
-
+    public String ShowValidReservationer(Model model){
+        ArrayList<Reservation> liste = reservationService.createValidReservationList();
+        model.addAttribute("validliste",liste);
         return "Dataregistrering";
     }
     @GetMapping("/Dataregistrering/Invalid")
