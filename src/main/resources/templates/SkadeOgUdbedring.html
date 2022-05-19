@@ -8,6 +8,8 @@ Forfatter: @Martin Anberg
     <title>Skade&Udbedring</title>
     <link rel="stylesheet" th:href="@{/SogU.Style.css}" href="../static/SogU.Style.css">
 </head>
+
+
 <header>
     <div id="headerLeft">
         <button class="buttonLogOut">Log out</button>
@@ -21,67 +23,48 @@ Forfatter: @Martin Anberg
         <p class="counterweight1"></p>
     </div>
 </header>
+
+
 <body>
-<h1 class="logo"></h1>
-<div class="titel">Skade & Udbedring</div>
-<button style="position: absolute;width: 185px;height: 34px;top: 170px;left: 30%;z-index: 1; cursor: pointer;" >Vis beskadigede biler</button>
-<button style="position: absolute;width: 185px;height: 34px;top: 170px;left: 60%;z-index: 1; cursor: pointer;" >Vis ubeskadigede biler</button>
+<section class="forretningsudviklerBox"><div style="font-size: 250%; align-self: center;"><b>Skade og udbedring</b></div></section>
+
+<section>
+<button class="leftCarButton">Vis beskadigede biler</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button class="rightCarButton">Vis ubeskadigede biler</button>
+</section>
 
 
-<input type="checkbox" id="title1" />
-<label for="title1">
-    <th style="width: 200vw;">BilID</th>
-    <th style="width: 200vw;">Skade</th>
-    <th style="width: 200vw;">Pris</th>
-    <button style="width: 50px;cursor: pointer;">Slet</button>
-</label>
-
-
-
-<div class="content">
-    <p>
-    style="width: 200vw;">Leveringstidspunkt
-    style="width: 200vw;">Afhentningstidspunkt
-    style="width: 200vw;">Værksted
-
-    </p>
+<div class="table-container">
+    <table style="width: 700px">
+        <tr>
+            <th>Bil-ID</th>
+            <th>Årgang</th>
+            <th>Mærke</th>
+            <th>Model</th>
+            <th>Farve</th>
+            <th>Indtast Fejl</th>
+            <th>Indtast Pris</th>
+            <th></th>
+        </tr>
+        <tr th:each="bil:${billiste}">
+            <td th:text="${bil.bil_ID}"></td>
+            <td th:text="${bil.aargang}"></td>
+            <td th:text="${bil.maerke}"></td>
+            <td th:text="${bil.model}"></td>
+            <td th:text="${bil.farve}"></td>
+            <form action="/Forretningudvikling" method="post">
+                <td><label for="fejl"></label><input type="text" id="fejl" name="fejl"></td>
+                <td><label for="pris"></label><input type="number" id="pris" name="pris"></td>
+                <input type="hidden" id="bil_ID" th:value="bil.bil_ID">
+                <td><button type="submit" name="submit" value="Opret fejl">Opret fejl</button></td>
+            </form>
+        </tr>
+    </table>
 </div>
 
-<input type="checkbox" id="title2" />
-<label for="title2">
-    BilID
-    Skade
-    Pris
-    <button style="width: 50px;cursor: pointer;">Slet</button>
-
-</label>
-
-<div class="content">
-    <p>
-        Leveringstidspunkt
-        Afhentningstidspunkt
-        Værksted
-    </p>
-    </p>
-</div>
-<input type="checkbox" id="title3" />
-<label for="title3">
-    BilID
-    Skade
-    Pris
-    <button style="width: 50px;cursor: pointer;">Slet</button>
-</label>
-
-<div class="content">
-    <p>
-    Leveringstidspunkt
-    Afhentningstidspunkt
-    Værksted
-    </p>
-</div>
-<tr th:each="bil:${billiste}">
-    <td th:text="${bil.bil_ID}"></td>
-    <td th:text="${bil.pris}"></td>
-</tr>
 </body>
 </html>
+
+
+
+
+

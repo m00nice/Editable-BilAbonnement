@@ -1,7 +1,7 @@
 package com.example.bilabonnement.models;
 // Forfatter @Martin Anberg
 public class Bil {
-    private int årgang;
+    private int aargang;
     private java.lang.String maerke;
     private java.lang.String model;
     private java.lang.String farve;
@@ -12,8 +12,8 @@ public class Bil {
 
     public Bil(){
     }
-    public Bil(int årgang, String maerke, String model, String farve, int bil_ID, int kundeID, double pris, int fejl_id) {
-        this.årgang = årgang;
+    public Bil(int aargang, String maerke, String model, String farve, int bil_ID, int kundeID, double pris, int fejl_id) {
+        this.aargang = aargang;
         this.maerke = maerke;
         this.model = model;
         this.farve = farve;
@@ -28,12 +28,12 @@ public class Bil {
         this.pris = pris;
     }
 
-    public int getÅrgang() {
-        return årgang;
+    public int getAargang() {
+        return aargang;
     }
 
-    public void setÅrgang(int årgang) {
-        this.årgang = årgang;
+    public void setAargang(int aargang) {
+        this.aargang = aargang;
     }
 
     public java.lang.String getMaerke() {
@@ -95,7 +95,7 @@ public class Bil {
     @Override
     public String toString() {
         return "Bil{" +
-                "årgang=" + årgang +
+                "årgang=" + aargang +
                 ", mærke='" + maerke + '\'' +
                 ", model='" + model + '\'' +
                 ", farve='" + farve + '\'' +

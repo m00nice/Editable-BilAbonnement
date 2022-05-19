@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.context.request.WebRequest;
 
 import java.util.ArrayList;
 
@@ -38,6 +40,15 @@ public class BilController {
         model.addAttribute("billiste",bilArrayList);
         model.addAttribute("totalpris",totalpris);
         return "Forretningudviklere";
+    }
+    @PostMapping("/Forretningudvikling")
+    public String tilføjFejl(WebRequest fejlData){
+        String fejl = fejlData.getParameter("fejl");
+        double pris = Double.parseDouble(fejlData.getParameter("pris"));
+        int bil_id = Integer.parseInt(fejlData.getParameter("bil_ID"));
+        bilService.setFejlID(bil_id,pris);
+
+        return "Forretningudvikling";
     }
 
 }
