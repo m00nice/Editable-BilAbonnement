@@ -34,7 +34,9 @@ public class BilController {
     @GetMapping("/Forretningsudvikling")
     public String listeAfUdlejedeBiler(Model model){
         ArrayList<Bil> bilArrayList = bilService.getUdlejedeBiler();
+        double totalpris = bilService.getTotalPrisPåUdlejedeBiler();
         model.addAttribute("billiste",bilArrayList);
+        model.addAttribute("totalpris",totalpris);
         return "Forretningudviklere";
     }
 
