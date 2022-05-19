@@ -129,16 +129,3 @@ input:checked + label + .content {
     width: 20vw;
     padding: 5vh;
 }
-.RegistreringsBox{
-    display: flex;
-    flex-direction: column;
-    flex-flow: column;
-    align-items: center;
-    background-color: #1892c3;
-    color: white;
-    margin: 5%;
-    border-radius: 15%;
-    height: 45vh;
-    width: 20vw;
-    padding: 5vh;
-}

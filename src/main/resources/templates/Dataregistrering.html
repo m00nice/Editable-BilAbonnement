@@ -24,6 +24,8 @@ Forfatter: @Tobias Winkel
 </header>
 <body>
 
+
+
 <div class="forretningsudviklerBox"><h1>Dataregistrering</h1></div>
 
 <div class="table-container">
@@ -65,6 +67,72 @@ Forfatter: @Tobias Winkel
 </table>
 </div>
 
+<button style="position: absolute;width: 185px;height: 34px;top: 185px;left: 30%;z-index: 1; cursor: pointer;" >Ikke validerede reservationer</button>
+<button style="position: absolute;width: 185px;height: 34px;top: 185px;left: 60%;z-index: 1; cursor: pointer;" >Validerede reservationer</button>
+
+
+
+
+<input type="checkbox" id="title1" />
+<label for="title1">
+    <th style="width: 200vw;">Fornavn</th>
+    <th style="width: 200vw;">Efternavn</th>
+    <th style="width: 200vw;">Postnummer</th>
+    <th style="width: 200vw;">Email</th>
+    <th style="width: 200vw;">Mobil</th>
+    <th style="width: 200vw;">CPR</th>
+    <th style="width: 200vw;">BilID</th>
+    <th style="width: 200vw;">Pris</th>
+    <tr th:each="bil:${billiste}">
+        <td th:text="${bil.bil_ID}"></td>
+        <td th:text="${bil.pris}"></td>
+    </tr>
+    <td><button style="width: 50px;cursor: pointer;">Slet</button>
+        <button style="width: 70px;cursor: pointer;">Acceptér</button></td></label>
+
+
+<div class="content">
+    <p>
+    <th style="width: 200vw;">Leveringstidspunkt</th>
+    <th style="width: 200vw;">Afhentningstidspunkt</th>
+    <th style="width: 200vw;">Værksted</th>
+
+    </p>
+</div>
+
+<input type="checkbox" id="title2" />
+<label for="title2">
+    BilID
+    Skade
+    Pris
+    <button style="width: 50px;cursor: pointer;">Slet</button>
+    <button style="width: 70px;cursor: pointer;">Acceptér</button>
+</label>
+
+<div class="content">
+    <p>
+        Leveringstidspunkt
+        Afhentningstidspunkt
+        Værksted
+    </p>
+    </p>
+</div>
+<input type="checkbox" id="title3" />
+<label for="title3">
+    BilID
+    Skade
+    Pris
+    <button style="width: 50px;cursor: pointer;">Slet</button>
+    <button style="width: 70px;cursor: pointer;">Acceptér</button>
+</label>
+
+<div class="content">
+    <p>
+        Leveringstidspunkt
+        Afhentningstidspunkt
+        Værksted
+    </p>
+</div>
 
 </body>
 <footer>
