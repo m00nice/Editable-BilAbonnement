@@ -20,18 +20,42 @@ public class BilController {
     @GetMapping("/SkadeOgUdebedring/Biler-med-skader")
      public String alleSkadetBiler(Model model) {
       ArrayList<Bil> skadeArrayList = bilService.getBilerMedFejlOgMangler();
-      model.addAttribute("skadeListe", skadeArrayList);
-      return "SkadeOgUdbedringIkkeSkadeListe";
+      model.addAttribute("skadetBilListe", skadeArrayList);
+      return "SkadeOgUdbedringSkadeListe";
  }
 
     //TODO get method til at lave liste af biler uden skade
     @GetMapping("/SkadeOgUdbedring/Biler-uden-skader")
     public String alleBilerUdenSkade(Model model) {
         ArrayList<Bil> bilArrayList = bilService.getBilerUdenFejlOgMangler();
-        model.addAttribute("skadeListe", bilArrayList);
+        model.addAttribute("uskadetBilListe", bilArrayList);
+        return "SkadeOgUdbedringIkkeSkadeListe";
+    }
+
+    @PostMapping("/SkadeOgUdbedring/Biler-uden-skader/Opret-Fejl")
+    public String tilføjFejl(WebRequest fejlData){
+        String fejl = fejlData.getParameter("fejl");
+        double pris = Double.parseDouble(fejlData.getParameter("pris"));
+        int bil_id = Integer.parseInt(fejlData.getParameter("bil_ID"));
+        bilService.setFejlID(bil_id,fejl,pris);
+
+        return "SkadeOgUdbedringIkkeSkadeListe";
+    }
+    @PostMapping("/SkadeOgUdbedring/Biler-med-skader/Slet-Fejl")
+    public String sletFejl(WebRequest fejlData){
+        int bil_id = Integer.parseInt(fejlData.getParameter("bil_ID"));
+        bilService.setFejlIdToNull(bil_id);
+
         return "SkadeOgUdbedringSkadeListe";
     }
 
+
+
+
+
+    //
+    //
+    //
     @GetMapping("/Forretningsudvikling")
     public String listeAfUdlejedeBiler(Model model){
         ArrayList<Bil> bilArrayList = bilService.getUdlejedeBiler();
@@ -40,14 +64,4 @@ public class BilController {
         model.addAttribute("totalpris",totalpris);
         return "Forretningudviklere";
     }
-    @PostMapping("/Forretningudvikling/Opret-Fejl")
-    public String tilføjFejl(WebRequest fejlData){
-        String fejl = fejlData.getParameter("fejl");
-        double pris = Double.parseDouble(fejlData.getParameter("pris"));
-        int bil_id = Integer.parseInt(fejlData.getParameter("bil_ID"));
-        bilService.setFejlID(bil_id,pris);
-
-        return "Forretningudvikling";
-    }
-
 }

@@ -53,9 +53,9 @@ Forfatter: @Martin Anberg
             <td th:text="${bil.farve}"></td>
             <td th:text="${bil.fejl}"></td>
             <td th:text="${bil.prisPåFejl}"></td>
-            <form action="/Forretningudvikling" method="post">
+            <form action="/SkadeOgUdbedring/Biler-med-skader/Slet-Fejl" method="post">
                 <input type="hidden" id="bil_ID" th:value="bil.bil_ID">
-                <td><button type="submit" name="submit" value="Opret fejl">Slet fejl</button></td>
+                <td><button type="submit" name="submit" value="Slet fejl">Slet fejl</button></td>
             </form>
         </tr>
     </table>

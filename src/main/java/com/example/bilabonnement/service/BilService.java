@@ -48,12 +48,14 @@ public class BilService {
         return bilUdenFejl;
     }
 
-    public void setFejlIdToNull(Bil bil){
-        bil.setFejl_id(0);
+    public void setFejlIdToNull(int bil_ID){
+        bilRepository.executeSQLsyntax("");
     }
-    public void setFejlID(Bil bil, int fejl){
-        bil.setFejl_id(fejl);
+
+    public void setFejlID(int bil_ID, String fejl, double pris){
+        bilRepository.executeSQLsyntax("");
     }
+
     public Bil getBil(int bilID){
         ArrayList<Bil> billiste = getAlleBiler();
         for (Bil bil:
