@@ -1,4 +1,5 @@
 package com.example.bilabonnement.controller;
+// Forfatter: @Martin Anberg, August Høg Dedenroth
 
 import com.example.bilabonnement.models.Bil;
 import com.example.bilabonnement.service.BilService;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 public class BilController {
     private final BilService bilService = new BilService();
 
+
     //TODO get method til at lave liste af biler med skade
     @GetMapping("/SkadeOgUdebedring/Biler-med-skader")
      public String alleSkadetBiler(@ModelAttribute (name = "skadeListe") Model model) {
@@ -20,7 +22,6 @@ public class BilController {
       model.addAttribute("skadeListe", skadeArrayList);
       return "SkadeOgUdbedring";
  }
-
 
     //TODO get method til at lave liste af biler uden skade
 
@@ -32,7 +33,7 @@ public class BilController {
     }
 
     @GetMapping("/Forretningsudvikvikling")
-    public String listeAfUdlejedeBiler(@ModelAttribute(name = "billiste") Model model){
+    public String listeAfUdlejedeBiler(Model model){
         ArrayList<Bil> bilArrayList = bilService.getUdlejedeBiler();
         model.addAttribute("billiste",bilArrayList);
         return "Forretningudviklere";

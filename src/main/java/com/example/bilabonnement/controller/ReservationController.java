@@ -1,7 +1,6 @@
 package com.example.bilabonnement.controller;
 
 import com.example.bilabonnement.models.Reservation;
-import com.example.bilabonnement.repository.BilRepository;
 import com.example.bilabonnement.service.BilService;
 import com.example.bilabonnement.service.KundeService;
 import com.example.bilabonnement.service.ReservationService;
@@ -15,8 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ReservationController {
 
     //TODO GENERELT tilføj SQL syntax til at ændre i databasen
-
-
 
 
     private final ReservationService reservationService = new ReservationService();
@@ -50,8 +47,6 @@ public class ReservationController {
 
     @GetMapping("/Dataregistrering/info")
     public String showReservationInfo(@ModelAttribute(name = "reservation") Reservation reservation, Model model1, Model model2){
-
-
         model1.addAttribute("bil",bilService.getBil(reservation.getBilID()));
         model2.addAttribute("kunde",kundeService.getKunde(reservation.getKundeID()));
 

@@ -10,6 +10,8 @@ public class Bil {
     private double pris;
     private int fejl_id;
 
+    public Bil(){
+    }
     public Bil(int årgang, String mærke, String model, String farve, int bil_ID, int kundeID, double pris, int fejl_id) {
         this.årgang = årgang;
         this.mærke = mærke;

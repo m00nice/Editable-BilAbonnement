@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <!--
-Forfatter: @Cemarkay Türker
+Forfatter: @Cemarkay Türker, August Høg Dedenroth
 -->
 <head>
     <meta charset="UTF-8">
@@ -27,7 +27,6 @@ Forfatter: @Cemarkay Türker
 <section class="forretningsudviklerBox"><div style="font-size: 250%; align-self: center;">Forretningsudviklere:</div></section>
 
 <!--
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -48,7 +47,17 @@ Forfatter: @Cemarkay Türker
 </table>
 </div>
 -->
-
+<div class="table-container"></div>
+<table>
+    <tr>
+        <th>Udlejet Biler</th>
+        <th>Total Pris</th>
+    </tr>
+    <tr th:each="bil:${billiste}">
+        <td th:text="${bil.bil_ID}"></td>
+        <td th:text="${bil.pris}"></td>
+    </tr>
+</table>
 </body>
 <footer>
 
