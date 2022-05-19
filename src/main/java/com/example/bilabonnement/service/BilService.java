@@ -64,7 +64,8 @@ public class BilService {
     }
 
     //Forfatter @Cem Akay Türker
-    public double getTotalPrisPåUdlejedeBiler(ArrayList<Bil> bilArrayList){
+    public double getTotalPrisPåUdlejedeBiler(){
+        ArrayList<Bil> bilArrayList = getUdlejedeBiler();
         double pris = 0;
         for (Bil bil : bilArrayList){
             if (bil.getKundeID() > 0) {
