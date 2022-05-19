@@ -24,10 +24,8 @@ Forfatter: @Tobias Winkel
 </header>
 <body>
 
-
-
 <div class="forretningsudviklerBox"><h1>Dataregistrering</h1></div>
-<!--
+
 <div class="table-container">
 <table>
 <thead>
@@ -39,31 +37,35 @@ Forfatter: @Tobias Winkel
 </thead>
 <tbody>
 
-<tr th:each="bil:${bilList}">
-    <td th:text="${bil.name}"></td>
-    <td th:text="${bil.Udlejer-ID}"></td>
-    <td th:text="${bil.pris}"></td>
+<tr th:each="reservation:${validliste}">
+    <td th:text="${reservation.bilID}"></td>
+    <td th:text="${reservation.kundeID}"></td>
+    <td th:text="${reservation.startDato}"></td>
+    <td th:text="${reservation.slutDato}"></td>
+    <input type="checkbox" id="title1" />
+<label for="title1">
+    <th style="width: 200vw;">BilID</th>
+    <th style="width: 200vw;">Skade</th>
+    <th style="width: 200vw;">Pris</th>
+    <td><button style="width: 50px;cursor: pointer;">Slet</button>
+        <button style="width: 70px;cursor: pointer;">Acceptér</button></td></label></td></label>
+
+
+<div class="content">
+    <p>
+    <th style="width: 200vw;">Leveringstidspunkt</th>
+    <th style="width: 200vw;">Afhentningstidspunkt</th>
+    <th style="width: 200vw;">Værksted</th>
+
+    </p>
+</div>
 </tr>
 
 </tbody>
 </table>
 </div>
--->
 
 
-
-<section class="RegistreringsBox">
-    <b style="font-size: 250%; align-self: center; color: white;">Registrering</b>
-    <form action="/" method="post">
-        <label for="Fornavn"></label>
-        <p style="font-size: 120%; align-self: center; color: white; padding: 5%; ">Fornavn: <input type="text" id="Fornavn" name="Fornavn" autofocus="autofocus" required/></p>
-
-        <label for="password"></label>
-        <p style="font-size: 120%; align-self: center; color: white; padding: 5%; ">Password:<input type="password" id="password" name="password"  required/></p>
-
-        <p><input style="align-self: center; margin-left: 40%; margin-top: 2%; background-color: white; text-align: center; display: inline-block; height: 3vh; width: 3vw; cursor: pointer; border-color: #1892c3; border-radius: 15%;" type="submit" value="Log ind"></p>
-    </form>
-</section>
 </body>
 <footer>
 
