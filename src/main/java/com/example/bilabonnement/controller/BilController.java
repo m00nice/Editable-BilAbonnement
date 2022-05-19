@@ -32,7 +32,7 @@ public class BilController {
         return "SkadeOgUdbedring";
     }
 
-    @GetMapping("/Forretningsudvikvikling")
+    @GetMapping("/Forretningsudvikling")
     public String listeAfUdlejedeBiler(Model model){
         ArrayList<Bil> bilArrayList = bilService.getUdlejedeBiler();
         model.addAttribute("billiste",bilArrayList);
