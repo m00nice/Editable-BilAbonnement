@@ -27,36 +27,20 @@ Forfatter: @Tobias Winkel
 
 
 <div class="forretningsudviklerBox"><h1>Dataregistrering</h1></div>
-
-<div class="table-container">
-<table>
-<tbody>
-
-<tr th:each="reservation:${validliste}">
-    <td th:text="${reservation.bilID}"></td>
-    <td th:text="${reservation.kundeID}"></td>
-    <td th:text="${reservation.startDato}"></td>
-    <td th:text="${reservation.slutDato}"></td>
-    <input type="checkbox" id="title1" />
-
-
-</tr>
-
-</tbody>
-</table>
-</div>
+<br><br>
 
 <button style="position: absolute;width: 185px;height: 34px;top: 185px;left: 30%;z-index: 1; cursor: pointer;" >Ikke validerede reservationer</button>
 <button style="position: absolute;width: 185px;height: 34px;top: 185px;left: 60%;z-index: 1; cursor: pointer;" >Validerede reservationer</button>
 
 
 <input type="checkbox" id="Registreringstabel" style="" />
+<br><br>
 <label for="Registreringstabel">
-    <th style="width: 200vw;">Fornavn</th>
-    <th style="width: 200vw;">Efternavn</th>
-    <th style="width: 200vw;">Postnummer</th>
-    <th style="width: 200vw;">Email</th>
-    <th style="width: 200vw;">Mobil</th>
+    <th style="width: 200vw;">BilID</th>
+    <th style="width: 200vw;">KundeID</th>
+    <th style="width: 200vw;">StartDato</th>
+    <th style="width: 200vw;">SlutDato</th>
+
     <tr th:each="reservation:${validliste}">
         <td th:text="${reservation.bilID}"></td>
         <td th:text="${reservation.kundeID}"></td>
@@ -67,18 +51,8 @@ Forfatter: @Tobias Winkel
 
     <button style="width: 50px;cursor: pointer;">Slet</button>
     <button style="width: 70px;cursor: pointer;">Acceptér</button>
+
 </label>
-
-<div class="content">
-    <p>
-    <th style="width: 200vw;">Leveringstidspunkt</th>
-    <th style="width: 200vw;">Afhentningstidspunkt</th>
-    <th style="width: 200vw;">CPR</th>
-    <th style="width: 200vw;">BilID</th>
-    <th style="width: 200vw;">Pris</th>
-    </p>
-</div>
-
 
 </body>
 <footer>
