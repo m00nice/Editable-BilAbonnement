@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <!--
-Forfatter: @Cemarkay Türker
+Forfatter: @Cemarkay Türker, August Høg Dedenroth
 -->
 <head>
     <meta charset="UTF-8">
     <title>Forretningsudviklere</title>
-    <link rel="stylesheet" th:href="@{../static/FU.Style.css}" href="/static/FU.Style.css">
+    <link rel="stylesheet" th:href="@{/FU.Style.css}" href="/static/FU.Style.css">
 </head>
 
 <header>
@@ -15,7 +15,7 @@ Forfatter: @Cemarkay Türker
     </div>
 
     <div id="headerCenter">
-        <img th:src="BILABONNEMENT.PNG" src="/static/Images/BILABONNEMENT.png" alt="BILABONNEMENT.LOGO" height="100%" width="50%">
+        <img th:src="@{/Images/BILABONNEMENT.png}" src="src/main/resources/static/Images/BILABONNEMENT.png" alt="BILABONNEMENT.LOGO" height="100%" width="50%">
     </div>
 
     <div id="headerRight">
@@ -24,31 +24,26 @@ Forfatter: @Cemarkay Türker
 </header>
 
 <body>
-<section class="forretningsudviklerBox"><div style="font-size: 250%; align-self: center;">Forretningsudviklere:</div></section>
+<section class="forretningsudviklerBox"><div style="font-size: 250%; align-self: center;"><b>Forretningsudviklere</b></div></section>
 
-<!--
+<section class="totalPris">
+    <div style="font-size: 120%;"><nobr>Total pris: <text th:text="${totalpris}"></text> kr</nobr>
+   </div>
+</section>
 <div class="table-container">
-<table>
-<thead>
-<tr>
-    <th>Bil</th>
-    <th>Udlejer-ID</th>
-    <th>Pris</th>
-</tr>
-</thead>
-<tbody>
-
-<tr th:each="bil:${bilList}">
-    <td th:text="${bil.name}"></td>
-    <td th:text="${bil.Udlejer-ID}"></td>
-    <td th:text="${bil.pris}"></td>
-</tr>
-
-</tbody>
+<table style="width:700px">
+    <tr>
+        <th>Udlejet Biler (ID)</th>
+        <th>Mærke</th>
+        <th>Pris</th>
+    </tr>
+    <tr th:each="bil:${billiste}">
+        <td th:text="${bil.bil_ID}"></td>
+        <td th:text="${bil.maerke}"></td>
+        <td th:text="${bil.pris}"><td>
+    </tr>
 </table>
 </div>
--->
-
 </body>
 <footer>
 

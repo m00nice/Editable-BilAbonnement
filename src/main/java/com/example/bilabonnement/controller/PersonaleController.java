@@ -1,5 +1,5 @@
 package com.example.bilabonnement.controller;
-// Forfatter @Martin Anberg
+
 import com.example.bilabonnement.models.Personale;
 import com.example.bilabonnement.service.PersonaleService;
 import org.springframework.stereotype.Controller;
@@ -27,10 +27,11 @@ public class PersonaleController {
         if(token){
             String rolle = personaleService.getRolle(brugernavn, password);
             if(rolle.equals("DR")){return "redirect:/Dataregistrering/Invalid";}
-            if(rolle.equals("FU")){return "redirect:/Forretningsudviklere";}
+            if(rolle.equals("FU")){return "redirect:Forretningsudvikling";}
             if(rolle.equals("S&U")){return "redirect:/Skade&Udebedring/Biler-med-skader";}
         }
         return "index";
+
         }
 
 

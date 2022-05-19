@@ -82,36 +82,50 @@ header{
     width: 15%;
     padding: 5vh
 }
-.toggle_collapse {
-    /* make it show to work across all ua's */
-    display:block;
+input {
+    display: none;
 }
-.toggle_collapse, /* hide off screen */
-.toggle_collapse + * > .collapseAfter ~ * {
-    position:absolute;
-    top:-999em;
-    left:-999em;
+
+label {
+    display: block;
+    padding: 8px 22px;
+    margin: 0 0 1px 0;
+    cursor: pointer;
+    background: #6AAB95;
+    border-radius: 3px;
+    color: #FFF;
+    transition: ease .5s;
 }
-.toggle_collapse:checked + *  .collapseAfter ~ * {
-    position:static;
+
+label:hover {
+    background: #4E8774;
 }
-.toggle_collapse + * + label {
-    display:inline-block; /* make visible for screen media */
-    color:blue;
+
+.content {
+    background: #E2E5F6;
+    padding: 10px 25px;
+    border: 1px solid #A7A7A7;
+    margin: 0 0 1px 0;
+    border-radius: 3px;
 }
-.toggle_collapse + * + label:before {
-    content:"See More";
+
+input + label + .content {
+    display: none;
 }
-.toggle_collapse:checked + * + label:before {
-    content:"See Less";
+
+input:checked + label + .content {
+    display: block;
 }
-.toggle_collapse + * + label:after {
-    content:"\25BC";
-    display:inline-block;
-    padding:0.4em 0 0 0.3em;
-    vertical-align:top;
-    font-size:0.625em;
-}
-.toggle_collapse:checked + * + label:after {
-    content:"\25B2";
+.RegistreringsBox{
+    display: flex;
+    flex-direction: column;
+    flex-flow: column;
+    align-items: center;
+    background-color: #1892c3;
+    color: white;
+    margin: 5%;
+    border-radius: 15%;
+    height: 45vh;
+    width: 20vw;
+    padding: 5vh;
 }

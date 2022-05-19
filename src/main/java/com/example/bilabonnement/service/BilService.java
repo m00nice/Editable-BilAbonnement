@@ -63,15 +63,16 @@ public class BilService {
         return null;
     }
 
-    //Forfatter @Cem Akay Türker
-    public double getTotalPrisPåUdlejedeBiler(ArrayList<Bil> bilArrayList){
+    //Forfatter @Cem Akay Türker, August Høg Dedenroth
+    public double getTotalPrisPåUdlejedeBiler(){
+        ArrayList<Bil> bilArrayList = getUdlejedeBiler();
         double pris = 0;
         for (Bil bil : bilArrayList){
             if (bil.getKundeID() > 0) {
                 pris += bil.getPris();
             }
         }
-        return pris;
+        return (Math.round(pris*100.0)/100.0);
     }
     //Forfatter @Cem Akay Türker
     public double getTotalPrisPåFejl(ArrayList<Bil> bilArrayList){

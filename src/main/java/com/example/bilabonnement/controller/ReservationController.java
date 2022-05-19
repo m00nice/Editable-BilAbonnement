@@ -1,7 +1,6 @@
 package com.example.bilabonnement.controller;
 
 import com.example.bilabonnement.models.Reservation;
-import com.example.bilabonnement.repository.BilRepository;
 import com.example.bilabonnement.service.BilService;
 import com.example.bilabonnement.service.KundeService;
 import com.example.bilabonnement.service.ReservationService;
@@ -11,12 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.util.ArrayList;
+
 @Controller
 public class ReservationController {
 
     //TODO GENERELT tilføj SQL syntax til at ændre i databasen
-
-
 
 
     private final ReservationService reservationService = new ReservationService();
@@ -24,9 +23,9 @@ public class ReservationController {
     private final KundeService kundeService = new KundeService();
 
     @GetMapping("/Dataregistrering")
-    public String ShowValidReservationer(){
-        reservationService.createValidReservationList();
-
+    public String ShowValidReservationer(Model model){
+        ArrayList<Reservation> liste = reservationService.createValidReservationList();
+        model.addAttribute("validliste",liste);
         return "Dataregistrering";
     }
     @GetMapping("/Dataregistrering/Invalid")
@@ -37,7 +36,7 @@ public class ReservationController {
     }
 
     @PostMapping("/Dataregistrering")
-    public String ændreValidation(@ModelAttribute(name = "reservation") Reservation reservation, Model model){
+    public String ændreValidation(Reservation reservation, Model model){
         int bilID = reservation.getBilID();
         int kundeID = reservation.getKundeID();
         model.addAttribute("bilID",bilID);
@@ -49,7 +48,7 @@ public class ReservationController {
     //TODO get method til at vise all info på reservation
 
     @GetMapping("/Dataregistrering/info")
-    public String showReservationInfo(@ModelAttribute(name = "reservation") Reservation reservation, Model model1, Model model2){
+    public String showReservationInfo(Reservation reservation, Model model1, Model model2){
 
 
         model1.addAttribute("bil",bilService.getBil(reservation.getBilID()));

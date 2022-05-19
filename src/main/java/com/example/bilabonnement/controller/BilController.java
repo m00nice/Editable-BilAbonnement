@@ -1,5 +1,6 @@
 package com.example.bilabonnement.controller;
-// Forfatter @Martin Anberg
+// Forfatter: @Martin Anberg, August Høg Dedenroth
+
 import com.example.bilabonnement.models.Bil;
 import com.example.bilabonnement.service.BilService;
 import org.springframework.stereotype.Controller;
@@ -13,27 +14,29 @@ import java.util.ArrayList;
 public class BilController {
     private final BilService bilService = new BilService();
 
-    //Liste af biler med skader til SkadeOgUdbedring
+
+    //TODO get method til at lave liste af biler med skade
     @GetMapping("/SkadeOgUdebedring/Biler-med-skader")
-     public String alleSkadetBiler(@ModelAttribute (name = "skadeListe") Model model) {
+     public String alleSkadetBiler(Model model) {
       ArrayList<Bil> skadeArrayList = bilService.getBilerMedFejlOgMangler();
       model.addAttribute("skadeListe", skadeArrayList);
       return "SkadeOgUdbedring";
  }
 
-
-    //Liste af biler uden skader
+    //TODO get method til at lave liste af biler uden skade
     @GetMapping("/SkadeOgUdbedring/Biler-uden-skader")
-    public String alleBilerUdenSkade(@ModelAttribute(name= "skadeListe") Model model) {
+    public String alleBilerUdenSkade(Model model) {
         ArrayList<Bil> bilArrayList = bilService.getBilerUdenFejlOgMangler();
         model.addAttribute("skadeListe", bilArrayList);
         return "SkadeOgUdbedring";
     }
 
-    @GetMapping("/Forretningsudvikvikling")
-    public String listeAfUdlejedeBiler(@ModelAttribute(name = "billiste") Model model){
+    @GetMapping("/Forretningsudvikling")
+    public String listeAfUdlejedeBiler(Model model){
         ArrayList<Bil> bilArrayList = bilService.getUdlejedeBiler();
+        double totalpris = bilService.getTotalPrisPåUdlejedeBiler();
         model.addAttribute("billiste",bilArrayList);
+        model.addAttribute("totalpris",totalpris);
         return "Forretningudviklere";
     }
 
