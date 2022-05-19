@@ -24,7 +24,6 @@ public class BilController {
  }
 
     //TODO get method til at lave liste af biler uden skade
-
     @GetMapping("/SkadeOgUdbedring/Biler-uden-skader")
     public String alleBilerUdenSkade(@ModelAttribute(name= "skadeListe") Model model) {
         ArrayList<Bil> bilArrayList = bilService.getBilerUdenFejlOgMangler();
