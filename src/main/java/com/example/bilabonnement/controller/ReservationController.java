@@ -1,7 +1,6 @@
 package com.example.bilabonnement.controller;
 
 import com.example.bilabonnement.models.Reservation;
-import com.example.bilabonnement.repository.BilRepository;
 import com.example.bilabonnement.service.BilService;
 import com.example.bilabonnement.service.KundeService;
 import com.example.bilabonnement.service.ReservationService;
@@ -15,8 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class ReservationController {
 
     //TODO GENERELT tilføj SQL syntax til at ændre i databasen
-
-
 
 
     private final ReservationService reservationService = new ReservationService();

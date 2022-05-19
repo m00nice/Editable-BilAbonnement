@@ -37,7 +37,7 @@ public class KundeRepository {
         return alleKunder;
     }
 
-    public void executeSQLsyntax(String syntax){
+    public void executeSQLsyntax(String syntax) {
         Connection conn = DatabaseConnectionManager.getConnection();
         try {
             conn.prepareStatement(syntax).execute();
