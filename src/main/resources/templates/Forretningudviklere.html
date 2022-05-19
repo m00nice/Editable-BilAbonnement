@@ -6,7 +6,7 @@ Forfatter: @Cemarkay Türker, August Høg Dedenroth
 <head>
     <meta charset="UTF-8">
     <title>Forretningsudviklere</title>
-    <link rel="stylesheet" th:href="@{../static/FU.Style.css}" href="/static/FU.Style.css">
+    <link rel="stylesheet" th:href="@{../static/FU.Style.css}" href="../static/FU.Style.css">
 </head>
 
 <header>
@@ -15,7 +15,7 @@ Forfatter: @Cemarkay Türker, August Høg Dedenroth
     </div>
 
     <div id="headerCenter">
-        <img th:href="src/main/resources/static/Images/BILABONNEMENT.png" src="src\main\resources\static\Images\BILABONNEMENT.png" alt="BILABONNEMENT.LOGO" height="100%" width="50%">
+        <img th:src="BILABONNEMENT.PNG" src="/static/Images/BILABONNEMENT.png" alt="BILABONNEMENT.LOGO" height="100%" width="50%">
     </div>
 
     <div id="headerRight">
@@ -55,6 +55,9 @@ Forfatter: @Cemarkay Türker, August Høg Dedenroth
     </tr>
     <tr th:each="bil:${billiste}">
         <td th:text="${bil.bil_ID}"></td>
+        <td th:text="${bil.mærke}"></td>
+        <td th:text="${bil.model}"></td>
+        <td th:text="${bil.farve}"></td>
         <td th:text="${bil.pris}"></td>
     </tr>
 </table>
