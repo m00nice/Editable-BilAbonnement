@@ -47,17 +47,22 @@ Forfatter: @Cemarkay Türker, August Høg Dedenroth
 </table>
 </div>
 -->
-<div class="table-container"></div>
-<table>
+<section class="totalPris">
+    <div style="font-size: 100%;"><nobr>Total pris: <text th:text="${totalpris}"></text></nobr>
+   </div>
+</section>
+<div class="table-container">
+<table style="width:500px">
     <tr>
-        <th>Udlejet Biler</th>
-        <th>Total Pris</th>
+        <th>Udlejet Biler (ID)</th>
+        <th>Pris</th>
     </tr>
     <tr th:each="bil:${billiste}">
         <td th:text="${bil.bil_ID}"></td>
         <td th:text="${bil.pris}"></td>
     </tr>
 </table>
+</div>
 </body>
 <footer>
 

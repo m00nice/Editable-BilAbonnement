@@ -65,11 +65,22 @@ header{
     height: 25vh;
     align-items: center;
 }
-.table-container{
+.table-container {
     display: flex;
-    justify-content: left;
     overflow-y: scroll;
+    border: 1px solid black;
+    justify-content: left;
+    height: 300px;
+    bottom: 200px;
+}
 
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+}
+
+.totalPris {
+    display: flex;
+    justify-content: center;
 }
 
 
