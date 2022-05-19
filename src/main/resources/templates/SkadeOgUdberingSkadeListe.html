@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--
+Forfatter: @Martin Anberg
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>Skade&Udbedring</title>
+    <link rel="stylesheet" th:href="@{/SogU.Style.css}" href="../static/SogUSkadet.css">
+</head>
+
+
+<header>
+    <div id="headerLeft">
+        <button class="buttonLogOut">Log out</button>
+    </div>
+
+    <div id="headerCenter">
+        <img th:src="@{/Images/BILABONNEMENT.png}" src="/static/Images/BILABONNEMENT.png" alt="BILABONNEMENT.LOGO" height="100%" width="50%">
+    </div>
+
+    <div id="headerRight">
+        <p class="counterweight1"></p>
+    </div>
+</header>
+
+
+<body>
+<section class="forretningsudviklerBox"><div style="font-size: 250%; align-self: center;"><b>Skade og udbedring</b></div></section>
+
+<section>
+    <button class="leftCarButton">Vis beskadigede biler</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button class="rightCarButton">Vis ubeskadigede biler</button>
+</section>
+
+
+<div class="table-container">
+    <table style="width: 700px">
+        <tr>
+            <th>Bil-ID</th>
+            <th>Årgang</th>
+            <th>Mærke</th>
+            <th>Model</th>
+            <th>Farve</th>
+            <th>Fejl</th>
+            <th>Pris på fejl</th>
+            <th></th>
+        </tr>
+        <tr th:each="bil:${skadetBilListe}">
+            <td th:text="${bil.bil_ID}"></td>
+            <td th:text="${bil.aargang}"></td>
+            <td th:text="${bil.maerke}"></td>
+            <td th:text="${bil.model}"></td>
+            <td th:text="${bil.farve}"></td>
+            <td th:text="${bil.fejl}"></td>
+            <td th:text="${bil.prisPåFejl}"></td>
+            <form action="/Forretningudvikling" method="post">
+                <input type="hidden" id="bil_ID" th:value="bil.bil_ID">
+                <td><button type="submit" name="submit" value="Opret fejl">Slet fejl</button></td>
+            </form>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
+
+
+
+
+

@@ -6,7 +6,6 @@ import com.example.bilabonnement.service.BilService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.context.request.WebRequest;
 
@@ -22,7 +21,7 @@ public class BilController {
      public String alleSkadetBiler(Model model) {
       ArrayList<Bil> skadeArrayList = bilService.getBilerMedFejlOgMangler();
       model.addAttribute("skadeListe", skadeArrayList);
-      return "SkadeOgUdbedring";
+      return "SkadeOgUdbedringIkkeSkadeListe";
  }
 
     //TODO get method til at lave liste af biler uden skade
@@ -30,7 +29,7 @@ public class BilController {
     public String alleBilerUdenSkade(Model model) {
         ArrayList<Bil> bilArrayList = bilService.getBilerUdenFejlOgMangler();
         model.addAttribute("skadeListe", bilArrayList);
-        return "SkadeOgUdbedring";
+        return "SkadeOgUdbedringSkadeListe";
     }
 
     @GetMapping("/Forretningsudvikling")
@@ -41,7 +40,7 @@ public class BilController {
         model.addAttribute("totalpris",totalpris);
         return "Forretningudviklere";
     }
-    @PostMapping("/Forretningudvikling")
+    @PostMapping("/Forretningudvikling/Opret-Fejl")
     public String tilføjFejl(WebRequest fejlData){
         String fejl = fejlData.getParameter("fejl");
         double pris = Double.parseDouble(fejlData.getParameter("pris"));
