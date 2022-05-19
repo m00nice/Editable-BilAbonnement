@@ -63,7 +63,7 @@ public class BilService {
         return null;
     }
 
-    //Forfatter @Cem Akay Türker
+    //Forfatter @Cem Akay Türker, August Høg Dedenroth
     public double getTotalPrisPåUdlejedeBiler(){
         ArrayList<Bil> bilArrayList = getUdlejedeBiler();
         double pris = 0;
@@ -72,7 +72,7 @@ public class BilService {
                 pris += bil.getPris();
             }
         }
-        return pris;
+        return (Math.round(pris*100.0)/100.0);
     }
     //Forfatter @Cem Akay Türker
     public double getTotalPrisPåFejl(ArrayList<Bil> bilArrayList){
