@@ -56,25 +56,23 @@ Forfatter: @Tobias Winkel
 
 
 
-<!--
-<td><button style="width: 100px;height: 24px;top: 300px;left: 73.3%;z-index: 1;cursor: pointer;">Se</button></td>
 
-<label for="cars">Choose a car:</label>
-
-<select name="cars" id="cars">
-    <option value="volvo">Volvo</option>
-    <option value="saab">Saab</option>
-    <option value="mercedes">Mercedes</option>
-    <option value="audi">Audi</option>
-</select>
--->
 <input type="checkbox" id="title1" />
 <label for="title1">
+    <th style="width: 200vw;">Fornavn</th>
+    <th style="width: 200vw;">Efternavn</th>
+    <th style="width: 200vw;">Postnummer</th>
+    <th style="width: 200vw;">Email</th>
+    <th style="width: 200vw;">Mobil</th>
+    <th style="width: 200vw;">CPR</th>
     <th style="width: 200vw;">BilID</th>
-    <th style="width: 200vw;">Skade</th>
     <th style="width: 200vw;">Pris</th>
+    <tr th:each="bil:${billiste}">
+        <td th:text="${bil.bil_ID}"></td>
+        <td th:text="${bil.pris}"></td>
+    </tr>
     <td><button style="width: 50px;cursor: pointer;">Slet</button>
-        <button style="width: 70px;cursor: pointer;">Acceptér</button></td></label></td></label>
+        <button style="width: 70px;cursor: pointer;">Acceptér</button></td></label>
 
 
 <div class="content">
@@ -119,6 +117,18 @@ Forfatter: @Tobias Winkel
         Værksted
     </p>
 </div>
+<section class="RegistreringsBox">
+    <b style="font-size: 250%; align-self: center; color: white;">Registrering af nye lejeaftaler</b>
+    <form action="/" method="post">
+        <label for="Fornavn"></label>
+        <p style="font-size: 120%; align-self: center; color: white; padding: 5%; ">Fornavn: <input type="text" id="Fornavn" name="Fornavn" autofocus="autofocus" required/></p>
+
+        <label for="password"></label>
+        <p style="font-size: 120%; align-self: center; color: white; padding: 5%; ">Password:<input type="password" id="password" name="password"  required/></p>
+
+        <p><input style="align-self: center; margin-left: 40%; margin-top: 2%; background-color: white; text-align: center; display: inline-block; height: 3vh; width: 3vw; cursor: pointer; border-color: #1892c3; border-radius: 15%;" type="submit" value="Log ind"></p>
+    </form>
+</section>
 </body>
 <footer>
 
