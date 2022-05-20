@@ -84,16 +84,16 @@ public class BilRepository {
     }
 
 
-    public void executeSQLsyntax(String syntax){
+    public void executeSQLsyntax(String syntax) {
         Connection conn = DatabaseConnectionManager.getConnection();
         try {
-            conn.prepareStatement(syntax).execute();
-        } catch (SQLException throwable) {
+            PreparedStatement preparedStatement = conn.prepareStatement(syntax);
+            preparedStatement.execute();
+        } catch (SQLException throwables) {
             System.out.println("Noget gik galt i executeSQLsyntax");
-
         }
-    }
 
+    }
 }
 
 

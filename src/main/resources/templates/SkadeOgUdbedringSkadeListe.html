@@ -6,7 +6,7 @@ Forfatter: @Martin Anberg
 <head>
     <meta charset="UTF-8">
     <title>Skade&Udbedring</title>
-    <link rel="stylesheet" th:href="@{/SogU.Style.css}" href="../static/SogUSkadet.Style.css">
+    <link rel="stylesheet" th:href="@{/SogUSkadeListe.Style.css}" href="../static/SogUSkadet.Style.css">
 </head>
 
 
@@ -52,9 +52,9 @@ Forfatter: @Martin Anberg
             <td th:text="${bil.model}"></td>
             <td th:text="${bil.farve}"></td>
             <td th:text="${bil.fejl}"></td>
-            <td th:text="${bil.prisPåFejl}"></td>
-            <form action="/SkadeOgUdbedring/Biler-med-skader/Slet-Fejl" method="post">
-                <input type="hidden" id="bil_ID" th:value="bil.bil_ID">
+            <td th:text="${bil.fejl_pris}"></td>
+            <form action="/SkadeOgUdbedring/Biler-med-skader" method="post">
+                <input type="hidden" id="bil_ID" name="bil_ID" th:value="${bil.bil_ID}">
                 <td><button type="submit" name="submit" value="Slet fejl">Slet fejl</button></td>
             </form>
         </tr>

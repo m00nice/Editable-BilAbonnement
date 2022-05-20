@@ -32,8 +32,9 @@ public class BilController {
         return "SkadeOgUdbedringIkkeSkadeListe";
     }
 
-    @PostMapping("/SkadeOgUdbedring/Biler-uden-skader/Opret-Fejl")
+    @PostMapping("/SkadeOgUdbedring/Biler-uden-skader")
     public String tilføjFejl(WebRequest fejlData){
+        System.out.println(fejlData.getParameter("bil_ID"));
         String fejl = fejlData.getParameter("fejl");
         double pris = Double.parseDouble(fejlData.getParameter("pris"));
         int bil_id = Integer.parseInt(fejlData.getParameter("bil_ID"));
@@ -41,7 +42,7 @@ public class BilController {
 
         return "SkadeOgUdbedringIkkeSkadeListe";
     }
-    @PostMapping("/SkadeOgUdbedring/Biler-med-skader/Slet-Fejl")
+    @PostMapping("/SkadeOgUdbedring/Biler-med-skader")
     public String sletFejl(WebRequest fejlData){
         int bil_id = Integer.parseInt(fejlData.getParameter("bil_ID"));
         bilService.setFejlIdToNull(bil_id);

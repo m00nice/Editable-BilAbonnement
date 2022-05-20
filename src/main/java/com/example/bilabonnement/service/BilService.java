@@ -49,11 +49,11 @@ public class BilService {
     }
 
     public void setFejlIdToNull(int bil_ID){
-        bilRepository.executeSQLsyntax("");
+        bilRepository.executeSQLsyntax("DELETE FROM `bilabonnement`.`fejl` WHERE (`bil_id` = '"+bil_ID+"');");
     }
 
     public void setFejlID(int bil_ID, String fejl, double pris){
-        bilRepository.executeSQLsyntax("");
+        bilRepository.executeSQLsyntax("INSERT INTO `bilabonnement`.`fejl` (`fejl_type`, `fejl_pris`, `bil_ID`) VALUES ('"+fejl+"', '"+pris+"', '"+bil_ID+"');");
     }
 
     public Bil getBil(int bilID){

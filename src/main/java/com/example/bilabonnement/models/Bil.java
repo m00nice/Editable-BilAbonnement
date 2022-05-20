@@ -27,6 +27,11 @@ public class Bil {
         this.fejl_pris = fejl_pris;
 
     }
+
+    public String getFejl() {
+        return fejl;
+    }
+
     public void setFejl(String fejl) {
         this.fejl = fejl;
     }
