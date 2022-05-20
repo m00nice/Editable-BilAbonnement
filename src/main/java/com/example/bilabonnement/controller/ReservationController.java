@@ -26,17 +26,17 @@ public class ReservationController {
     public String ShowValidReservationer(Model model){
         ArrayList liste = reservationService.createValidReservationList();
         model.addAttribute("validliste",liste);
-        return "Dataregistrering";
+        return "/Dataregistrering";
     }
     @GetMapping("/Dataregistrering/Invalid")
     public String ShowInvalidReservationer(Model model){
         ArrayList liste = reservationService.createInvalidReservationList();
 
         model.addAttribute("invalidliste",liste);
-        return "Dataregistrering";
+        return "DataregistreringInvalid";
     }
 
-    @PostMapping("/Dataregistrering")
+    @PostMapping("/Dataregistrering/")
     public String ændreValidation(Reservation reservation, Model model){
         int bilID = reservation.getBilID();
         int kundeID = reservation.getKundeID();
@@ -45,7 +45,11 @@ public class ReservationController {
         reservationService.ændreValidationReservation(reservationService.getReservation(bilID,kundeID));
         return "Dataregistrering";
     }
+    @GetMapping("/Dataregistrering/")
+    public String showData() {
 
+        return "Dataregistrering";
+    }
     //TODO get method til at vise all info på reservation
 
     @GetMapping("/Dataregistrering/info")

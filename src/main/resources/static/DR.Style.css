@@ -137,3 +137,30 @@ input:checked + label + .content {
     height: 300px;
     bottom: 200px;
 }
+.rightCarButton{
+    margin-right: 30vw;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    background-color: #1892c3;
+    border-color: #1892c3;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+    height: 3vh;
+    width: 10vw;
+    cursor: pointer;
+}
+
+.leftCarButton{
+    margin-left: 30vw;
+    color: white;
+    display: inline-block;
+    text-align: center;
+    background-color: #0f5c7a;
+    border-color: #0f5c7a;
+    border-top-left-radius: 15%;
+    border-top-right-radius: 15%;
+    height: 3vh;
+    width: 10vw;
+    cursor: pointer;
+}

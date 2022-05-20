@@ -3,6 +3,7 @@ package com.example.bilabonnement.service;
 import com.example.bilabonnement.models.Reservation;
 import com.example.bilabonnement.repository.ReservationRepository;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,6 +20,10 @@ public class ReservationService {
             }
         }
         return null;
+   }
+
+   public ArrayList<Reservation> getAllreservations(){
+        return (ArrayList<Reservation>) reservationRepository.getAlleReservationer();
    }
 
 
