@@ -1,14 +1,3 @@
-.textBox {
-    background-color: #c89d28;
-    border: solid black;
-    top: 160px;
-    left: 5%;
-    height: 450px;
-    width: 90%;
-    position: absolute;
-    text-align: left;
-    font-family: Calibri;
-}
 *{
     margin: 0;
     padding: 0;
@@ -68,66 +57,13 @@ header{
     border-color: #1892c3;
     border-radius: 15%;
 }
-.LogInBox{
+
+.forretningsudviklerBox{
     display: flex;
-    flex-direction: column;
-    flex-flow: column;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
     align-items: center;
-    background-color: #1892c3;
-    color: white;
-    margin: 5%;
-    border-color: #1892c3;
-    border-radius: 15%;
-    height: 30vh;
-    width: 15%;
-    padding: 5vh
-}
-input {
-    display: none;
-}
-
-label {
-    display: block;
-    padding: 8px 22px;
-    margin: 0 0 1px 0;
-    cursor: pointer;
-    background: #1892c3;
-    border-radius: 3px;
-    color: #FFF;
-    transition: ease .5s;
-}
-
-label:hover {
-    background: #20566b;
-}
-
-.content {
-    background: #E2E5F6;
-    padding: 10px 25px;
-    border: 1px solid #A7A7A7;
-    margin: 0 0 1px 0;
-    border-radius: 3px;
-}
-
-input + label + .content {
-    display: none;
-}
-
-input:checked + label + .content {
-    display: block;
-}
-.RegistreringsBox{
-    display: flex;
-    flex-direction: column;
-    flex-flow: column;
-    align-items: center;
-    background-color: #1892c3;
-    color: white;
-    margin: 5%;
-    border-radius: 15%;
-    height: 45vh;
-    width: 20vw;
-    padding: 5vh;
 }
 .table-container {
     display: flex;
@@ -137,30 +73,20 @@ input:checked + label + .content {
     height: 300px;
     bottom: 200px;
 }
-.rightCarButton{
-    margin-right: 30vw;
-    color: white;
-    display: inline-block;
-    text-align: center;
-    background-color: #1892c3;
-    border-color: #1892c3;
-    border-top-left-radius: 15%;
-    border-top-right-radius: 15%;
-    height: 3vh;
-    width: 10vw;
-    cursor: pointer;
+
+tr:nth-child(even) {
+    background-color: #D6EEEE;
 }
 
-.leftCarButton{
-    margin-left: 30vw;
-    color: white;
-    display: inline-block;
-    text-align: center;
-    background-color: #0f5c7a;
-    border-color: #0f5c7a;
-    border-top-left-radius: 15%;
-    border-top-right-radius: 15%;
-    height: 3vh;
-    width: 10vw;
-    cursor: pointer;
+.totalPris {
+    display: flex;
+    justify-content: center;
+}
+
+.Dataregistreringsbox{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    align-items: center;
 }
