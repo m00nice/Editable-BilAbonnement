@@ -51,5 +51,8 @@ public class ReservationService {
         if(reservation.isValid()){reservation.setValid(false); reservationRepository.executeSQLsyntax("UPDATE `Bilabonnement`.`reservation` SET `valid` = '-2' WHERE (`bilID` = '"+reservation.getBilID()+"')");}
         else{reservation.setValid(true); reservationRepository.executeSQLsyntax("UPDATE `Bilabonnement`.`reservation` SET `valid` = '2' WHERE (`bilID` = '"+reservation.getBilID()+"')");}
     }
+    public void sletReservation(Reservation reservation){
+        reservationRepository.executeSQLsyntax("DELETE FROM `bilabonnement`.`reservation` WHERE (`bilID` = '"+reservation.getBilID()+"' 'kundeID' = '"+reservation.getKundeID()+"');");
+    }
 
 }
