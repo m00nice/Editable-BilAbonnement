@@ -53,7 +53,21 @@ Forfatter: @Tobias Winkel
     <button style="width: 70px;cursor: pointer;">Acceptér</button>
 
 </label>
-
+<div class="table-container"; style="height:500px">
+    <table style="width:700px">
+        <tr>
+            <th>Udlejet Biler (ID)</th>
+            <th>Mærke</th>
+            <th>Pris</th>
+        </tr>
+        <tr th:each="reservation:${validlisteliste}">
+            <td th:text="${reservation.bilID}"></td>
+            <td th:text="${reservation.udlejerID}"></td>
+            <td th:text="${reservation.startDato}"><td>
+            <td th:text="${reservation.slutDato}"><td>
+        </tr>
+    </table>
+</div>
 </body>
 <footer>
 
