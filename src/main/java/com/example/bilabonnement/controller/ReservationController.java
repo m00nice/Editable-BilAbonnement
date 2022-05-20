@@ -22,16 +22,17 @@ public class ReservationController {
     private final BilService bilService = new BilService();
     private final KundeService kundeService = new KundeService();
 
-    @GetMapping("/Dataregistrering")
+    @GetMapping("/Dataregistrering/Valid")
     public String ShowValidReservationer(Model model){
-        ArrayList<Reservation> liste = reservationService.createValidReservationList();
+        ArrayList liste = reservationService.createValidReservationList();
         model.addAttribute("validliste",liste);
         return "Dataregistrering";
     }
     @GetMapping("/Dataregistrering/Invalid")
-    public String ShowInvalidReservationer(){
-        reservationService.createInvalidReservationList();
+    public String ShowInvalidReservationer(Model model){
+        ArrayList liste = reservationService.createInvalidReservationList();
 
+        model.addAttribute("invalidliste",liste);
         return "Dataregistrering";
     }
 

@@ -19,6 +19,10 @@ public class BilRepository {
         try{
             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bil");
             ResultSet rs = pstmt.executeQuery();
+            PreparedStatement pstmt2 = conn.prepareStatement("SELECT *FROM fejl");
+            ResultSet rs2 = pstmt2.executeQuery();
+
+
             while(rs.next()){
                 Bil temp = new Bil(
                         rs.getInt(1),
@@ -28,17 +32,36 @@ public class BilRepository {
                         rs.getInt(5),
                         rs.getInt(6),
                         rs.getDouble(7),
-                        rs.getInt(8)
-
+                        findFejl(rs,rs2),
+                        findFejlPris(rs,rs2)
                 );
                 alleBiler.add(temp);
             }
-        } catch (SQLException throwables) {
+        } catch (SQLException throwable) {
             System.out.println("Noget er gået galt i getAlleBiler");
-            throwables.printStackTrace();
+            throwable.printStackTrace();
         }
         return alleBiler;
 
+    }
+
+    private double findFejlPris(ResultSet rs,ResultSet rs2) throws SQLException {
+        while(rs2.next()){
+            if(rs2.getInt(4) == rs.getInt(5)){
+                return rs2.getInt(3);
+            }
+        }
+        return 0;
+    }
+
+    private String findFejl(ResultSet rs, ResultSet rs2) throws SQLException {
+
+        while(rs2.next()){
+            if(rs2.getInt(4) == rs.getInt(5)) {
+                return rs2.getString(2);
+            }
+        }
+        return "";
     }
 
     public List<Bil> getPrisPåUdlejedeBiler(){
