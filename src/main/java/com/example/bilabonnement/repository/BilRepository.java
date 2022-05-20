@@ -48,7 +48,7 @@ public class BilRepository {
     private double findFejlPris(ResultSet rs,ResultSet rs2) throws SQLException {
         while(rs2.next()){
             if(rs2.getInt(4) == rs.getInt(5)){
-                return rs2.getInt(3);
+                return rs2.getDouble(3);
             }
         }
         return 0;

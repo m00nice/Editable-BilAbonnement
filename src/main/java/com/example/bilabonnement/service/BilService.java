@@ -41,18 +41,18 @@ public class BilService {
         ArrayList<Bil> biler = (ArrayList<Bil>) bilRepository.getAlleBiler();
         ArrayList<Bil> bilUdenFejl = new ArrayList<>();
         for (Bil bil : biler){
-            if (bil.getFejl_pris() == 0){
+            if (bil.getFejl_pris() == 0 && bil.getKundeID() == 0){
                 bilUdenFejl.add(bil);
             }
         }
         return bilUdenFejl;
     }
-
-    public void setFejlIdToNull(int bil_ID){
+    //TODO navn ændret update klassediagram
+    public void setFejlToNull(int bil_ID){
         bilRepository.executeSQLsyntax("DELETE FROM `bilabonnement`.`fejl` WHERE (`bil_id` = '"+bil_ID+"');");
     }
-
-    public void setFejlID(int bil_ID, String fejl, double pris){
+//TODO navn ændret update klassediagram
+    public void addFejl(int bil_ID, String fejl, double pris){
         bilRepository.executeSQLsyntax("INSERT INTO `bilabonnement`.`fejl` (`fejl_type`, `fejl_pris`, `bil_ID`) VALUES ('"+fejl+"', '"+pris+"', '"+bil_ID+"');");
     }
 

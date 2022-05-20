@@ -17,7 +17,7 @@ public class BilController {
 
 
     //TODO get method til at lave liste af biler med skade
-    @GetMapping("/SkadeOgUdebedring/Biler-med-skader")
+    @GetMapping("/SkadeOgUdbedring/Biler-med-skader")
      public String alleSkadetBiler(Model model) {
       ArrayList<Bil> skadeArrayList = bilService.getBilerMedFejlOgMangler();
       model.addAttribute("skadetBilListe", skadeArrayList);
@@ -33,21 +33,21 @@ public class BilController {
     }
 
     @PostMapping("/SkadeOgUdbedring/Biler-uden-skader")
-    public String tilføjFejl(WebRequest fejlData){
+    public void tilføjFejl(WebRequest fejlData){
         System.out.println(fejlData.getParameter("bil_ID"));
         String fejl = fejlData.getParameter("fejl");
         double pris = Double.parseDouble(fejlData.getParameter("pris"));
         int bil_id = Integer.parseInt(fejlData.getParameter("bil_ID"));
-        bilService.setFejlID(bil_id,fejl,pris);
+        bilService.addFejl(bil_id,fejl,pris);
 
-        return "SkadeOgUdbedringIkkeSkadeListe";
+
     }
     @PostMapping("/SkadeOgUdbedring/Biler-med-skader")
-    public String sletFejl(WebRequest fejlData){
+    public void sletFejl(WebRequest fejlData){
         int bil_id = Integer.parseInt(fejlData.getParameter("bil_ID"));
-        bilService.setFejlIdToNull(bil_id);
+        bilService.setFejlToNull(bil_id);
 
-        return "SkadeOgUdbedringSkadeListe";
+
     }
 
 
