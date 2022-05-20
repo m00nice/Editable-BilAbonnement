@@ -29,7 +29,7 @@ public class BilService {
         ArrayList<Bil> biler = (ArrayList<Bil>) bilRepository.getAlleBiler();
         ArrayList<Bil> bilMedFejl = new ArrayList<>();
         for (Bil bil : biler){
-            if (bil.getKundeID() == 0 && bil.getFejl() > 0){
+            if (bil.getKundeID() == 0 && bil.getFejl_pris() > 0){
                 bilMedFejl.add(bil);
             }
         }
@@ -41,7 +41,7 @@ public class BilService {
         ArrayList<Bil> biler = (ArrayList<Bil>) bilRepository.getAlleBiler();
         ArrayList<Bil> bilUdenFejl = new ArrayList<>();
         for (Bil bil : biler){
-            if (bil.getFejl() == 0){
+            if (bil.getFejl_pris() == 0){
                 bilUdenFejl.add(bil);
             }
         }
@@ -80,8 +80,8 @@ public class BilService {
     public double getTotalPrisPåFejl(ArrayList<Bil> bilArrayList){
         double pris = 0;
         for (Bil bil : bilArrayList){
-            if (bil.getFejl() != 0){
-               pris +=  bil.getFejl();
+            if (bil.getFejl_pris() != 0){
+               pris +=  bil.getFejl_pris();
             }
         }
         return pris;
