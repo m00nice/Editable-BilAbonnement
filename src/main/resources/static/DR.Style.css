@@ -129,3 +129,11 @@ input:checked + label + .content {
     width: 20vw;
     padding: 5vh;
 }
+.table-container {
+    display: flex;
+    overflow-y: scroll;
+    border: 1px solid black;
+    justify-content: left;
+    height: 300px;
+    bottom: 200px;
+}
