@@ -74,6 +74,14 @@ Forfatter: @Tobias Winkel
         </tr>
     </table>
 </div>
+<form action="/Dataregistrering/Invalid" method="post">
+    <td><label for="BilID"></label><input type="number" id="BilID" name="BilID""></td>
+    <td><label for="KundeID"></label><input type="number" id="KundeID" name="KundeID"></td>
+    <td><label for="Startdato"></label><input type="text" id="Startdato" name="Startdato"></td>
+    <td><label for="Slutdato"></label><input type="text" id="Slutdato" name="Slutdato"></td>
+    <input type="hidden" name="reservation_ID" th:value="${reservation.bilID}">
+    <td><button type="submit" name="submit" value="Opret registrering">Opret registrering</button></td>
+</form>
 </body>
 <footer>
 
