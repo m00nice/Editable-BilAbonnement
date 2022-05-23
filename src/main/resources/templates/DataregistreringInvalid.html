@@ -24,8 +24,8 @@ Forfatter: @Tobias Winkel
 </header>
 <body>
 <section>
-    <button class="leftCarButton">Vis beskadigede biler</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-    <button class="rightCarButton">Vis ubeskadigede biler</button>
+    <button class="leftCarButton">Ikke validerede reservationer</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <button class="rightCarButton">Validerede reservationer</button>
 </section>
 
 
@@ -71,17 +71,21 @@ Forfatter: @Tobias Winkel
             <td th:text="${reservation.kundeID}"></td>
             <td th:text="${reservation.startDato}"><td>
             <td th:text="${reservation.slutDato}"><td>
+            <form action="/Dataregistrering/Invalid" method="post">
+                <input type="hidden" id="isValid" name="isValid" th:value="${reservation.valid}">
+            <td><button type="submit" name="submit" value="1">Valider</button></td>
+            </form>
+            <form action="/Dataregistrering/Invalid" method="post">
+                <input type="hidden" id="KundeID" name="KundeID" th:value="${reservation.kundeID}">
+                <td><button type="submit" name="submit" value="null">Slet</button></td>
+            </form>
+
+
+
         </tr>
     </table>
 </div>
-<form action="/Dataregistrering/Invalid" method="post">
-    <td><label for="BilID"></label><input type="number" id="BilID" name="BilID"></td>
-    <td><label for="KundeID"></label><input type="number" id="KundeID" name="KundeID"></td>
-    <td><label for="Startdato"></label><input type="text" id="Startdato" name="Startdato"></td>
-    <td><label for="Slutdato"></label><input type="text" id="Slutdato" name="Slutdato"></td>
-    <input type="hidden" name="reservation_ID" th:value="${reservation.bilID}">
-    <td><button type="submit" name="submit" value="Opret registrering">Opret registrering</button></td>
-</form>
+
 
 </body>
 <footer>

@@ -3,6 +3,8 @@ package com.example.bilabonnement.controller;
 
 import com.example.bilabonnement.models.Bil;
 import com.example.bilabonnement.service.BilService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +17,6 @@ import java.util.ArrayList;
 public class BilController {
     private final BilService bilService = new BilService();
 
-
-    //TODO get method til at lave liste af biler med skade
     @GetMapping("/SkadeOgUdbedring/Biler-med-skader")
      public String alleSkadetBiler(Model model) {
       ArrayList<Bil> skadeArrayList = bilService.getBilerMedFejlOgMangler();
@@ -24,7 +24,6 @@ public class BilController {
       return "SkadeOgUdbedringSkadeListe";
  }
 
-    //TODO get method til at lave liste af biler uden skade
     @GetMapping("/SkadeOgUdbedring/Biler-uden-skader")
     public String alleBilerUdenSkade(Model model) {
         ArrayList<Bil> bilArrayList = bilService.getBilerUdenFejlOgMangler();
@@ -33,21 +32,21 @@ public class BilController {
     }
 
     @PostMapping("/SkadeOgUdbedring/Biler-uden-skader")
-    public void tilføjFejl(WebRequest fejlData){
+    public String tilføjFejl(WebRequest fejlData){
         System.out.println(fejlData.getParameter("bil_ID"));
         String fejl = fejlData.getParameter("fejl");
         double pris = Double.parseDouble(fejlData.getParameter("pris"));
         int bil_id = Integer.parseInt(fejlData.getParameter("bil_ID"));
         bilService.addFejl(bil_id,fejl,pris);
 
-
+        return "redirect:http://localhost:8080/SkadeOgUdbedring/Biler-uden-skader";
     }
     @PostMapping("/SkadeOgUdbedring/Biler-med-skader")
-    public void sletFejl(WebRequest fejlData){
+    public String sletFejl(WebRequest fejlData){
         int bil_id = Integer.parseInt(fejlData.getParameter("bil_ID"));
         bilService.setFejlToNull(bil_id);
 
-
+        return "redirect:http://localhost:8080/SkadeOgUdbedring/Biler-med-skader";
     }
 
     @GetMapping("/Forretningsudvikling")
