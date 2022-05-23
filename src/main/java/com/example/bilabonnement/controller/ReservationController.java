@@ -45,6 +45,7 @@ public class ReservationController {
         reservationService.ændreValidationReservation(reservationService.getReservation(bilID,kundeID));
         return "Dataregistrering";
     }
+
     @GetMapping("/Dataregistrering/")
     public String showData() {
 
