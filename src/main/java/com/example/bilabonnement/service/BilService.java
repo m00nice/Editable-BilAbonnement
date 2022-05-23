@@ -49,11 +49,11 @@ public class BilService {
     }
     //TODO navn ændret update klassediagram
     public void setFejlToNull(int bil_ID){
-        bilRepository.executeSQLsyntax("DELETE FROM `bilabonnement`.`fejl` WHERE (`bil_id` = '"+bil_ID+"');");
+        bilRepository.executeSQLsyntax("UPDATE `bilabonnement`.`bil` SET `fejl` = '', `fejl_pris` = '0' WHERE (`bil_ID` = '"+bil_ID+"');");
     }
 //TODO navn ændret update klassediagram
     public void addFejl(int bil_ID, String fejl, double pris){
-        bilRepository.executeSQLsyntax("INSERT INTO `bilabonnement`.`fejl` (`fejl_type`, `fejl_pris`, `bil_ID`) VALUES ('"+fejl+"', '"+pris+"', '"+bil_ID+"');");
+        bilRepository.executeSQLsyntax("UPDATE `bilabonnement`.`bil` SET `fejl` = '"+fejl+"', `fejl_pris` = '"+pris+"' WHERE (`bil_ID` = '"+bil_ID+"');");
     }
 
     public Bil getBil(int bilID){
