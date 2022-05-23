@@ -28,10 +28,10 @@ public class ReservationController {
         model.addAttribute("validliste",liste);
         return "/Dataregistrering";
     }
+
     @GetMapping("/Dataregistrering/Invalid")
     public String ShowInvalidReservationer(Model model){
         ArrayList liste = reservationService.createInvalidReservationList();
-
         model.addAttribute("invalidliste",liste);
         return "DataregistreringInvalid";
     }
@@ -50,6 +50,7 @@ public class ReservationController {
 
         return "Dataregistrering";
     }
+
     //TODO get method til at vise all info på reservation
 
     @GetMapping("/Dataregistrering/info")
