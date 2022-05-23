@@ -1,7 +1,6 @@
 package com.example.bilabonnement.repository;
 // Forfatter @Martin Anberg
 import com.example.bilabonnement.models.Bil;
-import com.example.bilabonnement.models.Reservation;
 import utility.DatabaseConnectionManager;
 
 import java.sql.Connection;

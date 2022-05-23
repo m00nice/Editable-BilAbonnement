@@ -1,0 +1,8 @@
+CREATE TABLE `reservation` (
+  `bilID` int NOT NULL,
+  `kundeID` int NOT NULL,
+  `startDato` date NOT NULL,
+  `slutDato` date NOT NULL,
+  `valid` tinyint NOT NULL,
+  UNIQUE KEY `bilID_UNIQUE` (`bilID`)
+);
