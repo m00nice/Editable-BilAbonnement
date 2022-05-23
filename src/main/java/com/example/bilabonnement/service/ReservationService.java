@@ -1,6 +1,10 @@
 package com.example.bilabonnement.service;
 // Forfatter @Martin Anberg
+import com.example.bilabonnement.models.Bil;
+import com.example.bilabonnement.models.Kunde;
 import com.example.bilabonnement.models.Reservation;
+import com.example.bilabonnement.repository.BilRepository;
+import com.example.bilabonnement.repository.KundeRepository;
 import com.example.bilabonnement.repository.ReservationRepository;
 
 import java.lang.reflect.Array;
@@ -10,6 +14,7 @@ import java.util.List;
 public class ReservationService {
 
     private final ReservationRepository reservationRepository = new ReservationRepository();
+
 
 
     public Reservation getReservation(int bilID, int kundeID){
@@ -59,5 +64,4 @@ public class ReservationService {
     public void sletReservation(Reservation reservation){
         reservationRepository.executeSQLsyntax("DELETE FROM `bilabonnement`.`reservation` WHERE (`bilID` = '"+reservation.getBilID()+"' 'kundeID' = '"+reservation.getKundeID()+"');");
     }
-
 }

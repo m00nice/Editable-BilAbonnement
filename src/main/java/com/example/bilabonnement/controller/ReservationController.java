@@ -35,7 +35,7 @@ public class ReservationController {
         return "DataregistreringInvalid";
     }
 
-    @PostMapping("/Dataregistrering/")
+    @PostMapping("/Dataregistrering/Invalid")
     public String ændreValidation(Reservation reservation, Model model){
         int bilID = reservation.getBilID();
         int kundeID = reservation.getKundeID();
@@ -45,8 +45,11 @@ public class ReservationController {
         return "Dataregistrering";
     }
 
-    @GetMapping("/Dataregistrering/")
-    public String showData() {
+    @PostMapping("/Dataregistrering/")
+    public String showData(Reservation reservation, Model model) {
+        int bilID = reservation.getBilID();
+        int kundeID = reservation.getKundeID();
+
 
         return "Dataregistrering";
     }
