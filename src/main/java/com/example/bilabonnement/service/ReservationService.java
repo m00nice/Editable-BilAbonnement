@@ -57,7 +57,7 @@ public class ReservationService {
         else{reservation.setValid(true); reservationRepository.executeSQLsyntax("UPDATE `Bilabonnement`.`reservation` SET `valid` = '2' WHERE (`bilID` = '"+reservation.getBilID()+"')");}
     }
     public void sletReservation(Reservation reservation){
-        reservationRepository.executeSQLsyntax("DELETE FROM `bilabonnement`.`reservation` WHERE (`bilID` = '"+reservation.getBilID()+"' 'startDato' = '"+reservation.getStartDato()+"' 'slutDato' = '"+reservation.getSlutDato()+"' 'valid' = '"+reservation.getValid()+"');");
+        reservationRepository.executeSQLsyntax("DELETE FROM `bilabonnement`.`reservation` WHERE (`bilID` = '"+reservation.getBilID()+"' 'startDato' = '"+reservation.getStartDato()+"' 'slutDato' = '"+reservation.getSlutDato()+"');");
     }
 
 }
