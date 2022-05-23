@@ -20,7 +20,7 @@ public class PersonaleController {
     public String index(){return "index";}
 
     @PostMapping("/")
-    public String LogInd(WebRequest personaleData) {
+    public String logInd(WebRequest personaleData) {
         String brugernavn = personaleData.getParameter("brugernavn");
         String password = personaleData.getParameter("password");
         boolean token = personaleService.checkBruger(brugernavn, password);

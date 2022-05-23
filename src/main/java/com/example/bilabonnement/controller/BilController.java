@@ -50,13 +50,6 @@ public class BilController {
 
     }
 
-
-
-
-
-    //
-    //
-    //
     @GetMapping("/Forretningsudvikling")
     public String listeAfUdlejedeBiler(Model model){
         ArrayList<Bil> bilArrayList = bilService.getUdlejedeBiler();

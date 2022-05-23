@@ -21,9 +21,6 @@ public class KundeService {
                 return kunde;
             }
         }
-
-
         return null;
     }
-
 }
