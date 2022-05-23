@@ -31,7 +31,6 @@ public class ReservationController {
     @GetMapping("/Dataregistrering/Invalid")
     public String ShowInvalidReservationer(Model model){
         ArrayList liste = reservationService.createInvalidReservationList();
-
         model.addAttribute("invalidliste",liste);
         return "DataregistreringInvalid";
     }
@@ -45,6 +44,7 @@ public class ReservationController {
         reservationService.ændreValidationReservation(reservationService.getReservation(bilID,kundeID));
         return "Dataregistrering";
     }
+
     @GetMapping("/Dataregistrering/")
     public String showData() {
 

@@ -36,6 +36,7 @@ public class PersonaleController {
 
 
     //TODO method til at logge ud af system
+    /*
     @PostMapping("/Dataregistrering/Invalid")
     public String logUdDataregistreringInvalid(){
         return "redirect:/";
@@ -57,5 +58,6 @@ public class PersonaleController {
     public String logUdForretningsudviklere(){
         return "redirect:/";
     }
+    */
 
     }
