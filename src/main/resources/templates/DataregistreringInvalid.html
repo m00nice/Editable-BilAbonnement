@@ -71,9 +71,16 @@ Forfatter: @Tobias Winkel
             <td th:text="${reservation.kundeID}"></td>
             <td th:text="${reservation.startDato}"><td>
             <td th:text="${reservation.slutDato}"><td>
+            <form action="/Dataregistrering/Invalid" method="post">
+                <input type="hidden" id="isValid" name="isValid" th:value="${reservation.Valid}">
             <td><button type="submit" name="submit" value="Valider">Valider</button></td>
-            <td><button type="submit" name="submit" value="Slet">Slet</button></td>
             </form>
+            <form action="/Dataregistrering/Invalid" method="post">
+                <input type="hidden" id="KundeID" name="KundeID" th:value="${reservation.kundeID}">
+                <td><button type="submit" name="submit" value="Slet">Slet</button></td>
+            </form>
+
+
 
         </tr>
     </table>
