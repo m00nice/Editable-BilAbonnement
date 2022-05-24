@@ -28,6 +28,12 @@ public class ReservationController {
         model.addAttribute("validliste",liste);
         return "DataregistreringValid";
     }
+    @PostMapping("/Dataregistrering/Valid")
+    public String ændreValidation1(WebRequest bilData){
+        int reservationID = Integer.parseInt(bilData.getParameter("reservationID"));
+        reservationService.ændreValidationReservation(reservationService.getReservation(reservationID));
+        return "redirect:http://localhost:8080/Dataregistrering/Valid";
+    }
 
     @GetMapping("/Dataregistrering/Invalid")
     public String visInvalidReservationer(Model model){
@@ -37,7 +43,7 @@ public class ReservationController {
     }
 
     @PostMapping("/Dataregistrering/Invalid")
-    public String ændreValidation(WebRequest bilData){
+    public String ændreValidation2(WebRequest bilData){
         int reservationID = Integer.parseInt(bilData.getParameter("reservationID"));
         reservationService.ændreValidationReservation(reservationService.getReservation(reservationID));
         return "redirect:http://localhost:8080/Dataregistrering/Invalid";
