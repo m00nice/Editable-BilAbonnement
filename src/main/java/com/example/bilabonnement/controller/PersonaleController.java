@@ -24,7 +24,7 @@ public class PersonaleController {
         String brugernavn = personaleData.getParameter("brugernavn");
         String password = personaleData.getParameter("password");
         boolean token = personaleService.checkBruger(brugernavn, password);
-        if(token){
+        if(token) {
             String rolle = personaleService.getRolle(brugernavn, password);
             if(rolle.equals("DR")){return "redirect:/Dataregistrering/Invalid";}
             if(rolle.equals("FU")){return "redirect:Forretningsudvikling";}
