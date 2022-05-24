@@ -25,7 +25,8 @@ Forfatter: @Tobias Winkel
 <body>
 <section>
     <button class="leftCarButton">Ikke validerede reservationer</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-    <button class="rightCarButton">Validerede reservationer</button>
+    <form action="http://localhost:8080/Dataregistrering/Valid">
+    <button class="rightCarButton">Validerede reservationer</button></form>
 </section>
 
 
@@ -58,7 +59,7 @@ Forfatter: @Tobias Winkel
     <button style="width: 70px;cursor: pointer;">Acceptér</button>
 -->
 </label>
-<div class="table-container2"; style="height:500px">
+<div class="table-container2" style="height:500px">
     <table style="width:700px">
         <tr>
             <th>Bil ID</th>
@@ -71,6 +72,17 @@ Forfatter: @Tobias Winkel
             <td th:text="${reservation.kundeID}"></td>
             <td th:text="${reservation.startDato}"><td>
             <td th:text="${reservation.slutDato}"><td>
+            <form action="/Dataregistrering/Invalid" method="post">
+                <input type="hidden" name="reservationID" th:value="${reservation.reservationID}">
+            <td><button type="submit" name="submit" value="submit">Valider</button></td>
+            </form>
+            <form action="/Dataregistrering/Invalid/DELETE" method="post">
+                <input type="hidden" name="reservationID" th:value="${reservation.reservationID}">
+                <td><button type="submit" name="submit" value="submit">Slet</button></td>
+            </form>
+
+
+
         </tr>
     </table>
 </div>
