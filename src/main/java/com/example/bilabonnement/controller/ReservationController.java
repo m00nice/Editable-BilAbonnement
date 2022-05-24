@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.context.request.WebRequest;
 
 import java.util.ArrayList;
 // Forfatter @Martin Anberg
@@ -36,18 +37,14 @@ public class ReservationController {
     }
 
     @PostMapping("/Dataregistrering/Invalid")
-    public String ændreValidation(Reservation reservation, Model model){
-        int reservationID = reservation.getReservationID();
-        model.addAttribute("reservationID",reservationID);
-
+    public String ændreValidation(WebRequest bilData){
+        int reservationID = Integer.parseInt(bilData.getParameter("reservationID"));
         reservationService.ændreValidationReservation(reservationService.getReservation(reservationID));
         return "redirect:http://localhost:8080/Dataregistrering/Invalid";
     }
     @PostMapping("/Dataregistrering/Invalid/DELETE")
-    public String sletReservation(Reservation reservation, Model model){
-        int reservationID = reservation.getReservationID();
-        model.addAttribute("reservationID",reservationID);
-
+    public String sletReservation(WebRequest bilData){
+        int reservationID = Integer.parseInt(bilData.getParameter("reservationID"));
         reservationService.sletReservation(reservationID);
         return "redirect:http://localhost:8080/Dataregistrering/Invalid";
     }
