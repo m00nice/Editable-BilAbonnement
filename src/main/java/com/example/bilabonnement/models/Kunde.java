@@ -7,11 +7,11 @@ public class Kunde {
     private int postNummer;
     private String by;
     private String email;
-    private int mobil;
-    private int cpr_nr;
+    private String mobil;
+    private String cpr_nr;
     private int kundeID;
 
-    public Kunde(String forNavn, String efterNavn, String adresse, int postNummer, String by, String email, int mobil, int cpr_nr,int kundeID) {
+    public Kunde(String forNavn, String efterNavn, String adresse, int postNummer, String by, String email, String mobil, String cpr_nr,int kundeID) {
         this.forNavn = forNavn;
         this.efterNavn = efterNavn;
         this.adresse = adresse;
@@ -80,19 +80,19 @@ public class Kunde {
         this.email = email;
     }
 
-    public int getMobil() {
+    public String getMobil() {
         return mobil;
     }
 
-    public void setMobil(int mobil) {
+    public void setMobil(String mobil) {
         this.mobil = mobil;
     }
 
-    public int getCpr_nr() {
+    public String getCpr_nr() {
         return cpr_nr;
     }
 
-    public void setCpr_nr(int cpr_nr) {
+    public void setCpr_nr(String cpr_nr) {
         this.cpr_nr = cpr_nr;
     }
 
