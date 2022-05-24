@@ -1,0 +1,16 @@
+CREATE TABLE `kunde` (
+  `fornavn` varchar(45) NOT NULL,
+  `efternavn` varchar(45) NOT NULL,
+  `adresse` varchar(45) NOT NULL,
+  `postnummer` int NOT NULL,
+  `by` varchar(45) NOT NULL,
+  `email` varchar(45) NOT NULL,
+  `mobil` int NOT NULL,
+  `cpr_nr` int NOT NULL,
+  `kundeID` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`kundeID`),
+  UNIQUE KEY `udlejerID_UNIQUE` (`kundeID`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  UNIQUE KEY `mobil_UNIQUE` (`mobil`),
+  UNIQUE KEY `cpr-nr_UNIQUE` (`cpr_nr`)
+);

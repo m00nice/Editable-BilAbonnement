@@ -49,13 +49,6 @@ public class BilController {
         return "redirect:http://localhost:8080/SkadeOgUdbedring/Biler-med-skader";
     }
 
-
-
-
-
-    //
-    //
-    //
     @GetMapping("/Forretningsudvikling")
     public String listeAfUdlejedeBiler(Model model){
         ArrayList<Bil> bilArrayList = bilService.getUdlejedeBiler();

@@ -1,7 +1,7 @@
 package com.example.bilabonnement.models;
-// Forfatter @Martin Anberg
-import java.util.Date;
 
+import java.util.Date;
+// Forfatter @Martin Anberg
 public class Reservation {
 
     private int bilID;
@@ -9,13 +9,23 @@ public class Reservation {
     private Date startDato;
     private Date slutDato;
     private boolean valid;
+    private int reservationID;
 
-    public Reservation(int bilID, int udlejerID, Date startDato, Date slutDato, boolean valid) {
+    public Reservation(int bilID, int udlejerID, Date startDato, Date slutDato, boolean valid, int reservationID) {
         this.bilID = bilID;
         this.kundeID = udlejerID;
         this.startDato = startDato;
         this.slutDato = slutDato;
         this.valid = valid;
+        this.reservationID = reservationID;
+    }
+
+    public int getReservationID() {
+        return reservationID;
+    }
+
+    public void setReservationID(int reservationID) {
+        this.reservationID = reservationID;
     }
 
     public int getBilID() {
