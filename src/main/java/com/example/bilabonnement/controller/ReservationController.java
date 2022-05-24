@@ -27,6 +27,7 @@ public class ReservationController {
         model.addAttribute("validliste",liste);
         return "DataregistreringValid";
     }
+
     @GetMapping("/Dataregistrering/Invalid")
     public String visInvalidReservationer(Model model){
         ArrayList liste = reservationService.createInvalidReservationList();

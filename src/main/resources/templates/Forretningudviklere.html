@@ -34,11 +34,13 @@ Forfatter: @Cemarkay Türker, August Høg Dedenroth
 <table style="width:700px">
     <tr>
         <th>Udlejet Biler (ID)</th>
+        <th>Kunde ID</th>
         <th>Mærke</th>
         <th>Pris</th>
     </tr>
     <tr th:each="bil:${billiste}">
         <td th:text="${bil.bil_ID}"></td>
+        <td th:text="${bil.kundeID}"></td>
         <td th:text="${bil.maerke}"></td>
         <td th:text="${bil.pris}"><td>
     </tr>
