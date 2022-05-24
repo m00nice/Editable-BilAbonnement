@@ -7,4 +7,4 @@ CREATE TABLE `reservation` (
   `reservationID` int NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`reservationID`),
   UNIQUE KEY `bilID_UNIQUE` (`bilID`)
-  )
+  );
