@@ -28,7 +28,7 @@ public class PersonaleController {
             String rolle = personaleService.getRolle(brugernavn, password);
             if(rolle.equals("DR")){return "redirect:http://localhost:8080/Dataregistrering/Invalid";}
             if(rolle.equals("FU")){return "redirect:http://localhost:8080/Forretningsudvikling";}
-            if(rolle.equals("S&U")){return "redirect:http://localhost:8080/Skade&Udebedring/Biler-med-skader";}
+            if(rolle.equals("S&U")){return "redirect:http://localhost:8080/SkadeOgUdbedring/Biler-med-skader";}
         }
         return "index";
 
