@@ -4,5 +4,7 @@ CREATE TABLE `reservation` (
   `startDato` date NOT NULL,
   `slutDato` date NOT NULL,
   `valid` tinyint NOT NULL,
+  `reservationID` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`reservationID`),
   UNIQUE KEY `bilID_UNIQUE` (`bilID`)
-);
+  )

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
-
+// Forfatter @Martin Anberg
 @Controller
 public class ReservationController {
 
@@ -25,7 +25,7 @@ public class ReservationController {
     public String visValidReservationer(Model model){
         ArrayList liste = reservationService.createValidReservationList();
         model.addAttribute("validliste",liste);
-        return "/Dataregistrering";
+        return "DataregistreringValid";
     }
     @GetMapping("/Dataregistrering/Invalid")
     public String visInvalidReservationer(Model model){
@@ -36,32 +36,30 @@ public class ReservationController {
 
     @PostMapping("/Dataregistrering/Invalid")
     public String ændreValidation(Reservation reservation, Model model){
-        int bilID = reservation.getBilID();
-        int kundeID = reservation.getKundeID();
-        model.addAttribute("bilID",bilID);
-        model.addAttribute("kundeID",kundeID);
-        reservationService.ændreValidationReservation(reservationService.getReservation(bilID,kundeID));
-        return "Dataregistrering";
+        int reservationID = reservation.getReservationID();
+        model.addAttribute("reservationID",reservationID);
+
+        reservationService.ændreValidationReservation(reservationService.getReservation(reservationID));
+        return "redirect:http://localhost:8080/Dataregistrering/Invalid";
+    }
+    @PostMapping("/Dataregistrering/Invalid/DELETE")
+    public String sletReservation(Reservation reservation, Model model){
+        int reservationID = reservation.getReservationID();
+        model.addAttribute("reservationID",reservationID);
+
+        reservationService.sletReservation(reservationID);
+        return "redirect:http://localhost:8080/Dataregistrering/Invalid";
     }
 
-    @PostMapping("/Dataregistrering/")
-    public String showData(Reservation reservation, Model model) {
-        int bilID = reservation.getBilID();
-        int kundeID = reservation.getKundeID();
-
-
-        return "Dataregistrering";
-    }
     //TODO get method til at vise all info på reservation
 
     @GetMapping("/Dataregistrering/info")
     public String visReservationInfo(Reservation reservation, Model model1, Model model2){
 
+        model1.addAttribute("bilTilInfo",bilService.getBil(reservation.getBilID()));
+        model2.addAttribute("kundeInfo",kundeService.getKunde(reservation.getKundeID()));
 
-        model1.addAttribute("bil",bilService.getBil(reservation.getBilID()));
-        model2.addAttribute("kunde",kundeService.getKunde(reservation.getKundeID()));
-
-        return "Dataregistrering";
+        return "DataregistreringValid";
     }
 
 }

@@ -1,5 +1,5 @@
 package com.example.bilabonnement.repository;
-// Forfatter @Martin Anberg
+
 import com.example.bilabonnement.models.Personale;
 import com.example.bilabonnement.models.Reservation;
 import com.example.bilabonnement.service.BilService;
@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
+// Forfatter @Martin Anberg
 public class ReservationRepository {
 
 
@@ -27,7 +27,8 @@ public class ReservationRepository {
                         rs.getInt(2),
                         rs.getDate(3),
                         rs.getDate(4),
-                        rs.getBoolean(5)
+                        rs.getBoolean(5),
+                        rs.getInt(6)
                 );
                 alleReservation.add(temp);
             }
