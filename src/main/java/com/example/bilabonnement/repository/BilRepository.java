@@ -32,7 +32,6 @@ public class BilRepository {
                         rs.getString(8),
                         rs.getDouble(9)
                 );
-                System.out.println(temp.getFejl_pris());
                 alleBiler.add(temp);
             }
         } catch (SQLException throwable) {
