@@ -30,7 +30,7 @@ Forfatter: @Martin Anberg
 
 <section>
     <button class="leftCarButton">Vis beskadigede biler</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-    <form action="http://localhost:8080/SkadeOgUdbedring/Biler-uden-skader">
+    <form action="http://localhost:8080/SkadeOgUdbedring/Biler-uden-skader?">
     <button type="submit" class="rightCarButton">Vis ubeskadigede biler</button></form>
 </section>
 
@@ -45,7 +45,6 @@ Forfatter: @Martin Anberg
             <th>Farve</th>
             <th>Fejl</th>
             <th>Pris på fejl</th>
-            <th></th>
         </tr>
         <tr th:each="bil:${skadetBilListe}">
             <td th:text="${bil.bil_ID}"></td>
@@ -55,7 +54,7 @@ Forfatter: @Martin Anberg
             <td th:text="${bil.farve}"></td>
             <td th:text="${bil.fejl}"></td>
             <td th:text="${bil.fejl_pris}"></td>
-            <form action="/SkadeOgUdbedring/Biler-med-skader" method="post">
+            <form action="/SkadeOgUdbedring/Biler-med-skader?" method="post">
                 <input type="hidden" id="bil_ID" name="bil_ID" th:value="${bil.bil_ID}">
                 <td><button type="submit" name="submit" value="Slet fejl">Slet fejl</button></td>
             </form>
