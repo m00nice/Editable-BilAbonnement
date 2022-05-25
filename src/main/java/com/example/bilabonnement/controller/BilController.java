@@ -34,11 +34,21 @@ public class BilController {
     @PostMapping("/SkadeOgUdbedring/Biler-uden-skader")
     public String tilføjFejl(WebRequest fejlData){
         System.out.println(fejlData.getParameter("bil_ID"));
-        String fejl = fejlData.getParameter("fejl");
-        double pris = Double.parseDouble(fejlData.getParameter("pris"));
         int bil_id = Integer.parseInt(fejlData.getParameter("bil_ID"));
-        bilService.addFejl(bil_id,fejl,pris);
+        if(fejlData.getParameter("pris").equals("")){
 
+            return "redirect:http://localhost:8080/SkadeOgUdbedring/Biler-uden-skader";
+        }
+        if (fejlData.getParameter("fejl").equals("")){
+
+            return "redirect:http://localhost:8080/SkadeOgUdbedring/Biler-uden-skader";
+        }
+        if(!fejlData.getParameter("pris").equals("") && !fejlData.getParameter("fejl").equals("")){
+            double pris = Double.parseDouble(fejlData.getParameter("pris"));
+            String fejl = fejlData.getParameter("fejl");
+            bilService.addFejl(bil_id,fejl,pris);
+            return "redirect:http://localhost:8080/SkadeOgUdbedring/Biler-uden-skader";
+        }
         return "redirect:http://localhost:8080/SkadeOgUdbedring/Biler-uden-skader";
     }
     @PostMapping("/SkadeOgUdbedring/Biler-med-skader")
