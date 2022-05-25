@@ -65,6 +65,7 @@ public class ReservationController {
         model2.addAttribute("kundeInfo",kundeService.getKunde(reservation.getKundeID()));
 
         return "DataregistreringValid";
+
     }
 
 }
