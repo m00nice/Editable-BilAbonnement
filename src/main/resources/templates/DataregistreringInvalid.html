@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="www.thymeleaf.org">
 <!--
 Forfatter: @Tobias Winkel
 -->
@@ -11,7 +11,8 @@ Forfatter: @Tobias Winkel
 </head>
 <header>
     <div id="headerLeft">
-        <button class="buttonLogOut">Log out</button>
+        <a th:href="@{/logout}">
+        <button class="buttonLogOut">Log out</button></a>
     </div>
 
     <div id="headerCenter">
@@ -31,7 +32,7 @@ Forfatter: @Tobias Winkel
 </section>
 
 
-<div class="forretningsudviklerBox"><h1>Dataregistrering - Invaliderede</h1></div>
+<div class="forretningsudviklerBox"><h1>Dataregistrering - Reservationer til godkendelse</h1></div>
 <br><br>
 <!--
 <button style="position: absolute;width: 185px;height: 34px;top: 185px;left: 30%;z-index: 1; cursor: pointer;" >Ikke validerede reservationer</button>

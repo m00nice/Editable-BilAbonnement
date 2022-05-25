@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="www.thymeleaf.org">
 <!--
 Forfatter: @Tobias Winkel
 -->
@@ -11,7 +11,8 @@ Forfatter: @Tobias Winkel
 </head>
 <header>
     <div id="headerLeft">
-        <button class="buttonLogOut">Log out</button>
+        <a th:href="@{/logout}">
+            <button class="buttonLogOut">Log out</button></a>
     </div>
 
     <div id="headerCenter">
