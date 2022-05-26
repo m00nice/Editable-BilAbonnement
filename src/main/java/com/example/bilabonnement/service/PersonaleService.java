@@ -14,7 +14,6 @@ public class PersonaleService {
         ArrayList<Personale> personalelist = (ArrayList<Personale>) personaleRepository.getAlleBrugere();
         for (Personale personale: personalelist) {
             if(personale.getBrugernavn().equals(brugernavn) && personale.getPassword().equals(password)){
-                System.out.println("duck");
                 return true;}
         }
         return false;
@@ -24,10 +23,9 @@ public class PersonaleService {
         ArrayList<Personale> personalelist = (ArrayList<Personale>) personaleRepository.getAlleBrugere();
         for (Personale personale: personalelist) {
             if (personale.getBrugernavn().equals(brugernavn)&&personale.getPassword().equals(password)) {
-                System.out.println("yuk");
                 return personale.getRolle();
             }
         }
-        return "bruh";
+        return "";
     }
 }

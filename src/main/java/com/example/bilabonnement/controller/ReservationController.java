@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.context.request.WebRequest;
 
 import java.util.ArrayList;
+
 // Forfatter @Martin Anberg
 @Controller
 public class ReservationController {
@@ -64,6 +65,7 @@ public class ReservationController {
         model2.addAttribute("kundeInfo",kundeService.getKunde(reservation.getKundeID()));
 
         return "DataregistreringValid";
+
     }
 
 }
