@@ -1,8 +1,6 @@
 package com.example.bilabonnement.repository;
 
-import com.example.bilabonnement.models.Personale;
 import com.example.bilabonnement.models.Reservation;
-import com.example.bilabonnement.service.BilService;
 import utility.DatabaseConnectionManager;
 
 import java.sql.Connection;
@@ -12,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 // Forfatter @Martin Anberg
-public class ReservationRepository {
+public class ReservationRepository{
 
 
     public List<Reservation> getAlleReservationer(){
