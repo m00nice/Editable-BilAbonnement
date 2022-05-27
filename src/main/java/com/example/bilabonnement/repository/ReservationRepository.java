@@ -39,12 +39,12 @@ public class ReservationRepository {
         return alleReservation;
     }
 
-    public void executeSQLsyntax(String syntax){
+    public void executeSQLSyntax(String syntax){
         Connection conn = DatabaseConnectionManager.getConnection();
         try {
             conn.prepareStatement(syntax).execute();
         } catch (SQLException throwable) {
-            System.out.println("Noget gik galt i executeSQLsyntax");
+            System.out.println("Noget gik galt i executeSQLSyntax");
 
         }
     }
