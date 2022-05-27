@@ -29,7 +29,7 @@ Forfatter: @Tobias Winkel
 <section>
 
     <form action="http://localhost:8080/Dataregistrering/Invalid">
-        <button class="leftCarButton">Ikke validerede reservationer</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</form>
+        <button class="leftCarButton">Ikke validerede</button>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</form>
 
 
 </section>
@@ -49,7 +49,7 @@ Forfatter: @Tobias Winkel
             <td th:text="${reservation.slutDato}"><td>
             <form action="/Dataregistrering/Valid" method="post">
                 <input type="hidden" name="reservationID" th:value="${reservation.reservationID}">
-            <td><button type="submit" name="submit" value="submit">Invalider</button></td>
+            <td><button type="submit" name="submit" value="submit" style="color: black; background-color: white">Invalider</button></td>
             </form>
         </tr>
     </table>
