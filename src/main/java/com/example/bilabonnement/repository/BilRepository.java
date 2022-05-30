@@ -40,6 +40,7 @@ public class BilRepository{
         }
         return alleBiler;
 
+
     }
 
 
