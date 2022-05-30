@@ -36,7 +36,14 @@ header{
     margin-right: 5%;
 }
 
+button{
+    background-color: #1892c3;
+    border-color: #1892c3;
+    border-radius: 15%;
+    color: white;
+    cursor: pointer;
 
+}
 
 
 .buttonLogOut{
@@ -50,7 +57,6 @@ header{
     cursor: pointer;
     margin: 1%;
     border-color: #1892c3;
-    border-radius: 15%;
 }
 .counterweight1{
     display: inline-block;
@@ -68,8 +74,7 @@ header{
     text-align: center;
     background-color: #1892c3;
     border-color: #1892c3;
-    border-top-left-radius: 15%;
-    border-top-right-radius: 15%;
+    border-radius: 15% 15% 0 0;
     height: 3vh;
     width: 20vw;
     cursor: pointer;
