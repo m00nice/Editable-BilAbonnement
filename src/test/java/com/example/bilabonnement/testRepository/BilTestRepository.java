@@ -35,7 +35,7 @@ public class BilTestRepository {
         ArrayList<Reservation> reservationArrayList = new ArrayList<>(
                 Arrays.asList(
                        new Reservation(1,1,date1,date2,false,1),
-                       new Reservation(2,2,date3,date4,false,2),
+                       new Reservation(2,2,date3,date4,true,2),
                        new Reservation(3,3,date5,date6,false,3)
                 )
         );

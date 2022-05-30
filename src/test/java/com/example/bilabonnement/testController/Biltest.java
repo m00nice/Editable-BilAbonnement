@@ -61,16 +61,18 @@ public class Biltest {
     }
 
     @Test
-    void getValidReservationer(){
+    void getValidReservationer(){ // til dataregistrering
 
         //Arrange
         TestService testService = new TestService();
 
         //Act
-        testService.
+        testService.createValidReservationList();
+        int forventet = 1;
 
         //Assert
-
+        int resultat = testService.createValidReservationList().size();
+        assertEquals(forventet,resultat);
 
     }
 }
