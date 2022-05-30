@@ -2,14 +2,14 @@ package com.example.bilabonnement.testService;
 
 import com.example.bilabonnement.models.Bil;
 import com.example.bilabonnement.models.Reservation;
-import com.example.bilabonnement.testRepository.BilTestRepository;
+import com.example.bilabonnement.testRepository.TestRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 // Forfatter @Cemakay Türker @August Høg Dedenroth @Tobias Winkel
 public class TestService {
 
-    BilTestRepository testRepository = new BilTestRepository();
+    TestRepository testRepository = new TestRepository();
 
     public double getTotalPrisPåUdlejedeBiler(){
 
@@ -59,6 +59,17 @@ public class TestService {
             }
         }
         return reservationer;
+    }
+    public ArrayList<Bil> getBilerMedFejlOgMangler(){
+        ArrayList<Bil> biler = (ArrayList<Bil>) testRepository.getAlleBiler();
+        ArrayList<Bil> bilMedFejl = new ArrayList<>();
+        for (Bil bil : biler){
+            if (bil.getKundeID() == 0 && bil.getFejl_pris() > 0){
+                bilMedFejl.add(bil);
+            }
+        }
+        return bilMedFejl;
+
     }
 
 }

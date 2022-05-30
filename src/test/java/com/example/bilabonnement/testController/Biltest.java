@@ -75,6 +75,21 @@ public class Biltest {
         assertEquals(forventet,resultat);
 
     }
+    @Test
+    void getBilerMedFejlOgMangler(){ // til fejl og mangler
+
+        //Arrange
+        TestService testService = new TestService();
+
+        //Act
+        testService.getBilerMedFejlOgMangler();
+        int forventet = 1;
+
+        //Assert
+        int resultat = testService.getBilerMedFejlOgMangler().size();
+        assertEquals(forventet,resultat);
+
+    }
 }
 
 

@@ -9,13 +9,13 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 // Forfatter @Cemakay Türker @August Høg Dedenroth @Tobias Winkel
-public class BilTestRepository {
+public class TestRepository {
     public List<Bil> getAlleBiler() {
         ArrayList<Bil> bilArrayList = new ArrayList<>(
                 Arrays.asList(
                         new Bil(2011, "Skoda", "Citigo", "Hvid", 1, 1, 11, "null", 0),
                         new Bil(2011, "Skoda", "Fabia", "Sort", 2, 2, 22, "null", 0),
-                        new Bil(2011, "Skoda", "Octavia", "Sølv", 3, 0, 11, "null", 0)
+                        new Bil(2011, "Skoda", "Octavia", "Sølv", 3, 0, 11, "motor", 10000)
                 )
         );
         return bilArrayList;
