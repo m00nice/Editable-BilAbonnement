@@ -55,9 +55,9 @@ public class BilRepository implements IRepository<Bil>{
                 );
                 alleBiler.add(temp);
             }
-        } catch (SQLException throwables) {
+        } catch (SQLException throwable) {
             System.out.println("Noget er gået galt i getAlleBiler");
-            throwables.printStackTrace();
+            throwable.printStackTrace();
         }
         return alleBiler;
     }
@@ -68,8 +68,9 @@ public class BilRepository implements IRepository<Bil>{
         try {
             PreparedStatement preparedStatement = conn.prepareStatement(syntax);
             preparedStatement.execute();
-        } catch (SQLException throwables) {
+        } catch (SQLException throwable) {
             System.out.println("Noget gik galt i executeSQLsyntax");
+            throwable.printStackTrace();
         }
 
     }
