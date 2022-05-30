@@ -1,6 +1,7 @@
 package com.example.bilabonnement.testService;
 
 import com.example.bilabonnement.models.Bil;
+import com.example.bilabonnement.models.Reservation;
 import com.example.bilabonnement.testRepository.BilTestRepository;
 
 import java.util.ArrayList;
@@ -49,6 +50,15 @@ public class TestService {
         }
         return udlejedeBiler;
     }
-
+    public ArrayList createValidReservationList(){
+        ArrayList<Reservation> alleReservationer = (ArrayList<Reservation>) testRepository.getAlleReservationer();
+        ArrayList<Reservation> reservationer = new ArrayList();
+        for (Reservation reservation: alleReservationer) {
+            if(reservation.isValid()){
+                reservationer.add(reservation);
+            }
+        }
+        return reservationer;
+    }
 
 }

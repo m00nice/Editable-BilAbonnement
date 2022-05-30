@@ -47,7 +47,7 @@ public class Biltest {
     }
 
     @Test
-    void getUdlejedeBiler() {
+    void getUdlejedeBiler() { //  til forretningudviklere
 
         //Arrange
         TestService testService = new TestService();
@@ -59,6 +59,20 @@ public class Biltest {
         //Assert
         int resultat = testService.getUdlejedeBiler().size();
         assertEquals(forventet,resultat);
+
+    }
+
+    @Test
+    void getValidReservationer(){
+
+        //Arrange
+        TestService testService = new TestService();
+
+        //Act
+        testService.
+
+        //Assert
+
 
     }
 }
