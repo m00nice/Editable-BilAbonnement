@@ -5,7 +5,7 @@ import com.example.bilabonnement.models.Bil;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+// Forfatter @Cemakay Türker @August Høg Dedenroth @Tobias Winkel
 public class BilTestRepository {
     public List<Bil> getAlleBiler() {
         ArrayList<Bil> bilArrayList = new ArrayList<>(

@@ -43,7 +43,7 @@ public class KundeRepository {
             conn.prepareStatement(syntax).execute();
         } catch (SQLException throwable) {
             System.out.println("Noget gik galt i executeSQLsyntax");
-
+            throwable.printStackTrace();
         }
     }
 
