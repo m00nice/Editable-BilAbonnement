@@ -43,9 +43,6 @@ public class Bil {
     public void setFejl_pris(double fejl_pris) {
         this.fejl_pris = fejl_pris;
     }
-    public Bil(double pris) {
-        this.pris = pris;
-    }
 
     public int getAargang() {
         return aargang;

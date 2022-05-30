@@ -42,24 +42,6 @@ public class BilRepository{
 
     }
 
-    public List<Bil> getPrisPåUdlejedeBiler(){
-        Connection conn = DatabaseConnectionManager.getConnection();
-        List<Bil> alleBiler = new ArrayList<>();
-        try{
-            PreparedStatement pstmt = conn.prepareStatement("SELECT pris FROM bil");
-            ResultSet rs = pstmt.executeQuery();
-            while(rs.next()){
-                Bil temp = new Bil(
-                        rs.getDouble(7)
-                );
-                alleBiler.add(temp);
-            }
-        } catch (SQLException throwable) {
-            System.out.println("Noget er gået galt i getAlleBiler");
-            throwable.printStackTrace();
-        }
-        return alleBiler;
-    }
 
 
     public void executeSQLsyntax(String syntax) {
