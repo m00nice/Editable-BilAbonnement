@@ -41,6 +41,7 @@ public class BilRepository implements IRepository<Bil>{
         }
         return alleBiler;
 
+
     }
 
     public List<Bil> getPrisPåUdlejedeBiler(){

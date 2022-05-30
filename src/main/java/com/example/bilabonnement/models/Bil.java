@@ -12,9 +12,6 @@ public class Bil {
     private double fejl_pris;
 
 
-
-    public Bil(){
-    }
     public Bil(int aargang, String maerke, String model, String farve, int bil_ID, int kundeID, double pris, String fejl, double fejl_pris) {
         this.aargang = aargang;
         this.maerke = maerke;
