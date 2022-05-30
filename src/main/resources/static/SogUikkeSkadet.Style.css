@@ -62,21 +62,7 @@ header{
 }
 
 
-.registrerButton{}
-
-.removeButton{}
-
-.LogUdButton{}
-
-.skadeMenu{}
-
-.ikkeSkadeMenu{}
-
-.søgefelt{}
-
-
-
-.leftCarButton{
+.CarButton{
     color: white;
     display: inline-block;
     text-align: center;
