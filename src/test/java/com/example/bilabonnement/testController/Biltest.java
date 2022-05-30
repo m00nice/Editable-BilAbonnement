@@ -1,4 +1,4 @@
-package com.example.bilabonnement.test;
+package com.example.bilabonnement.testController;
 
 import com.example.bilabonnement.models.Bil;
 import com.example.bilabonnement.testService.TestService;
@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 // Forfatter @Cemakay Türker @August Høg Dedenroth @Tobias Winkel
 @SpringBootTest
 public class Biltest {
+
 
     @Test
     void erPrisOverGennemsnit() {
@@ -22,30 +23,43 @@ public class Biltest {
 
         //Assert
         boolean resultat = testService.erPrisOverGennemsnit(bil);
-        assertEquals(forventet,resultat);
+        assertEquals(forventet, resultat);
 
     }
 
     @Test
-    void getTotalPrisPåUdlejedeBiler() {
+    void getTotalPrisPåUdlejedeBiler() { //  til forretningudviklere
 
         //Arrange
         TestService testService = new TestService();
 
         //Act
         testService.getTotalPrisPåUdlejedeBiler();
-        double forventet = 44;
-
+        double forventet = 4;
 
 
         //Assert
         double resultat = testService.getTotalPrisPåUdlejedeBiler();
-        assertEquals(forventet,resultat);
-
+        assertEquals(forventet, resultat);
 
     }
 
+    @Test
+    void getUdlejedeBiler() {
 
+        //Arrange
+        TestService testService = new TestService();
+
+        //Act
+        testService.getUdlejedeBiler();
+        int forventet = 3; // size på ArrayList i BilTestRepository
+
+        //Assert
+        int resultat = testService.getUdlejedeBiler().size();
+        assertEquals(forventet,resultat);
+
+    }
 }
+
 
 
