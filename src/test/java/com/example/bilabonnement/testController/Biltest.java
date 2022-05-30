@@ -1,11 +1,9 @@
-package com.example.bilabonnement.test;
+package com.example.bilabonnement.testController;
 
 import com.example.bilabonnement.models.Bil;
 import com.example.bilabonnement.testService.TestService;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 // Forfatter @Cemakay Türker @August Høg Dedenroth @Tobias Winkel
