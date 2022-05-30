@@ -10,9 +10,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BilRepository implements IRepository<Bil>{
+public class BilRepository{
 
-    @Override
     public List<Bil> getAlleBiler(){
         Connection conn = DatabaseConnectionManager.getConnection();
         List<Bil> alleBiler = new ArrayList<>();
