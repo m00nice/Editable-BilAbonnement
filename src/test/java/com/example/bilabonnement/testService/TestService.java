@@ -3,6 +3,7 @@ package com.example.bilabonnement.testService;
 import com.example.bilabonnement.models.Bil;
 import com.example.bilabonnement.testRepository.BilTestRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestService {
@@ -36,6 +37,17 @@ public class TestService {
         } else {
             return false;
         }
+    }
+
+    public ArrayList<Bil> getUdlejedeBiler(){
+        ArrayList<Bil> biler = (ArrayList<Bil>) testRepository.getAlleBiler();
+        ArrayList<Bil> udlejedeBiler = new ArrayList<>();
+        for(Bil bil : biler){
+            if (bil.getKundeID() > 0 ){
+                udlejedeBiler.add(bil);
+            }
+        }
+        return udlejedeBiler;
     }
 
 
