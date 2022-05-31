@@ -47,7 +47,7 @@ public class BilService {
         }
         return bilUdenFejl;
     }
-    //TODO navn ændret update klassediagram
+
     public void setFejlToNull(int bil_ID){
         bilRepository.executeSQLsyntax("UPDATE `bilabonnement`.`bil` SET `fejl` = '', `fejl_pris` = '0' WHERE (`bil_ID` = '"+bil_ID+"');");
     }

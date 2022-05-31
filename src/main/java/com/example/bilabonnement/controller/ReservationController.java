@@ -16,9 +16,6 @@ import java.util.ArrayList;
 @Controller
 public class ReservationController {
 
-    //TODO GENERELT tilføj SQL syntax til at ændre i databasen
-
-
     private final ReservationService reservationService = new ReservationService();
     private final BilService bilService = new BilService();
     private final KundeService kundeService = new KundeService();
@@ -55,8 +52,6 @@ public class ReservationController {
         reservationService.sletReservation(reservationID);
         return "redirect:http://localhost:8080/Dataregistrering/Invalid";
     }
-
-    //TODO get method til at vise all info på reservation
 
     @GetMapping("/Dataregistrering/info")
     public String visReservationInfo(Reservation reservation, Model model1, Model model2){

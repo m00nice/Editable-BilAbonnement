@@ -49,31 +49,4 @@ public class PersonaleController {
         return "redirect:/";
     }
 
-
- /*   //TODO method til at logge ud af system
-
-    @PostMapping("/Dataregistrering/Invalid")
-    public String logUdDataregistreringInvalid(){
-        return "redirect:/";
-    }*/
-
-    /*
-    @PostMapping("/Dataregistrering/Valid")
-    public String logUdDataregistreringValid(){
-        return "redirect:/";
-    }
-    @PostMapping("/Skade&Udebedring/Biler-med-skader")
-    public String logUdDataregistreringSogUmedSkade(){
-        return "redirect:/";
-    }
-    @PostMapping("/Skade&Udebedring/Biler-uden-skader")
-    public String logUdDataregistreringSogUudenSkade(){
-        return "redirect:/";
-    }
-    @PostMapping("/Forretningsudviklere")
-    public String logUdForretningsudviklere(){
-        return "redirect:/";
-    }
-    */
-
 }
