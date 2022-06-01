@@ -32,6 +32,8 @@ public class PersonaleRepository {
             throwable.printStackTrace();
         }
         return alleBrugere;
+
+
     }
 
     public void executeSQLsyntax(String syntax){
