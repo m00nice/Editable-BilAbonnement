@@ -12,7 +12,7 @@ import org.springframework.web.context.request.WebRequest;
 
 import java.util.ArrayList;
 
-// Forfatter @Martin Anberg
+// Forfatter @Martin Anberg @Tobias Winkel
 @Controller
 public class ReservationController {
 
