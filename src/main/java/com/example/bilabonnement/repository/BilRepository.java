@@ -2,7 +2,6 @@ package com.example.bilabonnement.repository;
 // Forfatter @Martin Anberg
 import com.example.bilabonnement.models.Bil;
 import utility.DatabaseConnectionManager;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,7 +11,7 @@ import java.util.List;
 
 public class BilRepository{
 
-    public List<Bil> getAlleBiler(){
+    public List<Bil> getAlleBiler(){  // tager fat i databasen og returnerer listen
         Connection conn = DatabaseConnectionManager.getConnection();
         List<Bil> alleBiler = new ArrayList<>();
         try{
@@ -39,13 +38,9 @@ public class BilRepository{
             throwable.printStackTrace();
         }
         return alleBiler;
-
-
     }
 
-
-
-    public void executeSQLsyntax(String syntax) {
+    public void executeSQLsyntax(String syntax) { // foretager ændringer på data i databasen
         Connection conn = DatabaseConnectionManager.getConnection();
         try {
             PreparedStatement preparedStatement = conn.prepareStatement(syntax);

@@ -2,7 +2,6 @@ package com.example.bilabonnement.repository;
 //Forfatter @Cem Akay Türker, Tobias Winkel
 import com.example.bilabonnement.models.Kunde;
 import utility.DatabaseConnectionManager;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -46,5 +45,4 @@ public class KundeRepository {
             throwable.printStackTrace();
         }
     }
-
 }

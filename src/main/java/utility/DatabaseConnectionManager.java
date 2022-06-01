@@ -1,5 +1,9 @@
 package utility;
 // Forfatter @Cemakey Türker
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,11 +29,12 @@ public class DatabaseConnectionManager {
 
         try {
             conn = DriverManager.getConnection(url, username, password);
-            System.out.println("connection established");
+            System.out.println("DatabaseConnectionManager established connection ");
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return conn;
     }
+
 }
