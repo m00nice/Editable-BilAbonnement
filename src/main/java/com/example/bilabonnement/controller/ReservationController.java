@@ -22,7 +22,7 @@ public class ReservationController {
 
     @GetMapping("/Dataregistrering/Valid")
     public String visValidReservationer(Model model){
-        ArrayList liste = reservationService.createValidReservationList();
+        ArrayList liste = reservationService.opretValidReservationList();
         model.addAttribute("validliste",liste);
         return "DataregistreringValid";
     }
@@ -35,7 +35,7 @@ public class ReservationController {
 
     @GetMapping("/Dataregistrering/Invalid")
     public String visInvalidReservationer(Model model){
-        ArrayList liste = reservationService.createInvalidReservationList();
+        ArrayList liste = reservationService.opretInvalidReservationList();
         model.addAttribute("invalidliste",liste);
         return "DataregistreringInvalid";
     }

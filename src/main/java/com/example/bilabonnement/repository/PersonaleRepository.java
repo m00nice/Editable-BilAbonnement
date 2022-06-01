@@ -33,7 +33,6 @@ public class PersonaleRepository {
         }
         return alleBrugere;
 
-
     }
 
     public void executeSQLsyntax(String syntax){

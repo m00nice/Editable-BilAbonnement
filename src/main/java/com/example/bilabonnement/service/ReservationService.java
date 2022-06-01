@@ -28,7 +28,7 @@ public class ReservationService {
 
 
 
-    public ArrayList createValidReservationList(){
+    public ArrayList opretValidReservationList(){
          ArrayList<Reservation> alleReservationer = (ArrayList<Reservation>) reservationRepository.getAlleReservationer();
         ArrayList<Reservation> reservationer = new ArrayList();
         for (Reservation reservation: alleReservationer) {
@@ -40,7 +40,7 @@ public class ReservationService {
     }
 
 
-    public ArrayList createInvalidReservationList(){
+    public ArrayList opretInvalidReservationList(){
         ArrayList<Reservation> alleReservationer = (ArrayList<Reservation>) reservationRepository.getAlleReservationer();
         ArrayList<Reservation> reservationer = new ArrayList();
         for (Reservation reservation: alleReservationer) {

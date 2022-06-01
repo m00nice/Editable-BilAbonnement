@@ -67,11 +67,11 @@ public class Biltest {
         TestService testService = new TestService();
 
         //Act
-        testService.createValidReservationList();
+        testService.opretValidReservationList();
         int forventet = 1;
 
         //Assert
-        int resultat = testService.createValidReservationList().size();
+        int resultat = testService.opretValidReservationList().size();
         assertEquals(forventet,resultat);
 
     }

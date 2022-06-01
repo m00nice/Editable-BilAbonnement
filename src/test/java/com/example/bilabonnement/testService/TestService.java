@@ -50,7 +50,7 @@ public class TestService {
         }
         return udlejedeBiler;
     }
-    public ArrayList createValidReservationList(){
+    public ArrayList opretValidReservationList(){
         ArrayList<Reservation> alleReservationer = (ArrayList<Reservation>) testRepository.reservationsArrayList();
         ArrayList<Reservation> reservationer = new ArrayList();
         for (Reservation reservation: alleReservationer) {
