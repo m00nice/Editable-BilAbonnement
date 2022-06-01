@@ -33,7 +33,6 @@ public class BilController {
 
     @PostMapping("/SkadeOgUdbedring/Biler-uden-skader")
     public String tilføjFejl(WebRequest fejlData){
-        System.out.println(fejlData.getParameter("bil_ID"));
         int bil_id = Integer.parseInt(fejlData.getParameter("bil_ID"));
         if(fejlData.getParameter("pris").equals("")){
 
