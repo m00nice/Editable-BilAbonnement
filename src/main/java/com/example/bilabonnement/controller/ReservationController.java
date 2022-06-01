@@ -12,12 +12,9 @@ import org.springframework.web.context.request.WebRequest;
 
 import java.util.ArrayList;
 
-// Forfatter @Martin Anberg
+// Forfatter @Martin Anberg @Tobias Winkel
 @Controller
 public class ReservationController {
-
-    //TODO GENERELT tilføj SQL syntax til at ændre i databasen
-
 
     private final ReservationService reservationService = new ReservationService();
     private final BilService bilService = new BilService();
@@ -55,8 +52,6 @@ public class ReservationController {
         reservationService.sletReservation(reservationID);
         return "redirect:http://localhost:8080/Dataregistrering/Invalid";
     }
-
-    //TODO get method til at vise all info på reservation
 
     @GetMapping("/Dataregistrering/info")
     public String visReservationInfo(Reservation reservation, Model model1, Model model2){

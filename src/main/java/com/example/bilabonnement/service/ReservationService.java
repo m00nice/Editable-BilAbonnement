@@ -5,7 +5,7 @@ import com.example.bilabonnement.repository.ReservationRepository;
 
 import java.util.ArrayList;
 
-// Forfatter @Martin Anberg
+// Forfatter @Martin Anberg @Tobias Winkel
 public class ReservationService {
 
     private final ReservationRepository reservationRepository = new ReservationRepository();

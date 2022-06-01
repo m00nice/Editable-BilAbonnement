@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-// Forfatter @Martin Anberg
+// Forfatter @Martin Anberg @Tobias Winkel
 public class ReservationRepository{
 
 
@@ -40,10 +40,8 @@ public class ReservationRepository{
     public void executeSQLSyntax(String syntax){
         Connection conn = DatabaseConnectionManager.getConnection();
         try {
-            System.out.println("bruh moment");
             conn.prepareStatement(syntax).execute();
         } catch (SQLException throwable) {
-            System.out.println("Noget gik galt i executeSQLSyntax");
             throwable.printStackTrace();
 
         }

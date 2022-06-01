@@ -1,7 +1,7 @@
 package com.example.bilabonnement.models;
 
 import java.util.Date;
-// Forfatter @Martin Anberg
+// Forfatter @Martin Anberg @Tobias Winkel
 public class Reservation {
 
     private int bilID;
