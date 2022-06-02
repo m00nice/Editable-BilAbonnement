@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class BilController {
     private final BilService bilService = new BilService();
 
+
     @GetMapping("/SkadeOgUdbedring/Biler-med-skader")
      public String alleSkadetBiler(Model model) {
       ArrayList<Bil> skadeArrayList = bilService.getBilerMedFejlOgMangler();
