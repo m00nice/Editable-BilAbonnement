@@ -53,7 +53,7 @@ public class ReservationController {
         return "redirect:http://localhost:8080/Dataregistrering/Invalid";
     }
 
-    @GetMapping("/Dataregistrering/info")
+   /* @GetMapping("/Dataregistrering/info")
     public String visReservationInfo(Reservation reservation, Model model1, Model model2){
 
         model1.addAttribute("bilTilInfo",bilService.getBil(reservation.getBilID()));
@@ -61,6 +61,6 @@ public class ReservationController {
 
         return "DataregistreringValid";
 
-    }
+    }*/
 
 }

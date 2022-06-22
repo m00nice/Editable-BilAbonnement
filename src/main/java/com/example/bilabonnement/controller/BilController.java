@@ -2,6 +2,7 @@ package com.example.bilabonnement.controller;
 // Forfatter: @Martin Anberg, August Høg Dedenroth
 
 import com.example.bilabonnement.models.Bil;
+import com.example.bilabonnement.models.BilBuilder;
 import com.example.bilabonnement.service.BilService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,19 +19,19 @@ public class BilController {
     private final BilService bilService = new BilService();
 
 
-    @GetMapping("/SkadeOgUdbedring/Biler-med-skader")
+  /*  @GetMapping("/SkadeOgUdbedring/Biler-med-skader")
      public String alleSkadetBiler(Model model) {
       ArrayList<Bil> skadeArrayList = bilService.getBilerMedFejlOgMangler();
       model.addAttribute("skadetBilListe", skadeArrayList);
       return "SkadeOgUdbedringSkadeListe";
- }
+ }*/
 
-    @GetMapping("/SkadeOgUdbedring/Biler-uden-skader")
+   /* @GetMapping("/SkadeOgUdbedring/Biler-uden-skader")
     public String alleBilerUdenSkade(Model model) {
         ArrayList<Bil> bilArrayList = bilService.getBilerUdenFejlOgMangler();
         model.addAttribute("uskadetBilListe", bilArrayList);
         return "SkadeOgUdbedringIkkeSkadeListe";
-    }
+    }*/
 
     @PostMapping("/SkadeOgUdbedring/Biler-uden-skader")
     public String tilføjFejl(WebRequest fejlData){
@@ -59,12 +60,12 @@ public class BilController {
         return "redirect:http://localhost:8080/SkadeOgUdbedring/Biler-med-skader";
     }
 
-    @GetMapping("/Forretningsudvikling")
+    /*@GetMapping("/Forretningsudvikling")
     public String listeAfUdlejedeBiler(Model model){
-        ArrayList<Bil> bilArrayList = bilService.getUdlejedeBiler();
+        ArrayList<BilBuilder> bilArrayList = bilService.getUdlejedeBiler();
         double totalpris = bilService.getTotalPrisPåUdlejedeBiler();
         model.addAttribute("billiste",bilArrayList);
         model.addAttribute("totalpris",totalpris);
         return "Forretningudviklere";
-    }
+    }*/
 }

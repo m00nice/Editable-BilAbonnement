@@ -61,8 +61,8 @@ public class Bil {
         return model;
     }
 
-    public void setModel(java.lang.String model) {
-        this.model = model;
+    public String setModel(java.lang.String model) {
+        return model;
     }
 
     public java.lang.String getFarve() {
@@ -108,7 +108,8 @@ public class Bil {
                 ", bil_ID=" + bil_ID +
                 ", kundeID=" + kundeID +
                 ", pris=" + pris +
-                ", fejl_id=" + fejl +
+                ", fejl=" + fejl +
+                ", fejl_pris=" + fejl_pris +
                 '}';
     }
 }
