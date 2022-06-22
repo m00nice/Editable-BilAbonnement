@@ -43,7 +43,11 @@ Forfatter: @Tobias Winkel
             <th>Startdato</th>
             <th>Slutdato</th>
         </tr>
+
+
         <tr th:each="reservation:${invalidliste}">
+<input class="AccordionInput" type="checkbox" id="${reservation.bilID}">
+            <label class="AccordionLabel" for="${reservation.bilID}">
             <td th:text="${reservation.bilID}"></td>
             <td th:text="${reservation.kundeID}"></td>
             <td th:text="${reservation.startDato}"><td>
@@ -56,7 +60,10 @@ Forfatter: @Tobias Winkel
                 <input type="hidden" name="reservationID" th:value="${reservation.reservationID}">
                 <td><button type="submit" name="submit" value="submit" style="color: black; background-color: white">Slet</button></td>
             </form>
-
+            </label>
+            <div class="AccordionContent">
+                <p>bfbdf</p>
+            </div>
 
 
         </tr>
